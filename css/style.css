@@ -1,168 +1,549 @@
-/* =========================
-   ICON DECORATIONS
-========================= */
+/* =========================================
+   RESET
+========================================= */
 
-.floating {
-    position: fixed;
-    pointer-events: none;
-    z-index: 5;
-    object-fit: contain;
-    opacity: 0.75;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.flower-left {
-    position: fixed;
-    width: 65px;
-    left: 4%;
-    top: 18%;
-    transform: rotate(-15deg);
-    opacity: 0.7;
-    pointer-events: none;
+html {
+    scroll-behavior: smooth;
 }
 
-.flower-right {
-    position: fixed;
-    width: 60px;
-    right: 4%;
-    top: 42%;
-    transform: rotate(15deg);
-    opacity: 0.7;
-    pointer-events: none;
-}
-
-.heart-left {
-    position: fixed;
-    width: 35px;
-    left: 9%;
-    top: 65%;
-    transform: rotate(-15deg);
-    opacity: 0.65;
-    pointer-events: none;
-}
-
-.heart-right {
-    position: fixed;
-    width: 35px;
-    right: 10%;
-    top: 75%;
-    transform: rotate(20deg);
-    opacity: 0.65;
-    pointer-events: none;
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #fff7fa;
+    color: #4a2634;
+    overflow-x: hidden;
 }
 
 
-/* =========================
+/* =========================================
+   GENERAL
+========================================= */
+
+img {
+    max-width: 100%;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================================
    HERO
-========================= */
+========================================= */
 
 .hero {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
     position: relative;
-    overflow: hidden;
+
+    padding: 80px 20px;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 190, 210, 0.25),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255, 210, 225, 0.3),
+            transparent 30%
+        ),
+        #fff7fa;
 }
+
+
+/* =========================================
+   HERO ICONS
+========================================= */
 
 .hero-bow {
     position: absolute;
+
     width: 130px;
-    right: 8%;
-    top: 8%;
+
+    top: 9%;
+    right: 10%;
+
     transform: rotate(10deg);
+
+    opacity: 0.95;
 }
 
 .hero-heart {
-    width: 75px;
-    height: 75px;
+    width: 70px;
+    height: 70px;
+
     object-fit: contain;
-    margin-bottom: 20px;
+
+    margin-bottom: 22px;
+
     animation: heartbeat 2s infinite;
 }
 
+
+/* =========================================
+   TEXT
+========================================= */
+
+.eyebrow {
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    font-size: 0.75rem;
+
+    font-weight: 600;
+
+    color: #d85b86;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: "Pacifico", cursive;
+
+    font-size: clamp(3.5rem, 9vw, 7rem);
+
+    line-height: 1.05;
+
+    font-weight: 400;
+
+    color: #482532;
+}
+
+.hero h1 span {
+    color: #e95f91;
+}
+
+.subtitle {
+    margin-top: 25px;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
+    color: #795765;
+}
+
+
+/* =========================================
+   HERO DECORATION
+========================================= */
+
 .hero-decoration {
     display: flex;
-    justify-content: center;
+
     align-items: center;
-    gap: 15px;
+    justify-content: center;
+
+    gap: 18px;
+
     margin: 25px 0;
 }
 
 .hero-decoration img {
     width: 38px;
     height: 38px;
+
     object-fit: contain;
 }
 
 .hero-decoration span {
+    color: #e95f91;
+
     font-size: 28px;
-    color: #ef6593;
 }
 
 
-/* =========================
-   FLOWER DIVIDERS
-========================= */
+/* =========================================
+   BUTTON
+========================================= */
+
+.start-button {
+    margin-top: 30px;
+
+    border: none;
+
+    background: #eb6796;
+
+    color: white;
+
+    padding: 16px 28px;
+
+    border-radius: 50px;
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(235, 103, 150, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.start-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(235, 103, 150, 0.35);
+}
+
+.start-button span {
+    margin-left: 8px;
+}
+
+.hint {
+    margin-top: 15px;
+
+    font-size: 0.75rem;
+
+    color: #b58b99;
+}
+
+
+/* =========================================
+   GIFT SECTION
+========================================= */
+
+.gift-section {
+    position: relative;
+
+    padding: 120px 7%;
+
+    background: #fff;
+}
+
+
+/* =========================================
+   HEART PATTERN
+========================================= */
+
+.heart-pattern {
+    position: absolute;
+
+    width: 200px;
+
+    top: 70px;
+    right: -30px;
+
+    opacity: 0.07;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+.section-header {
+    max-width: 700px;
+
+    margin: 0 auto 70px;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+.section-header h2,
+.photo-section h2,
+.ending h2 {
+    font-family: "Pacifico", cursive;
+
+    font-weight: 400;
+
+    font-size: clamp(2.3rem, 5vw, 4rem);
+
+    line-height: 1.2;
+
+    color: #4a2634;
+}
+
+.section-header h2 span,
+.photo-section h2 span,
+.ending h2 span {
+    color: #e95f91;
+}
+
+.section-header > p:last-child {
+    margin-top: 20px;
+
+    line-height: 1.8;
+
+    color: #80606d;
+}
+
+
+/* =========================================
+   FLOWER DIVIDER
+========================================= */
 
 .flower-divider {
     display: flex;
-    justify-content: center;
+
     align-items: center;
+    justify-content: center;
+
     gap: 15px;
+
     margin-bottom: 20px;
 }
 
 .flower-divider img {
     width: 42px;
     height: 42px;
+
     object-fit: contain;
 }
 
 .flower-divider span {
-    color: #ef6593;
+    color: #e95f91;
+
     font-size: 26px;
 }
 
 
-/* =========================
-   CARD ICONS
-========================= */
+/* =========================================
+   CARDS
+========================================= */
+
+.card-grid {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.cute-card {
+    position: relative;
+
+    background: #fff8fb;
+
+    border: 1px solid #f7dce6;
+
+    border-radius: 25px;
+
+    padding: 35px;
+
+    min-height: 250px;
+
+    box-shadow:
+        0 10px 35px rgba(130, 55, 80, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.cute-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 40px rgba(130, 55, 80, 0.12);
+}
 
 .card-decoration {
     width: 65px;
     height: 65px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 .card-decoration img {
     width: 100%;
     height: 100%;
+
     object-fit: contain;
 }
 
+.cute-card h3 {
+    font-family: "Pacifico", cursive;
 
-/* =========================
-   HEART BACKGROUND
-========================= */
+    font-size: 1.7rem;
 
-.heart-pattern {
+    font-weight: 400;
+
+    color: #4a2634;
+}
+
+.cute-card p {
+    margin-top: 10px;
+
+    line-height: 1.6;
+
+    color: #80606d;
+
+    max-width: 350px;
+}
+
+.card-arrow {
     position: absolute;
 
-    width: 180px;
+    bottom: 25px;
+    right: 30px;
 
-    right: -25px;
-    top: 70px;
+    color: #e95f91;
 
-    opacity: 0.08;
+    font-size: 1.4rem;
 
-    pointer-events: none;
+    transition: transform 0.2s ease;
+}
+
+.cute-card:hover .card-arrow {
+    transform: translateX(5px);
 }
 
 
-/* =========================
+/* =========================================
+   PHOTO SECTION
+========================================= */
+
+.photo-section {
+    max-width: 1100px;
+
+    margin: 150px auto 0;
+
+    text-align: center;
+}
+
+.photo-placeholder {
+    margin-top: 60px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================
+   POLAROIDS
+========================================= */
+
+.polaroid {
+    background: white;
+
+    padding: 12px 12px 20px;
+
+    width: 260px;
+
+    box-shadow:
+        0 12px 30px rgba(80, 40, 55, 0.12);
+
+    transform: rotate(-2deg);
+
+    transition: transform 0.25s ease;
+}
+
+.polaroid:hover {
+    transform:
+        rotate(0deg)
+        translateY(-8px);
+}
+
+.polaroid.tilted {
+    transform: rotate(3deg);
+}
+
+.polaroid.tilted:hover {
+    transform:
+        rotate(0deg)
+        translateY(-8px);
+}
+
+.photo-box {
+    height: 230px;
+
+    background: #fff0f5;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    color: #c792a6;
+}
+
+.photo-box span {
+    font-size: 2.5rem;
+
+    margin-bottom: 10px;
+}
+
+.photo-box p {
+    font-size: 0.85rem;
+}
+
+.polaroid-caption {
+    margin-top: 15px;
+
+    font-family: "Pacifico", cursive;
+
+    color: #6e4756;
+
+    font-size: 1rem;
+}
+
+
+/* =========================================
    ENDING
-========================= */
+========================================= */
+
+.ending {
+    max-width: 700px;
+
+    margin: 170px auto 50px;
+
+    text-align: center;
+}
 
 .ending-flower {
     display: block;
@@ -188,10 +569,116 @@
     animation: heartbeat 2s infinite;
 }
 
+.ending > p {
+    margin-top: 20px;
 
-/* =========================
-   HEART ANIMATION
-========================= */
+    color: #80606d;
+
+    font-size: 1.05rem;
+}
+
+.signature {
+    font-family: "Pacifico", cursive;
+
+    color: #e95f91 !important;
+
+    font-size: 1.3rem !important;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    text-align: center;
+
+    padding: 35px 20px;
+
+    background: #fff0f5;
+
+    color: #a87587;
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================================
+   FLOATING DECORATIONS
+========================================= */
+
+.flower-left {
+    position: fixed;
+
+    width: 65px;
+
+    left: 4%;
+    top: 18%;
+
+    transform: rotate(-15deg);
+
+    opacity: 0.7;
+
+    pointer-events: none;
+
+    z-index: 5;
+}
+
+.flower-right {
+    position: fixed;
+
+    width: 60px;
+
+    right: 4%;
+    top: 42%;
+
+    transform: rotate(15deg);
+
+    opacity: 0.7;
+
+    pointer-events: none;
+
+    z-index: 5;
+}
+
+.heart-left {
+    position: fixed;
+
+    width: 35px;
+
+    left: 9%;
+    top: 65%;
+
+    transform: rotate(-15deg);
+
+    opacity: 0.65;
+
+    pointer-events: none;
+
+    z-index: 5;
+}
+
+.heart-right {
+    position: fixed;
+
+    width: 35px;
+
+    right: 10%;
+    top: 75%;
+
+    transform: rotate(20deg);
+
+    opacity: 0.65;
+
+    pointer-events: none;
+
+    z-index: 5;
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
 
 @keyframes heartbeat {
 
@@ -206,30 +693,53 @@
     100% {
         transform: scale(1);
     }
-
 }
 
 
-/* =========================
+/* =========================================
    MOBILE
-========================= */
+========================================= */
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
+
+    .hero {
+        min-height: 100svh;
+
+        padding: 70px 20px;
+    }
 
     .hero-bow {
-        width: 90px;
+        width: 85px;
+
         right: 2%;
         top: 5%;
     }
 
+    .hero-heart {
+        width: 60px;
+        height: 60px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cute-card {
+        min-height: 220px;
+    }
+
+    .photo-placeholder {
+        gap: 35px;
+    }
+
     .flower-left {
-        width: 45px;
-        left: 2%;
+        width: 42px;
+        left: 1%;
     }
 
     .flower-right {
-        width: 45px;
-        right: 2%;
+        width: 42px;
+        right: 1%;
     }
 
     .heart-left,
@@ -238,7 +748,34 @@
     }
 
     .heart-pattern {
-        width: 100px;
+        width: 110px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 450px) {
+
+    .hero h1 {
+        font-size: 3.3rem;
+    }
+
+    .section-header h2,
+    .photo-section h2,
+    .ending h2 {
+        font-size: 2.3rem;
+    }
+
+    .hero-bow {
+        width: 65px;
+    }
+
+    .cute-card {
+        padding: 28px;
     }
 
 }
