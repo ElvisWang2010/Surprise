@@ -25,163 +25,117 @@ img {
 
 
 /* =========================================
-   CORNER DECORATIONS
+   DECORATION SYSTEM
+   EVERYTHING SCROLLS WITH THE PAGE
 ========================================= */
 
-.corner-decorations {
-    position: fixed;
+.decorations {
+    position: absolute;
 
-    top: 0;
     left: 0;
-
     width: 100%;
-    height: 100vh;
 
     pointer-events: none;
 
-    z-index: 20;
+    z-index: 3;
 }
 
-.corner-icon {
+.decor {
     position: absolute;
 
     object-fit: contain;
 
-    opacity: 0.72;
-
     pointer-events: none;
+
+    opacity: 0.68;
 }
 
 
 /* =========================================
-   FLOWERS
+   HERO DECORATIONS
 ========================================= */
 
-/* Large flower - top left */
+.hero-decorations {
+    top: 0;
+    height: 100vh;
+}
 
-.flower-top-left {
-    width: 75px;
+
+/* Top-left large flower */
+
+.flower-hero-left {
+    width: 78px;
 
     left: 2.5%;
-    top: 5%;
+    top: 7%;
 
     transform: rotate(-18deg);
 }
 
 
-/* Small flower - upper left */
+/* Top-left smaller flower */
 
-.flower-upper-left {
+.flower-hero-left-small {
     width: 42px;
 
-    left: 14%;
-    top: 18%;
+    left: 13%;
+    top: 20%;
 
-    transform: rotate(22deg);
+    transform: rotate(27deg);
 
-    opacity: 0.58;
+    opacity: 0.5;
 }
 
 
-/* Flower - middle left */
+/* Top-right bow */
 
-.flower-middle-left {
-    width: 58px;
-
-    left: 3%;
-    top: 63%;
-
-    transform: rotate(-12deg);
-}
-
-
-/* Large flower - right */
-
-.flower-right {
-    width: 65px;
+.bow-hero-right {
+    width: 82px;
 
     right: 3%;
-    top: 47%;
-
-    transform: rotate(17deg);
-}
-
-
-/* Small flower - upper right */
-
-.flower-upper-right {
-    width: 45px;
-
-    right: 13%;
-    top: 22%;
-
-    transform: rotate(-20deg);
-
-    opacity: 0.58;
-}
-
-
-/* Small flower - bottom left */
-
-.flower-bottom-left {
-    width: 48px;
-
-    left: 12%;
-    bottom: 7%;
-
-    transform: rotate(16deg);
-
-    opacity: 0.62;
-}
-
-
-/* Large flower - bottom right */
-
-.flower-bottom-right {
-    width: 72px;
-
-    right: 5%;
-    bottom: 5%;
-
-    transform: rotate(-14deg);
-}
-
-
-/* =========================================
-   OTHER DECORATIONS
-========================================= */
-
-.bow-top-right {
-    width: 85px;
-
-    right: 3%;
-    top: 7%;
+    top: 8%;
 
     transform: rotate(12deg);
 }
 
 
-.heart-left {
+/* Right flower */
+
+.flower-hero-right {
+    width: 62px;
+
+    right: 4%;
+    top: 45%;
+
+    transform: rotate(-26deg);
+}
+
+
+/* Left heart */
+
+.heart-hero-left {
     width: 42px;
 
-    left: 4%;
-    top: 36%;
+    left: 5%;
+    top: 48%;
 
     transform: rotate(-15deg);
 
-    opacity: 0.6;
+    opacity: 0.55;
 }
 
 
-.heart-bottom-left {
-    width: 48px;
+/* Small right flower */
 
-    left: 6%;
-    bottom: 8%;
+.flower-hero-right-small {
+    width: 42px;
 
-    transform: rotate(12deg);
+    right: 15%;
+    top: 24%;
 
-    opacity: 0.6;
+    transform: rotate(34deg);
+
+    opacity: 0.5;
 }
 
 
@@ -193,6 +147,7 @@ img {
     min-height: 100vh;
 
     display: flex;
+
     flex-direction: column;
 
     justify-content: center;
@@ -367,6 +322,94 @@ img {
 
 
 /* =========================================
+   STORY DECORATIONS
+========================================= */
+
+.story-decorations {
+    top: 0;
+    height: 850px;
+}
+
+
+/* Left flower */
+
+.flower-story-left {
+    width: 65px;
+
+    left: 3%;
+    top: 9%;
+
+    transform: rotate(22deg);
+}
+
+
+/* Left heart */
+
+.heart-story-left {
+    width: 38px;
+
+    left: 9%;
+    top: 31%;
+
+    transform: rotate(-18deg);
+
+    opacity: 0.5;
+}
+
+
+/* Right bow */
+
+.bow-story-right {
+    width: 70px;
+
+    right: 3%;
+    top: 12%;
+
+    transform: rotate(-10deg);
+}
+
+
+/* Right flower */
+
+.flower-story-right {
+    width: 58px;
+
+    right: 4%;
+    top: 36%;
+
+    transform: rotate(31deg);
+}
+
+
+/* Small left flower */
+
+.flower-story-left-middle {
+    width: 44px;
+
+    left: 4%;
+    top: 61%;
+
+    transform: rotate(-31deg);
+
+    opacity: 0.55;
+}
+
+
+/* Right heart */
+
+.heart-story-right {
+    width: 40px;
+
+    right: 9%;
+    top: 67%;
+
+    transform: rotate(16deg);
+
+    opacity: 0.5;
+}
+
+
+/* =========================================
    SECTION HEADER
 ========================================= */
 
@@ -376,6 +419,10 @@ img {
     margin: 0 auto 70px;
 
     text-align: center;
+
+    position: relative;
+
+    z-index: 4;
 }
 
 .little-heart {
@@ -434,6 +481,10 @@ img {
     grid-template-columns: repeat(4, 1fr);
 
     gap: 22px;
+
+    position: relative;
+
+    z-index: 4;
 }
 
 .cute-card {
@@ -478,8 +529,6 @@ img {
     display: inline-block;
 }
 
-
-/* Different rotations */
 
 .cute-card:nth-child(1) .card-decoration {
     transform: rotate(-8deg);
@@ -537,6 +586,73 @@ img {
 
 
 /* =========================================
+   MIDDLE DECORATIONS
+========================================= */
+
+.middle-decorations {
+    top: 820px;
+
+    height: 500px;
+}
+
+
+/* Left flower */
+
+.flower-middle-left {
+    width: 60px;
+
+    left: 2%;
+
+    top: 15%;
+
+    transform: rotate(-14deg);
+}
+
+
+/* Right flower */
+
+.flower-middle-right {
+    width: 68px;
+
+    right: 2%;
+
+    top: 30%;
+
+    transform: rotate(38deg);
+}
+
+
+/* Left heart */
+
+.heart-middle-left {
+    width: 40px;
+
+    left: 10%;
+
+    top: 55%;
+
+    transform: rotate(18deg);
+
+    opacity: 0.5;
+}
+
+
+/* Right bow */
+
+.bow-middle-right {
+    width: 64px;
+
+    right: 10%;
+
+    top: 70%;
+
+    transform: rotate(-18deg);
+
+    opacity: 0.6;
+}
+
+
+/* =========================================
    MEMORIES
 ========================================= */
 
@@ -546,17 +662,93 @@ img {
     margin: 130px auto 0;
 
     text-align: center;
+
+    position: relative;
+
+    z-index: 4;
 }
 
 .photo-placeholder {
     display: flex;
 
     justify-content: center;
+
     align-items: flex-start;
 
     gap: 35px;
 
     margin-top: 60px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+/* =========================================
+   PHOTO DECORATIONS
+========================================= */
+
+.photo-decorations {
+    top: 100px;
+
+    height: 650px;
+}
+
+
+/* Left flower */
+
+.flower-photo-left {
+    width: 62px;
+
+    left: 1%;
+
+    top: 15%;
+
+    transform: rotate(26deg);
+}
+
+
+/* Right flower */
+
+.flower-photo-right {
+    width: 70px;
+
+    right: 1%;
+
+    top: 42%;
+
+    transform: rotate(-37deg);
+}
+
+
+/* Left heart */
+
+.heart-photo-left {
+    width: 38px;
+
+    left: 8%;
+
+    top: 64%;
+
+    transform: rotate(-12deg);
+
+    opacity: 0.5;
+}
+
+
+/* Right bow */
+
+.bow-photo-right {
+    width: 70px;
+
+    right: 8%;
+
+    top: 72%;
+
+    transform: rotate(15deg);
+
+    opacity: 0.58;
 }
 
 
@@ -611,6 +803,7 @@ img {
     flex-direction: column;
 
     justify-content: center;
+
     align-items: center;
 
     color: #d89aaa;
@@ -638,6 +831,101 @@ img {
 
 
 /* =========================================
+   ENDING DECORATIONS
+========================================= */
+
+.ending-decorations {
+    top: 1900px;
+
+    height: 650px;
+}
+
+
+/* Left flower */
+
+.flower-ending-left {
+    width: 72px;
+
+    left: 3%;
+
+    top: 20%;
+
+    transform: rotate(-25deg);
+}
+
+
+/* Small left flower */
+
+.flower-ending-left-small {
+    width: 44px;
+
+    left: 14%;
+
+    top: 55%;
+
+    transform: rotate(35deg);
+
+    opacity: 0.5;
+}
+
+
+/* Right bow */
+
+.bow-ending-right {
+    width: 76px;
+
+    right: 3%;
+
+    top: 15%;
+
+    transform: rotate(17deg);
+}
+
+
+/* Right flower */
+
+.flower-ending-right {
+    width: 64px;
+
+    right: 5%;
+
+    top: 50%;
+
+    transform: rotate(-42deg);
+}
+
+
+/* Left heart */
+
+.heart-ending-left {
+    width: 40px;
+
+    left: 7%;
+
+    top: 72%;
+
+    transform: rotate(14deg);
+
+    opacity: 0.5;
+}
+
+
+/* Small right flower */
+
+.flower-ending-right-small {
+    width: 44px;
+
+    right: 14%;
+
+    top: 76%;
+
+    transform: rotate(29deg);
+
+    opacity: 0.5;
+}
+
+
+/* =========================================
    ENDING
 ========================================= */
 
@@ -647,6 +935,10 @@ img {
     margin-top: 140px;
 
     padding-bottom: 50px;
+
+    position: relative;
+
+    z-index: 4;
 }
 
 .ending-heart {
@@ -701,6 +993,10 @@ footer {
     color: #b58a9a;
 
     font-size: 12px;
+
+    position: relative;
+
+    z-index: 5;
 }
 
 
@@ -741,32 +1037,45 @@ footer {
         flex-wrap: wrap;
     }
 
-    .flower-top-left {
+    .flower-hero-left {
         width: 55px;
     }
 
-    .flower-upper-left {
+    .flower-hero-left-small {
         width: 32px;
     }
 
-    .bow-top-right {
+    .bow-hero-right {
         width: 60px;
     }
 
-    .flower-right {
+    .flower-hero-right {
         width: 48px;
     }
 
-    .flower-upper-right {
+    .flower-hero-right-small {
         width: 34px;
     }
 
-    .flower-bottom-right {
-        width: 55px;
+    .flower-story-left,
+    .flower-middle-left,
+    .flower-photo-left,
+    .flower-ending-left {
+        width: 48px;
     }
 
-    .flower-bottom-left {
-        width: 38px;
+    .flower-story-right,
+    .flower-middle-right,
+    .flower-photo-right,
+    .flower-ending-right {
+        width: 50px;
+    }
+
+    .bow-story-right,
+    .bow-middle-right,
+    .bow-photo-right,
+    .bow-ending-right {
+        width: 52px;
     }
 
 }
@@ -817,59 +1126,198 @@ footer {
         height: 240px;
     }
 
-    .corner-icon {
-        opacity: 0.5;
+
+    /* =====================================
+       MOBILE DECORATIONS
+    ===================================== */
+
+    .decor {
+        opacity: 0.45;
     }
 
-    .flower-top-left {
+
+    .flower-hero-left {
         width: 42px;
+
         left: 1%;
+
+        top: 4%;
     }
 
-    .flower-upper-left {
-        width: 28px;
-        left: 7%;
-        top: 20%;
+    .flower-hero-left-small {
+        width: 27px;
+
+        left: 6%;
+
+        top: 17%;
     }
 
-    .bow-top-right {
+    .bow-hero-right {
         width: 50px;
+
         right: 1%;
+
+        top: 5%;
     }
 
-    .heart-left {
-        width: 30px;
-        left: 2%;
+    .flower-hero-right {
+        width: 40px;
+
+        right: 1%;
+
+        top: 43%;
     }
+
+    .heart-hero-left {
+        width: 30px;
+
+        left: 2%;
+
+        top: 49%;
+    }
+
+    .flower-hero-right-small {
+        width: 28px;
+
+        right: 7%;
+
+        top: 22%;
+    }
+
+
+    .flower-story-left {
+        width: 40px;
+
+        left: 1%;
+
+        top: 8%;
+    }
+
+    .heart-story-left {
+        width: 28px;
+
+        left: 5%;
+
+        top: 30%;
+    }
+
+    .bow-story-right {
+        width: 48px;
+
+        right: 1%;
+
+        top: 10%;
+    }
+
+    .flower-story-right {
+        width: 40px;
+
+        right: 1%;
+
+        top: 37%;
+    }
+
+    .flower-story-left-middle {
+        width: 30px;
+
+        left: 2%;
+
+        top: 63%;
+    }
+
+    .heart-story-right {
+        width: 28px;
+
+        right: 5%;
+
+        top: 68%;
+    }
+
 
     .flower-middle-left {
         width: 38px;
+
         left: 1%;
     }
 
-    .flower-right {
+    .flower-middle-right {
         width: 40px;
+
         right: 1%;
     }
 
-    .flower-upper-right {
+    .heart-middle-left {
         width: 28px;
-        right: 6%;
+
+        left: 4%;
     }
 
-    .heart-bottom-left {
-        width: 34px;
+    .bow-middle-right {
+        width: 45px;
+
+        right: 5%;
+    }
+
+
+    .flower-photo-left {
+        width: 38px;
+
+        left: 0;
+    }
+
+    .flower-photo-right {
+        width: 42px;
+
+        right: 0;
+    }
+
+    .heart-photo-left {
+        width: 27px;
+
         left: 3%;
     }
 
-    .flower-bottom-left {
-        width: 32px;
-        left: 8%;
+    .bow-photo-right {
+        width: 45px;
+
+        right: 3%;
     }
 
-    .flower-bottom-right {
+
+    .flower-ending-left {
         width: 42px;
-        right: 2%;
+
+        left: 1%;
+    }
+
+    .flower-ending-left-small {
+        width: 28px;
+
+        left: 7%;
+    }
+
+    .bow-ending-right {
+        width: 48px;
+
+        right: 1%;
+    }
+
+    .flower-ending-right {
+        width: 40px;
+
+        right: 1%;
+    }
+
+    .heart-ending-left {
+        width: 28px;
+
+        left: 3%;
+    }
+
+    .flower-ending-right-small {
+        width: 28px;
+
+        right: 7%;
     }
 
 }
