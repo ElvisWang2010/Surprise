@@ -54,12 +54,12 @@ img {
 
 .hero-decorations {
     top: 0;
-    height: 100vh;
+    height: 100%;
     z-index: 3;
 }
 
 
-/* Original top-left flower */
+/* Top-left flower */
 
 .flower-top-left {
     width: 70px;
@@ -69,7 +69,7 @@ img {
 }
 
 
-/* Extra small flower */
+/* Small extra flower */
 
 .flower-top-left-small {
     width: 45px;
@@ -80,7 +80,7 @@ img {
 }
 
 
-/* Original bow */
+/* Top-right bow */
 
 .bow-top-right {
     width: 85px;
@@ -90,7 +90,7 @@ img {
 }
 
 
-/* Original left heart */
+/* Left heart */
 
 .heart-left {
     width: 42px;
@@ -101,7 +101,7 @@ img {
 }
 
 
-/* Original right flower */
+/* Right flower */
 
 .flower-right {
     width: 62px;
@@ -111,8 +111,7 @@ img {
 }
 
 
-/* Extra right flower
-   DIFFERENT rotation */
+/* Small right flower */
 
 .flower-right-small {
     width: 45px;
@@ -184,6 +183,7 @@ img {
 
     margin-bottom: 15px;
 }
+
 
 .hero h1 {
     font-family: 'Pacifico', cursive;
@@ -387,6 +387,7 @@ img {
     transform: rotate(-8deg);
 }
 
+
 .section-header h2,
 .photo-section h2,
 .ending h2 {
@@ -495,6 +496,7 @@ img {
 .cute-card:nth-child(4) .card-decoration {
     transform: rotate(8deg);
 }
+
 
 .cute-card h3 {
     font-family: 'Pacifico', cursive;
@@ -698,17 +700,22 @@ img {
     align-items: center;
 
     color: #d89aaa;
+
+    overflow: hidden;
 }
 
-.photo-box span {
-    font-size: 42px;
 
-    margin-bottom: 10px;
+/* Actual photos */
+
+.photo-box img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
 }
 
-.photo-box p {
-    font-size: 13px;
-}
 
 .polaroid-caption {
     font-family: 'Pacifico', cursive;
