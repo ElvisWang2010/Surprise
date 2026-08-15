@@ -39,7 +39,6 @@ img {
     text-align: center;
 
     position: relative;
-    overflow: hidden;
 
     padding: 80px 20px;
 
@@ -48,63 +47,6 @@ img {
         #fff5f9 0%,
         #fffafd 100%
     );
-}
-
-
-/* =========================================
-   CORNER DECORATIONS
-========================================= */
-
-.corner-icon {
-    position: absolute;
-
-    pointer-events: none;
-
-    z-index: 1;
-
-    object-fit: contain;
-}
-
-
-/* Hero flower */
-
-.hero-flower {
-    width: 70px;
-
-    left: 7%;
-    top: 14%;
-
-    transform: rotate(-20deg);
-
-    opacity: 0.7;
-}
-
-
-/* Hero bow */
-
-.hero-bow {
-    width: 105px;
-
-    right: 8%;
-    top: 12%;
-
-    transform: rotate(13deg);
-
-    opacity: 0.85;
-}
-
-
-/* Heart in story section */
-
-.story-heart {
-    width: 55px;
-
-    right: 7%;
-    top: 18%;
-
-    transform: rotate(16deg);
-
-    opacity: 0.6;
 }
 
 
@@ -119,6 +61,8 @@ img {
     object-fit: contain;
 
     margin-bottom: 22px;
+
+    transform: rotate(-7deg);
 
     animation: heartbeat 2.2s ease-in-out infinite;
 }
@@ -272,6 +216,17 @@ img {
     text-align: center;
 }
 
+.little-heart {
+    font-size: 28px;
+
+    color: #ed719b;
+
+    margin-bottom: 20px;
+
+    transform: rotate(-8deg);
+}
+
+
 .section-header h2,
 .photo-section h2,
 .ending h2 {
@@ -349,44 +304,33 @@ img {
 }
 
 
-/* Emoji instead of a flower on every card */
+/* =========================================
+   CARD EMOJIS
+========================================= */
 
 .card-decoration {
-    width: 58px;
-    height: 58px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    margin-bottom: 18px;
-}
-
-.card-decoration span {
     font-size: 34px;
 
     color: #ed719b;
 
+    margin-bottom: 18px;
+
     display: inline-block;
 }
 
-
-/* Slightly different rotations */
-
-.cute-card:nth-child(1) .card-decoration span {
+.cute-card:nth-child(1) .card-decoration {
     transform: rotate(-10deg);
 }
 
-.cute-card:nth-child(2) .card-decoration span {
-    transform: rotate(8deg);
+.cute-card:nth-child(2) .card-decoration {
+    transform: rotate(7deg);
 }
 
-.cute-card:nth-child(3) .card-decoration span {
+.cute-card:nth-child(3) .card-decoration {
     transform: rotate(-5deg);
 }
 
-.cute-card:nth-child(4) .card-decoration span {
+.cute-card:nth-child(4) .card-decoration {
     transform: rotate(10deg);
 }
 
@@ -542,34 +486,17 @@ img {
     padding-bottom: 50px;
 }
 
-
-/* Only ONE flower here */
-
-.ending-flower {
-    display: block;
-
-    width: 55px;
-    height: 55px;
+.ending-heart {
+    width: 58px;
+    height: 58px;
 
     object-fit: contain;
 
-    margin: 20px auto;
+    margin: 0 auto 30px;
 
-    transform: rotate(14deg);
-
-    opacity: 0.75;
-}
-
-
-.big-heart {
     display: block;
 
-    width: 75px;
-    height: 75px;
-
-    object-fit: contain;
-
-    margin: 30px auto;
+    transform: rotate(10deg);
 
     animation: heartbeat 2.2s ease-in-out infinite;
 }
@@ -660,20 +587,6 @@ footer {
         padding: 70px 20px;
     }
 
-    .hero-bow {
-        width: 75px;
-
-        right: 3%;
-        top: 5%;
-    }
-
-    .hero-flower {
-        width: 48px;
-
-        left: 3%;
-        top: 18%;
-    }
-
     .hero-heart {
         width: 65px;
         height: 65px;
@@ -681,12 +594,6 @@ footer {
 
     .gift-section {
         padding-top: 80px;
-    }
-
-    .story-heart {
-        width: 38px;
-
-        right: 4%;
     }
 
     .card-grid {
@@ -715,9 +622,9 @@ footer {
         height: 240px;
     }
 
-    .ending-flower {
-        width: 45px;
-        height: 45px;
+    .ending-heart {
+        width: 50px;
+        height: 50px;
     }
 
 }
