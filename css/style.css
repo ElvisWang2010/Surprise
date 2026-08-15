@@ -1,533 +1,197 @@
-/* =========================================
-   GENERAL
-========================================= */
+/* =========================
+   ICON DECORATIONS
+========================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.floating {
+    position: fixed;
+    pointer-events: none;
+    z-index: 5;
+    object-fit: contain;
+    opacity: 0.75;
 }
 
-html {
-    scroll-behavior: smooth;
+.flower-left {
+    position: fixed;
+    width: 65px;
+    left: 4%;
+    top: 18%;
+    transform: rotate(-15deg);
+    opacity: 0.7;
+    pointer-events: none;
 }
 
-body {
-    font-family: "DM Sans", sans-serif;
-    background: #fff5f8;
-    color: #542a3a;
-    overflow-x: hidden;
+.flower-right {
+    position: fixed;
+    width: 60px;
+    right: 4%;
+    top: 42%;
+    transform: rotate(15deg);
+    opacity: 0.7;
+    pointer-events: none;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+.heart-left {
+    position: fixed;
+    width: 35px;
+    left: 9%;
+    top: 65%;
+    transform: rotate(-15deg);
+    opacity: 0.65;
+    pointer-events: none;
+}
+
+.heart-right {
+    position: fixed;
+    width: 35px;
+    right: 10%;
+    top: 75%;
+    transform: rotate(20deg);
+    opacity: 0.65;
+    pointer-events: none;
 }
 
 
-/* =========================================
-   LANDING PAGE
-========================================= */
+/* =========================
+   HERO
+========================= */
 
 .hero {
-    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
 
+.hero-bow {
+    position: absolute;
+    width: 130px;
+    right: 8%;
+    top: 8%;
+    transform: rotate(10deg);
+}
+
+.hero-heart {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    animation: heartbeat 2s infinite;
+}
+
+.hero-decoration {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 15px;
+    margin: 25px 0;
+}
 
-    text-align: center;
+.hero-decoration img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
 
-    padding: 40px 20px;
-
-    position: relative;
-
-    background:
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(255, 188, 210, 0.5),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 80% 80%,
-            rgba(255, 210, 225, 0.6),
-            transparent 35%
-        ),
-        #fff5f8;
+.hero-decoration span {
+    font-size: 28px;
+    color: #ef6593;
 }
 
 
-.small-heart {
-    font-size: 50px;
-    color: #ff6f9f;
+/* =========================
+   FLOWER DIVIDERS
+========================= */
 
-    animation: heartbeat 2s infinite;
-
+.flower-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
     margin-bottom: 20px;
 }
 
+.flower-divider img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
 
-.eyebrow {
-    text-transform: uppercase;
+.flower-divider span {
+    color: #ef6593;
+    font-size: 26px;
+}
 
-    letter-spacing: 4px;
 
-    font-size: 11px;
-    font-weight: 600;
+/* =========================
+   CARD ICONS
+========================= */
 
-    color: #d85c89;
+.card-decoration {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     margin-bottom: 15px;
 }
 
-
-h1 {
-    font-family: "Pacifico", cursive;
-
-    font-size: clamp(55px, 13vw, 110px);
-
-    line-height: 1.05;
-
-    font-weight: 400;
-
-    color: #7c304f;
+.card-decoration img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 
-h1 span,
-h2 span {
-    color: #ef6593;
-}
-
-
-.subtitle {
-    margin-top: 25px;
-
-    font-size: 16px;
-
-    line-height: 1.7;
-
-    color: #956275;
-}
-
-
-.start-button {
-    margin-top: 35px;
-
-    border: none;
-
-    background: #ef6593;
-
-    color: white;
-
-    padding: 17px 30px;
-
-    border-radius: 50px;
-
-    font-family: "DM Sans", sans-serif;
-
-    font-size: 15px;
-    font-weight: 600;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 10px 30px rgba(239, 101, 147, 0.3);
-
-    transition: 0.3s ease;
-}
-
-
-.start-button span {
-    margin-left: 8px;
-}
-
-
-.start-button:hover {
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 15px 35px rgba(239, 101, 147, 0.4);
-}
-
-
-.hint {
-    margin-top: 18px;
-
-    font-size: 11px;
-
-    color: #c18a9d;
-}
-
-
-/* =========================================
-   FLOATING HEARTS
-========================================= */
-
-.hearts span {
-    position: fixed;
-
-    bottom: -50px;
-
-    color: rgba(239, 101, 147, 0.25);
-
-    font-size: 25px;
-
-    pointer-events: none;
-
-    animation: floatUp 12s linear infinite;
-
-    z-index: 0;
-}
-
-
-.hearts span:nth-child(1) {
-    left: 10%;
-    animation-delay: 0s;
-}
-
-.hearts span:nth-child(2) {
-    left: 25%;
-    animation-delay: 3s;
-}
-
-.hearts span:nth-child(3) {
-    left: 40%;
-    animation-delay: 6s;
-}
-
-.hearts span:nth-child(4) {
-    left: 55%;
-    animation-delay: 1s;
-}
-
-.hearts span:nth-child(5) {
-    left: 70%;
-    animation-delay: 5s;
-}
-
-.hearts span:nth-child(6) {
-    left: 85%;
-    animation-delay: 8s;
-}
-
-.hearts span:nth-child(7) {
-    left: 95%;
-    animation-delay: 2s;
-}
-
-
-/* =========================================
-   GIFT SECTION
-========================================= */
-
-.gift-section {
-    background: #ffffff;
-
-    padding: 100px 20px;
-
-    min-height: 100vh;
-}
-
-
-.section-header {
-    max-width: 650px;
-
-    margin: 0 auto 60px;
-
-    text-align: center;
-}
-
-
-.section-decoration {
-    display: block;
-
-    font-size: 28px;
-
-    color: #ef6593;
-
-    margin-bottom: 20px;
-}
-
-
-h2 {
-    font-family: "Pacifico", cursive;
-
-    font-size: clamp(38px, 8vw, 65px);
-
-    line-height: 1.2;
-
-    font-weight: 400;
-
-    color: #713149;
-}
-
-
-.section-header > p:last-child {
-    margin-top: 20px;
-
-    color: #956275;
-
-    line-height: 1.8;
-}
-
-
-/* =========================================
-   CARDS
-========================================= */
-
-.card-grid {
-    max-width: 900px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 20px;
-}
-
-
-.cute-card {
-    position: relative;
-
-    padding: 30px;
-
-    border-radius: 25px;
-
-    background: #fff6f9;
-
-    border: 1px solid #ffe0e9;
-
-    transition: 0.3s ease;
-
-    overflow: hidden;
-}
-
-
-.cute-card:hover {
-    transform: translateY(-7px);
-
-    box-shadow:
-        0 15px 35px rgba(200, 80, 120, 0.12);
-
-    border-color: #ffc4d5;
-}
-
-
-.card-icon {
-    font-size: 32px;
-
-    margin-bottom: 20px;
-}
-
-
-.cute-card h3 {
-    font-size: 20px;
-
-    color: #713149;
-
-    margin-bottom: 8px;
-}
-
-
-.cute-card p {
-    font-size: 14px;
-
-    line-height: 1.6;
-
-    color: #a06a7e;
-
-    max-width: 250px;
-}
-
-
-.card-arrow {
+/* =========================
+   HEART BACKGROUND
+========================= */
+
+.heart-pattern {
     position: absolute;
 
-    right: 25px;
-    bottom: 25px;
+    width: 180px;
 
-    color: #ef6593;
+    right: -25px;
+    top: 70px;
 
-    font-size: 22px;
+    opacity: 0.08;
 
-    transition: 0.3s;
+    pointer-events: none;
 }
 
 
-.cute-card:hover .card-arrow {
-    transform: translateX(5px);
-}
-
-
-/* =========================================
-   PHOTOS
-========================================= */
-
-.photo-section {
-    max-width: 1000px;
-
-    margin: 130px auto 0;
-
-    text-align: center;
-}
-
-
-.photo-placeholder {
-    margin-top: 60px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 30px;
-
-    flex-wrap: wrap;
-}
-
-
-.polaroid {
-    background: white;
-
-    padding: 12px 12px 20px;
-
-    width: 240px;
-
-    box-shadow:
-        0 10px 30px rgba(80, 30, 50, 0.1);
-
-    transform: rotate(-2deg);
-
-    transition: 0.3s ease;
-}
-
-
-.polaroid:hover {
-    transform:
-        rotate(0deg)
-        translateY(-10px);
-}
-
-
-.polaroid.tilted {
-    transform: rotate(4deg);
-}
-
-
-.polaroid.tilted:hover {
-    transform:
-        rotate(0deg)
-        translateY(-10px);
-}
-
-
-.photo-box {
-    height: 220px;
-
-    background: #ffe7ef;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    color: #e487a4;
-}
-
-
-.photo-box span {
-    font-size: 35px;
-
-    margin-bottom: 8px;
-}
-
-
-.photo-box p {
-    font-size: 12px;
-}
-
-
-.polaroid-caption {
-    font-family: "Pacifico", cursive;
-
-    font-size: 16px;
-
-    margin-top: 15px;
-
-    color: #713149;
-}
-
-
-/* =========================================
+/* =========================
    ENDING
-========================================= */
+========================= */
 
-.ending {
-    max-width: 650px;
+.ending-flower {
+    display: block;
 
-    margin: 160px auto 80px;
+    width: 55px;
+    height: 55px;
 
-    text-align: center;
+    object-fit: contain;
+
+    margin: 20px auto;
 }
-
 
 .big-heart {
-    font-size: 65px;
+    display: block;
 
-    color: #ef6593;
+    width: 75px;
+    height: 75px;
+
+    object-fit: contain;
+
+    margin: 25px auto;
 
     animation: heartbeat 2s infinite;
-
-    margin-bottom: 30px;
 }
 
 
-.ending p {
-    margin-top: 25px;
-
-    color: #956275;
-
-    font-size: 16px;
-}
-
-
-.ending .signature {
-    font-family: "Pacifico", cursive;
-
-    color: #ef6593;
-
-    font-size: 22px;
-}
-
-
-/* =========================================
-   FOOTER
-========================================= */
-
-footer {
-    padding: 30px;
-
-    text-align: center;
-
-    font-size: 11px;
-
-    color: #c18a9d;
-
-    background: #fff5f8;
-}
-
-
-/* =========================================
-   ANIMATIONS
-========================================= */
+/* =========================
+   HEART ANIMATION
+========================= */
 
 @keyframes heartbeat {
 
@@ -535,83 +199,46 @@ footer {
         transform: scale(1);
     }
 
-    15% {
-        transform: scale(1.15);
-    }
-
-    30% {
-        transform: scale(1);
-    }
-
-    45% {
-        transform: scale(1.1);
-    }
-
-    60% {
-        transform: scale(1);
-    }
-}
-
-
-@keyframes floatUp {
-
-    0% {
-        transform: translateY(0) rotate(0deg);
-
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 1;
-    }
-
-    90% {
-        opacity: 1;
+    50% {
+        transform: scale(1.08);
     }
 
     100% {
-        transform:
-            translateY(-110vh)
-            rotate(360deg);
-
-        opacity: 0;
+        transform: scale(1);
     }
+
 }
 
 
-/* =========================================
+/* =========================
    MOBILE
-========================================= */
+========================= */
 
 @media (max-width: 650px) {
 
-    .hero {
-        padding: 30px 20px;
+    .hero-bow {
+        width: 90px;
+        right: 2%;
+        top: 5%;
     }
 
-    .card-grid {
-        grid-template-columns: 1fr;
+    .flower-left {
+        width: 45px;
+        left: 2%;
     }
 
-    .cute-card {
-        padding: 25px;
+    .flower-right {
+        width: 45px;
+        right: 2%;
     }
 
-    .photo-placeholder {
-        gap: 35px;
+    .heart-left,
+    .heart-right {
+        width: 25px;
     }
 
-    .polaroid {
-        width: 85%;
-        max-width: 280px;
-    }
-
-    .photo-box {
-        height: 250px;
-    }
-
-    .gift-section {
-        padding-top: 80px;
+    .heart-pattern {
+        width: 100px;
     }
 
 }

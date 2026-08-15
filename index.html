@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,56 +11,146 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Pacifico&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Pacifico&display=swap"
+        rel="stylesheet"
+    >
 </head>
 
 <body>
 
-    <!-- Floating hearts -->
-    <div class="hearts">
-        <span>♡</span>
-        <span>♥</span>
-        <span>♡</span>
-        <span>♥</span>
-        <span>♡</span>
-        <span>♥</span>
-        <span>♡</span>
-    </div>
+    <!-- =========================
+         DECORATIONS
+    ========================== -->
 
-    <!-- Main landing page -->
+    <img
+        class="floating flower-left"
+        src="assets/icons/Flower1.png"
+        alt=""
+    >
+
+    <img
+        class="floating flower-right"
+        src="assets/icons/Flower2.png"
+        alt=""
+    >
+
+    <img
+        class="floating heart-left"
+        src="assets/icons/PinkHeart2.png"
+        alt=""
+    >
+
+    <img
+        class="floating heart-right"
+        src="assets/icons/PinkHeart2.png"
+        alt=""
+    >
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
     <main class="hero">
 
-        <div class="small-heart">♡</div>
+        <img
+            class="hero-bow"
+            src="assets/icons/PinkBow.png"
+            alt=""
+        >
 
-        <p class="eyebrow">A little something for you</p>
+        <img
+            class="hero-heart"
+            src="assets/icons/PinkHeart1.png"
+            alt="Pink heart"
+        >
+
+        <p class="eyebrow">
+            A little something for you
+        </p>
 
         <h1>
             Happy<br>
             <span>One Month</span>
         </h1>
 
+        <div class="hero-decoration">
+
+            <img
+                src="assets/icons/Flower1.png"
+                alt=""
+            >
+
+            <span>♡</span>
+
+            <img
+                src="assets/icons/Flower2.png"
+                alt=""
+            >
+
+        </div>
+
         <p class="subtitle">
             I made a little corner of the internet<br>
             just for us ♡
         </p>
 
-        <button class="start-button" onclick="openGift()">
+        <button
+            class="start-button"
+            onclick="openGift()"
+        >
             Open your gift
             <span>♡</span>
         </button>
 
-        <p class="hint">made with love, obviously</p>
+        <p class="hint">
+            made with love, obviously
+        </p>
 
     </main>
 
 
-    <!-- Gift section -->
-    <section id="gift" class="gift-section">
+    <!-- =========================
+         OUR STORY
+    ========================== -->
+
+    <section
+        id="gift"
+        class="gift-section"
+    >
+
+        <!-- Background hearts -->
+
+        <img
+            class="heart-pattern"
+            src="assets/icons/PinkHearts.png"
+            alt=""
+        >
+
 
         <div class="section-header">
-            <span class="section-decoration">✿</span>
 
-            <p class="eyebrow">Our little story</p>
+            <div class="flower-divider">
+
+                <img
+                    src="assets/icons/Flower1.png"
+                    alt=""
+                >
+
+                <span>♡</span>
+
+                <img
+                    src="assets/icons/Flower2.png"
+                    alt=""
+                >
+
+            </div>
+
+            <p class="eyebrow">
+                Our little story
+            </p>
 
             <h2>
                 One month of
@@ -71,86 +162,231 @@
                 but somehow you've already given me so many
                 memories to keep.
             </p>
+
         </div>
 
 
-        <!-- Navigation cards -->
+        <!-- =========================
+             CARDS
+        ========================== -->
+
         <div class="card-grid">
 
-            <a href="pages/memories.html" class="cute-card">
-                <div class="card-icon">📸</div>
-                <h3>Our Memories</h3>
-                <p>Little moments I never want to forget.</p>
-                <span class="card-arrow">→</span>
+
+            <!-- Memories -->
+
+            <a
+                href="pages/memories.html"
+                class="cute-card"
+            >
+
+                <div class="card-decoration">
+
+                    <img
+                        src="assets/icons/PinkHeart1.png"
+                        alt=""
+                    >
+
+                </div>
+
+                <h3>
+                    Our Memories
+                </h3>
+
+                <p>
+                    Little moments I never want to forget.
+                </p>
+
+                <span class="card-arrow">
+                    →
+                </span>
+
             </a>
 
-            <a href="pages/reasons.html" class="cute-card">
-                <div class="card-icon">💗</div>
-                <h3>Reasons</h3>
-                <p>A few of the many reasons you're special to me.</p>
-                <span class="card-arrow">→</span>
+
+            <!-- Reasons -->
+
+            <a
+                href="pages/reasons.html"
+                class="cute-card"
+            >
+
+                <div class="card-decoration">
+
+                    <img
+                        src="assets/icons/Flower1.png"
+                        alt=""
+                    >
+
+                </div>
+
+                <h3>
+                    Reasons
+                </h3>
+
+                <p>
+                    A few of the many reasons you're special to me.
+                </p>
+
+                <span class="card-arrow">
+                    →
+                </span>
+
             </a>
 
-            <a href="pages/letters.html" class="cute-card">
-                <div class="card-icon">💌</div>
-                <h3>Open When...</h3>
-                <p>Little letters for whenever you need them.</p>
-                <span class="card-arrow">→</span>
+
+            <!-- Letters -->
+
+            <a
+                href="pages/letters.html"
+                class="cute-card"
+            >
+
+                <div class="card-decoration">
+
+                    <img
+                        src="assets/icons/PinkHeart2.png"
+                        alt=""
+                    >
+
+                </div>
+
+                <h3>
+                    Open When...
+                </h3>
+
+                <p>
+                    Little letters for whenever you need them.
+                </p>
+
+                <span class="card-arrow">
+                    →
+                </span>
+
             </a>
 
-            <a href="pages/game.html" class="cute-card">
-                <div class="card-icon">🎀</div>
-                <h3>A Little Surprise</h3>
-                <p>There's something waiting for you...</p>
-                <span class="card-arrow">→</span>
+
+            <!-- Surprise -->
+
+            <a
+                href="pages/game.html"
+                class="cute-card"
+            >
+
+                <div class="card-decoration">
+
+                    <img
+                        src="assets/icons/PinkBow.png"
+                        alt=""
+                    >
+
+                </div>
+
+                <h3>
+                    A Little Surprise
+                </h3>
+
+                <p>
+                    There's something waiting for you...
+                </p>
+
+                <span class="card-arrow">
+                    →
+                </span>
+
             </a>
 
         </div>
 
 
-        <!-- Placeholder for your photos -->
+        <!-- =========================
+             MEMORIES
+        ========================== -->
+
         <div class="photo-section">
 
-            <p class="eyebrow">my favorite person</p>
+            <div class="flower-divider">
+
+                <img
+                    src="assets/icons/Flower2.png"
+                    alt=""
+                >
+
+                <span>♡</span>
+
+                <img
+                    src="assets/icons/Flower1.png"
+                    alt=""
+                >
+
+            </div>
+
+            <p class="eyebrow">
+                my favorite person
+            </p>
 
             <h2>
                 Some of my favorite
                 <span>memories</span>
             </h2>
 
+
             <div class="photo-placeholder">
 
                 <div class="polaroid">
+
                     <div class="photo-box">
+
                         <span>📷</span>
-                        <p>Your photo here</p>
+
+                        <p>
+                            Your photo here
+                        </p>
+
                     </div>
 
                     <p class="polaroid-caption">
                         our favorite moment ♡
                     </p>
+
                 </div>
 
+
                 <div class="polaroid tilted">
+
                     <div class="photo-box">
+
                         <span>📷</span>
-                        <p>Your photo here</p>
+
+                        <p>
+                            Your photo here
+                        </p>
+
                     </div>
 
                     <p class="polaroid-caption">
                         another one :)
                     </p>
+
                 </div>
 
+
                 <div class="polaroid">
+
                     <div class="photo-box">
+
                         <span>📷</span>
-                        <p>Your photo here</p>
+
+                        <p>
+                            Your photo here
+                        </p>
+
                     </div>
 
                     <p class="polaroid-caption">
                         us ♡
                     </p>
+
                 </div>
 
             </div>
@@ -158,10 +394,23 @@
         </div>
 
 
-        <!-- Ending -->
+        <!-- =========================
+             ENDING
+        ========================== -->
+
         <div class="ending">
 
-            <div class="big-heart">♥</div>
+            <img
+                class="ending-flower"
+                src="assets/icons/Flower1.png"
+                alt=""
+            >
+
+            <img
+                class="big-heart"
+                src="assets/icons/PinkHeart1.png"
+                alt=""
+            >
 
             <h2>
                 And this is only
@@ -173,13 +422,23 @@
             </p>
 
             <p class="signature">
-                — your RayRay ♡
+                — yours ♡
             </p>
+
+            <img
+                class="ending-flower"
+                src="assets/icons/Flower2.png"
+                alt=""
+            >
 
         </div>
 
     </section>
 
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer>
         made with way too much love ♡
@@ -189,4 +448,5 @@
     <script src="js/script.js"></script>
 
 </body>
+
 </html>
