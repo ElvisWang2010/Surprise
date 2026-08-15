@@ -13,29 +13,14 @@ html {
 }
 
 body {
-    font-family: "DM Sans", sans-serif;
-    background: #fff7fa;
-    color: #4a2634;
+    font-family: 'DM Sans', sans-serif;
+    background: #fff8fb;
+    color: #5a3d48;
     overflow-x: hidden;
 }
 
-
-/* =========================================
-   GENERAL
-========================================= */
-
 img {
     max-width: 100%;
-}
-
-button,
-a {
-    font-family: inherit;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
 }
 
 
@@ -45,120 +30,94 @@ a {
 
 .hero {
     min-height: 100vh;
-
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-
+    align-items: center;
     text-align: center;
 
     position: relative;
+    overflow: hidden;
 
     padding: 80px 20px;
-
-    background:
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(255, 190, 210, 0.25),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 80% 70%,
-            rgba(255, 210, 225, 0.3),
-            transparent 30%
-        ),
-        #fff7fa;
+    background: linear-gradient(
+        180deg,
+        #fff5f9 0%,
+        #fffafd 100%
+    );
 }
 
 
-/* =========================================
-   HERO ICONS
-========================================= */
+/* Main bow */
 
 .hero-bow {
     position: absolute;
-
-    width: 130px;
-
-    top: 9%;
+    width: 110px;
     right: 10%;
+    top: 10%;
 
-    transform: rotate(10deg);
+    transform: rotate(12deg);
 
-    opacity: 0.95;
+    opacity: 0.9;
 }
 
+
+/* Main heart */
+
 .hero-heart {
-    width: 70px;
-    height: 70px;
+    width: 78px;
+    height: 78px;
 
     object-fit: contain;
 
     margin-bottom: 22px;
 
-    animation: heartbeat 2s infinite;
+    animation: heartbeat 2.2s ease-in-out infinite;
 }
 
 
-/* =========================================
-   TEXT
-========================================= */
+/* Small text */
 
 .eyebrow {
+    font-size: 13px;
+    letter-spacing: 3px;
     text-transform: uppercase;
 
-    letter-spacing: 3px;
-
-    font-size: 0.75rem;
-
-    font-weight: 600;
-
-    color: #d85b86;
+    color: #d76b91;
 
     margin-bottom: 15px;
 }
 
-.hero h1 {
-    font-family: "Pacifico", cursive;
 
-    font-size: clamp(3.5rem, 9vw, 7rem);
+/* Main heading */
+
+.hero h1 {
+    font-family: 'Pacifico', cursive;
+
+    font-size: clamp(55px, 8vw, 90px);
 
     line-height: 1.05;
 
-    font-weight: 400;
+    color: #6b4352;
 
-    color: #482532;
+    font-weight: 400;
 }
 
 .hero h1 span {
-    color: #e95f91;
-}
-
-.subtitle {
-    margin-top: 25px;
-
-    font-size: 1.05rem;
-
-    line-height: 1.8;
-
-    color: #795765;
+    color: #e96b98;
 }
 
 
-/* =========================================
-   HERO DECORATION
-========================================= */
+/* Hero flowers */
 
 .hero-decoration {
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     gap: 18px;
 
-    margin: 25px 0;
+    margin: 28px 0;
 }
 
 .hero-decoration img {
@@ -168,38 +127,53 @@ a {
     object-fit: contain;
 }
 
-.hero-decoration span {
-    color: #e95f91;
+.hero-decoration img:first-child {
+    transform: rotate(-18deg);
+}
 
+.hero-decoration img:last-child {
+    transform: rotate(18deg);
+}
+
+.hero-decoration span {
+    color: #ed6c98;
     font-size: 28px;
 }
 
 
-/* =========================================
-   BUTTON
-========================================= */
+/* Subtitle */
+
+.subtitle {
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #876873;
+
+    margin-bottom: 30px;
+}
+
+
+/* Button */
 
 .start-button {
-    margin-top: 30px;
-
     border: none;
 
-    background: #eb6796;
+    background: #ec719b;
 
     color: white;
 
-    padding: 16px 28px;
+    padding: 16px 30px;
 
     border-radius: 50px;
 
-    font-size: 0.95rem;
-
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
     font-weight: 600;
 
     cursor: pointer;
 
-    box-shadow:
-        0 10px 25px rgba(235, 103, 150, 0.25);
+    box-shadow: 0 10px 25px rgba(236, 113, 155, 0.25);
 
     transition:
         transform 0.2s ease,
@@ -210,48 +184,55 @@ a {
     transform: translateY(-3px);
 
     box-shadow:
-        0 15px 30px rgba(235, 103, 150, 0.35);
+        0 15px 30px rgba(236, 113, 155, 0.3);
 }
 
 .start-button span {
     margin-left: 8px;
 }
 
+
+/* Hint */
+
 .hint {
-    margin-top: 15px;
+    margin-top: 18px;
 
-    font-size: 0.75rem;
+    font-size: 12px;
 
-    color: #b58b99;
+    color: #b58c9b;
+
+    font-style: italic;
 }
 
 
 /* =========================================
-   GIFT SECTION
+   OUR STORY
 ========================================= */
 
 .gift-section {
     position: relative;
 
-    padding: 120px 7%;
+    padding: 110px 20px 90px;
 
-    background: #fff;
+    background: white;
+
+    overflow: hidden;
 }
 
 
-/* =========================================
-   HEART PATTERN
-========================================= */
+/* Very subtle heart pattern */
 
 .heart-pattern {
     position: absolute;
 
-    width: 200px;
+    width: 160px;
 
-    top: 70px;
     right: -30px;
+    top: 70px;
 
-    opacity: 0.07;
+    opacity: 0.035;
+
+    transform: rotate(8deg);
 
     pointer-events: none;
 }
@@ -267,43 +248,41 @@ a {
     margin: 0 auto 70px;
 
     text-align: center;
-
-    position: relative;
-
-    z-index: 1;
 }
 
 .section-header h2,
 .photo-section h2,
 .ending h2 {
-    font-family: "Pacifico", cursive;
+    font-family: 'Pacifico', cursive;
 
     font-weight: 400;
 
-    font-size: clamp(2.3rem, 5vw, 4rem);
+    font-size: clamp(38px, 5vw, 58px);
 
     line-height: 1.2;
 
-    color: #4a2634;
+    color: #694552;
 }
 
 .section-header h2 span,
 .photo-section h2 span,
 .ending h2 span {
-    color: #e95f91;
+    color: #e96b98;
 }
 
 .section-header > p:last-child {
-    margin-top: 20px;
+    max-width: 570px;
+
+    margin: 20px auto 0;
 
     line-height: 1.8;
 
-    color: #80606d;
+    color: #927481;
 }
 
 
 /* =========================================
-   FLOWER DIVIDER
+   FLOWER DIVIDERS
 ========================================= */
 
 .flower-divider {
@@ -318,16 +297,24 @@ a {
 }
 
 .flower-divider img {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
 
     object-fit: contain;
 }
 
-.flower-divider span {
-    color: #e95f91;
+.flower-divider img:first-child {
+    transform: rotate(-14deg);
+}
 
-    font-size: 26px;
+.flower-divider img:last-child {
+    transform: rotate(14deg);
+}
+
+.flower-divider span {
+    font-size: 25px;
+
+    color: #ed719b;
 }
 
 
@@ -336,36 +323,33 @@ a {
 ========================================= */
 
 .card-grid {
-    max-width: 1000px;
+    max-width: 1050px;
 
     margin: 0 auto;
 
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
-    gap: 25px;
-
-    position: relative;
-
-    z-index: 2;
+    gap: 22px;
 }
 
 .cute-card {
     position: relative;
 
+    text-decoration: none;
+
+    color: inherit;
+
     background: #fff8fb;
 
-    border: 1px solid #f7dce6;
+    border: 1px solid #f6dce7;
 
-    border-radius: 25px;
+    border-radius: 24px;
 
-    padding: 35px;
+    padding: 30px 25px;
 
-    min-height: 250px;
-
-    box-shadow:
-        0 10px 35px rgba(130, 55, 80, 0.06);
+    min-height: 245px;
 
     transition:
         transform 0.25s ease,
@@ -373,15 +357,15 @@ a {
 }
 
 .cute-card:hover {
-    transform: translateY(-7px);
+    transform: translateY(-8px) rotate(-1deg);
 
     box-shadow:
-        0 18px 40px rgba(130, 55, 80, 0.12);
+        0 18px 35px rgba(190, 105, 135, 0.12);
 }
 
 .card-decoration {
-    width: 65px;
-    height: 65px;
+    width: 58px;
+    height: 58px;
 
     display: flex;
 
@@ -398,35 +382,55 @@ a {
     object-fit: contain;
 }
 
-.cute-card h3 {
-    font-family: "Pacifico", cursive;
 
-    font-size: 1.7rem;
+/* Give each card's decoration a slightly different angle */
+
+.cute-card:nth-child(1) .card-decoration img {
+    transform: rotate(-8deg);
+}
+
+.cute-card:nth-child(2) .card-decoration img {
+    transform: rotate(10deg);
+}
+
+.cute-card:nth-child(3) .card-decoration img {
+    transform: rotate(-6deg);
+}
+
+.cute-card:nth-child(4) .card-decoration img {
+    transform: rotate(8deg);
+}
+
+
+.cute-card h3 {
+    font-family: 'Pacifico', cursive;
+
+    font-size: 25px;
 
     font-weight: 400;
 
-    color: #4a2634;
+    color: #704654;
+
+    margin-bottom: 10px;
 }
 
 .cute-card p {
-    margin-top: 10px;
+    font-size: 14px;
 
     line-height: 1.6;
 
-    color: #80606d;
-
-    max-width: 350px;
+    color: #987985;
 }
 
 .card-arrow {
     position: absolute;
 
-    bottom: 25px;
-    right: 30px;
+    right: 22px;
+    bottom: 20px;
 
-    color: #e95f91;
+    font-size: 22px;
 
-    font-size: 1.4rem;
+    color: #e66c97;
 
     transition: transform 0.2s ease;
 }
@@ -437,54 +441,51 @@ a {
 
 
 /* =========================================
-   PHOTO SECTION
+   FAVORITE MEMORIES
 ========================================= */
 
 .photo-section {
     max-width: 1100px;
 
-    margin: 150px auto 0;
+    margin: 130px auto 0;
 
     text-align: center;
 }
 
 .photo-placeholder {
-    margin-top: 60px;
-
     display: flex;
 
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 
-    gap: 30px;
+    gap: 35px;
 
-    flex-wrap: wrap;
+    margin-top: 60px;
 }
 
 
-/* =========================================
-   POLAROIDS
-========================================= */
+/* Polaroids */
 
 .polaroid {
+    width: 280px;
+
     background: white;
 
     padding: 12px 12px 20px;
 
-    width: 260px;
-
     box-shadow:
-        0 12px 30px rgba(80, 40, 55, 0.12);
+        0 10px 30px rgba(100, 50, 70, 0.12);
 
     transform: rotate(-2deg);
 
-    transition: transform 0.25s ease;
+    transition:
+        transform 0.25s ease;
 }
 
 .polaroid:hover {
     transform:
-        rotate(0deg)
-        translateY(-8px);
+        translateY(-8px)
+        rotate(0deg);
 }
 
 .polaroid.tilted {
@@ -493,43 +494,51 @@ a {
 
 .polaroid.tilted:hover {
     transform:
-        rotate(0deg)
-        translateY(-8px);
+        translateY(-8px)
+        rotate(0deg);
 }
 
-.photo-box {
-    height: 230px;
 
-    background: #fff0f5;
+/* Photo placeholder */
+
+.photo-box {
+    height: 260px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe8f0,
+            #fff5f8
+        );
 
     display: flex;
 
-    align-items: center;
-    justify-content: center;
-
     flex-direction: column;
 
-    color: #c792a6;
+    justify-content: center;
+    align-items: center;
+
+    color: #d89aaa;
 }
 
 .photo-box span {
-    font-size: 2.5rem;
+    font-size: 42px;
 
     margin-bottom: 10px;
 }
 
 .photo-box p {
-    font-size: 0.85rem;
+    font-size: 13px;
 }
 
 .polaroid-caption {
+    font-family: 'Pacifico', cursive;
+
+    font-size: 17px;
+
+    color: #815363;
+
     margin-top: 15px;
-
-    font-family: "Pacifico", cursive;
-
-    color: #6e4756;
-
-    font-size: 1rem;
 }
 
 
@@ -538,22 +547,30 @@ a {
 ========================================= */
 
 .ending {
-    max-width: 700px;
-
-    margin: 170px auto 50px;
-
     text-align: center;
+
+    margin-top: 140px;
+
+    padding-bottom: 50px;
 }
 
 .ending-flower {
     display: block;
 
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
 
     object-fit: contain;
 
-    margin: 20px auto;
+    margin: 22px auto;
+}
+
+.ending-flower:first-child {
+    transform: rotate(-18deg);
+}
+
+.ending-flower:last-child {
+    transform: rotate(18deg);
 }
 
 .big-heart {
@@ -564,25 +581,31 @@ a {
 
     object-fit: contain;
 
-    margin: 25px auto;
+    margin: 30px auto;
 
-    animation: heartbeat 2s infinite;
+    animation: heartbeat 2.2s ease-in-out infinite;
+}
+
+.ending h2 {
+    max-width: 650px;
+
+    margin: 0 auto 20px;
 }
 
 .ending > p {
-    margin-top: 20px;
+    color: #957480;
 
-    color: #80606d;
-
-    font-size: 1.05rem;
+    font-size: 16px;
 }
 
 .signature {
-    font-family: "Pacifico", cursive;
+    margin-top: 10px;
 
-    color: #e95f91 !important;
+    font-family: 'Pacifico', cursive;
 
-    font-size: 1.3rem !important;
+    color: #e36a95 !important;
+
+    font-size: 20px !important;
 }
 
 
@@ -593,91 +616,18 @@ a {
 footer {
     text-align: center;
 
-    padding: 35px 20px;
+    padding: 30px 20px;
 
-    background: #fff0f5;
+    background: #fff5f9;
 
-    color: #a87587;
+    color: #b58a9a;
 
-    font-size: 0.8rem;
+    font-size: 12px;
 }
 
 
 /* =========================================
-   FLOATING DECORATIONS
-========================================= */
-
-.flower-left {
-    position: fixed;
-
-    width: 65px;
-
-    left: 4%;
-    top: 18%;
-
-    transform: rotate(-15deg);
-
-    opacity: 0.7;
-
-    pointer-events: none;
-
-    z-index: 5;
-}
-
-.flower-right {
-    position: fixed;
-
-    width: 60px;
-
-    right: 4%;
-    top: 42%;
-
-    transform: rotate(15deg);
-
-    opacity: 0.7;
-
-    pointer-events: none;
-
-    z-index: 5;
-}
-
-.heart-left {
-    position: fixed;
-
-    width: 35px;
-
-    left: 9%;
-    top: 65%;
-
-    transform: rotate(-15deg);
-
-    opacity: 0.65;
-
-    pointer-events: none;
-
-    z-index: 5;
-}
-
-.heart-right {
-    position: fixed;
-
-    width: 35px;
-
-    right: 10%;
-    top: 75%;
-
-    transform: rotate(20deg);
-
-    opacity: 0.65;
-
-    pointer-events: none;
-
-    z-index: 5;
-}
-
-
-/* =========================================
-   ANIMATION
+   HEART ANIMATION
 ========================================= */
 
 @keyframes heartbeat {
@@ -693,6 +643,71 @@ footer {
     100% {
         transform: scale(1);
     }
+
+}
+
+
+/* =========================================
+   REMOVE OLD FIXED DECORATIONS
+========================================= */
+
+/*
+    These are intentionally NOT position: fixed.
+
+    This prevents flowers/hearts from following
+    the user while scrolling.
+*/
+
+.floating {
+    position: absolute;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+.flower-left {
+    width: 55px;
+
+    left: 4%;
+    top: 22%;
+
+    transform: rotate(-22deg);
+
+    opacity: 0.65;
+}
+
+.flower-right {
+    width: 52px;
+
+    right: 5%;
+    top: 58%;
+
+    transform: rotate(20deg);
+
+    opacity: 0.6;
+}
+
+.heart-left {
+    width: 30px;
+
+    left: 8%;
+    top: 75%;
+
+    transform: rotate(-15deg);
+
+    opacity: 0.55;
+}
+
+.heart-right {
+    width: 30px;
+
+    right: 9%;
+    top: 30%;
+
+    transform: rotate(18deg);
+
+    opacity: 0.55;
 }
 
 
@@ -700,28 +715,52 @@ footer {
    MOBILE
 ========================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 850px) {
+
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        max-width: 650px;
+    }
+
+    .photo-placeholder {
+        flex-wrap: wrap;
+    }
+
+}
+
+
+@media (max-width: 650px) {
 
     .hero {
-        min-height: 100svh;
-
         padding: 70px 20px;
     }
 
     .hero-bow {
-        width: 85px;
+        width: 80px;
 
-        right: 2%;
+        right: 3%;
         top: 5%;
     }
 
     .hero-heart {
-        width: 60px;
-        height: 60px;
+        width: 65px;
+        height: 65px;
+    }
+
+    .hero-decoration img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .gift-section {
+        padding-top: 80px;
     }
 
     .card-grid {
         grid-template-columns: 1fr;
+
+        max-width: 400px;
     }
 
     .cute-card {
@@ -729,53 +768,64 @@ footer {
     }
 
     .photo-placeholder {
+        flex-direction: column;
+
+        align-items: center;
+
         gap: 35px;
+    }
+
+    .polaroid {
+        width: min(280px, 90vw);
+    }
+
+    .photo-box {
+        height: 240px;
     }
 
     .flower-left {
         width: 42px;
-        left: 1%;
+
+        left: 2%;
+
+        top: 25%;
     }
 
     .flower-right {
-        width: 42px;
-        right: 1%;
+        width: 40px;
+
+        right: 2%;
+
+        top: 60%;
     }
 
     .heart-left,
     .heart-right {
-        width: 25px;
+        width: 23px;
     }
 
     .heart-pattern {
-        width: 110px;
+        width: 100px;
+
+        right: -20px;
     }
 
 }
 
 
 /* =========================================
-   SMALL PHONES
+   REDUCED MOTION
 ========================================= */
 
-@media (max-width: 450px) {
+@media (prefers-reduced-motion: reduce) {
 
-    .hero h1 {
-        font-size: 3.3rem;
-    }
-
-    .section-header h2,
-    .photo-section h2,
-    .ending h2 {
-        font-size: 2.3rem;
-    }
-
-    .hero-bow {
-        width: 65px;
-    }
-
-    .cute-card {
-        padding: 28px;
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 
 }
