@@ -30,16 +30,19 @@ img {
 
 .hero {
     min-height: 100vh;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     text-align: center;
 
     position: relative;
     overflow: hidden;
 
     padding: 80px 20px;
+
     background: linear-gradient(
         180deg,
         #fff5f9 0%,
@@ -48,21 +51,66 @@ img {
 }
 
 
-/* Main bow */
+/* =========================================
+   CORNER DECORATIONS
+========================================= */
 
-.hero-bow {
+.corner-icon {
     position: absolute;
-    width: 110px;
-    right: 10%;
-    top: 10%;
 
-    transform: rotate(12deg);
+    pointer-events: none;
 
-    opacity: 0.9;
+    z-index: 1;
+
+    object-fit: contain;
 }
 
 
-/* Main heart */
+/* Hero flower */
+
+.hero-flower {
+    width: 70px;
+
+    left: 7%;
+    top: 14%;
+
+    transform: rotate(-20deg);
+
+    opacity: 0.7;
+}
+
+
+/* Hero bow */
+
+.hero-bow {
+    width: 105px;
+
+    right: 8%;
+    top: 12%;
+
+    transform: rotate(13deg);
+
+    opacity: 0.85;
+}
+
+
+/* Heart in story section */
+
+.story-heart {
+    width: 55px;
+
+    right: 7%;
+    top: 18%;
+
+    transform: rotate(16deg);
+
+    opacity: 0.6;
+}
+
+
+/* =========================================
+   HERO HEART
+========================================= */
 
 .hero-heart {
     width: 78px;
@@ -76,11 +124,15 @@ img {
 }
 
 
-/* Small text */
+/* =========================================
+   TEXT
+========================================= */
 
 .eyebrow {
     font-size: 13px;
+
     letter-spacing: 3px;
+
     text-transform: uppercase;
 
     color: #d76b91;
@@ -88,8 +140,6 @@ img {
     margin-bottom: 15px;
 }
 
-
-/* Main heading */
 
 .hero h1 {
     font-family: 'Pacifico', cursive;
@@ -108,40 +158,28 @@ img {
 }
 
 
-/* Hero flowers */
+/* =========================================
+   HERO HEART EMOJI
+========================================= */
 
 .hero-decoration {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 18px;
-
     margin: 28px 0;
-}
-
-.hero-decoration img {
-    width: 38px;
-    height: 38px;
-
-    object-fit: contain;
-}
-
-.hero-decoration img:first-child {
-    transform: rotate(-18deg);
-}
-
-.hero-decoration img:last-child {
-    transform: rotate(18deg);
 }
 
 .hero-decoration span {
     color: #ed6c98;
-    font-size: 28px;
+
+    font-size: 32px;
+
+    display: inline-block;
+
+    transform: rotate(-8deg);
 }
 
 
-/* Subtitle */
+/* =========================================
+   SUBTITLE
+========================================= */
 
 .subtitle {
     font-size: 17px;
@@ -154,7 +192,9 @@ img {
 }
 
 
-/* Button */
+/* =========================================
+   BUTTON
+========================================= */
 
 .start-button {
     border: none;
@@ -168,12 +208,15 @@ img {
     border-radius: 50px;
 
     font-family: 'DM Sans', sans-serif;
+
     font-size: 15px;
+
     font-weight: 600;
 
     cursor: pointer;
 
-    box-shadow: 0 10px 25px rgba(236, 113, 155, 0.25);
+    box-shadow:
+        0 10px 25px rgba(236, 113, 155, 0.25);
 
     transition:
         transform 0.2s ease,
@@ -191,9 +234,6 @@ img {
     margin-left: 8px;
 }
 
-
-/* Hint */
-
 .hint {
     margin-top: 18px;
 
@@ -206,7 +246,7 @@ img {
 
 
 /* =========================================
-   OUR STORY
+   STORY SECTION
 ========================================= */
 
 .gift-section {
@@ -217,24 +257,6 @@ img {
     background: white;
 
     overflow: hidden;
-}
-
-
-/* Very subtle heart pattern */
-
-.heart-pattern {
-    position: absolute;
-
-    width: 160px;
-
-    right: -30px;
-    top: 70px;
-
-    opacity: 0.035;
-
-    transform: rotate(8deg);
-
-    pointer-events: none;
 }
 
 
@@ -278,43 +300,6 @@ img {
     line-height: 1.8;
 
     color: #927481;
-}
-
-
-/* =========================================
-   FLOWER DIVIDERS
-========================================= */
-
-.flower-divider {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 15px;
-
-    margin-bottom: 20px;
-}
-
-.flower-divider img {
-    width: 40px;
-    height: 40px;
-
-    object-fit: contain;
-}
-
-.flower-divider img:first-child {
-    transform: rotate(-14deg);
-}
-
-.flower-divider img:last-child {
-    transform: rotate(14deg);
-}
-
-.flower-divider span {
-    font-size: 25px;
-
-    color: #ed719b;
 }
 
 
@@ -363,6 +348,9 @@ img {
         0 18px 35px rgba(190, 105, 135, 0.12);
 }
 
+
+/* Emoji instead of a flower on every card */
+
 .card-decoration {
     width: 58px;
     height: 58px;
@@ -375,30 +363,31 @@ img {
     margin-bottom: 18px;
 }
 
-.card-decoration img {
-    width: 100%;
-    height: 100%;
+.card-decoration span {
+    font-size: 34px;
 
-    object-fit: contain;
+    color: #ed719b;
+
+    display: inline-block;
 }
 
 
-/* Give each card's decoration a slightly different angle */
+/* Slightly different rotations */
 
-.cute-card:nth-child(1) .card-decoration img {
-    transform: rotate(-8deg);
+.cute-card:nth-child(1) .card-decoration span {
+    transform: rotate(-10deg);
 }
 
-.cute-card:nth-child(2) .card-decoration img {
-    transform: rotate(10deg);
-}
-
-.cute-card:nth-child(3) .card-decoration img {
-    transform: rotate(-6deg);
-}
-
-.cute-card:nth-child(4) .card-decoration img {
+.cute-card:nth-child(2) .card-decoration span {
     transform: rotate(8deg);
+}
+
+.cute-card:nth-child(3) .card-decoration span {
+    transform: rotate(-5deg);
+}
+
+.cute-card:nth-child(4) .card-decoration span {
+    transform: rotate(10deg);
 }
 
 
@@ -441,7 +430,7 @@ img {
 
 
 /* =========================================
-   FAVORITE MEMORIES
+   MEMORIES
 ========================================= */
 
 .photo-section {
@@ -464,7 +453,9 @@ img {
 }
 
 
-/* Polaroids */
+/* =========================================
+   POLAROIDS
+========================================= */
 
 .polaroid {
     width: 280px;
@@ -497,9 +488,6 @@ img {
         translateY(-8px)
         rotate(0deg);
 }
-
-
-/* Photo placeholder */
 
 .photo-box {
     height: 260px;
@@ -554,24 +542,24 @@ img {
     padding-bottom: 50px;
 }
 
+
+/* Only ONE flower here */
+
 .ending-flower {
     display: block;
 
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
 
     object-fit: contain;
 
-    margin: 22px auto;
+    margin: 20px auto;
+
+    transform: rotate(14deg);
+
+    opacity: 0.75;
 }
 
-.ending-flower:first-child {
-    transform: rotate(-18deg);
-}
-
-.ending-flower:last-child {
-    transform: rotate(18deg);
-}
 
 .big-heart {
     display: block;
@@ -627,7 +615,7 @@ footer {
 
 
 /* =========================================
-   HEART ANIMATION
+   HEARTBEAT
 ========================================= */
 
 @keyframes heartbeat {
@@ -644,70 +632,6 @@ footer {
         transform: scale(1);
     }
 
-}
-
-
-/* =========================================
-   REMOVE OLD FIXED DECORATIONS
-========================================= */
-
-/*
-    These are intentionally NOT position: fixed.
-
-    This prevents flowers/hearts from following
-    the user while scrolling.
-*/
-
-.floating {
-    position: absolute;
-
-    pointer-events: none;
-
-    z-index: 2;
-}
-
-.flower-left {
-    width: 55px;
-
-    left: 4%;
-    top: 22%;
-
-    transform: rotate(-22deg);
-
-    opacity: 0.65;
-}
-
-.flower-right {
-    width: 52px;
-
-    right: 5%;
-    top: 58%;
-
-    transform: rotate(20deg);
-
-    opacity: 0.6;
-}
-
-.heart-left {
-    width: 30px;
-
-    left: 8%;
-    top: 75%;
-
-    transform: rotate(-15deg);
-
-    opacity: 0.55;
-}
-
-.heart-right {
-    width: 30px;
-
-    right: 9%;
-    top: 30%;
-
-    transform: rotate(18deg);
-
-    opacity: 0.55;
 }
 
 
@@ -737,10 +661,17 @@ footer {
     }
 
     .hero-bow {
-        width: 80px;
+        width: 75px;
 
         right: 3%;
         top: 5%;
+    }
+
+    .hero-flower {
+        width: 48px;
+
+        left: 3%;
+        top: 18%;
     }
 
     .hero-heart {
@@ -748,13 +679,14 @@ footer {
         height: 65px;
     }
 
-    .hero-decoration img {
-        width: 32px;
-        height: 32px;
-    }
-
     .gift-section {
         padding-top: 80px;
+    }
+
+    .story-heart {
+        width: 38px;
+
+        right: 4%;
     }
 
     .card-grid {
@@ -783,49 +715,9 @@ footer {
         height: 240px;
     }
 
-    .flower-left {
-        width: 42px;
-
-        left: 2%;
-
-        top: 25%;
-    }
-
-    .flower-right {
-        width: 40px;
-
-        right: 2%;
-
-        top: 60%;
-    }
-
-    .heart-left,
-    .heart-right {
-        width: 23px;
-    }
-
-    .heart-pattern {
-        width: 100px;
-
-        right: -20px;
-    }
-
-}
-
-
-/* =========================================
-   REDUCED MOTION
-========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
+    .ending-flower {
+        width: 45px;
+        height: 45px;
     }
 
 }
