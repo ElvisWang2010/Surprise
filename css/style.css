@@ -25,6 +25,89 @@ img {
 
 
 /* =========================================
+   CORNER DECORATIONS
+========================================= */
+
+.corner-decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.corner-icon {
+    position: absolute;
+    object-fit: contain;
+    opacity: 0.72;
+}
+
+
+/* Top left flower */
+
+.flower-top-left {
+    width: 70px;
+    left: 2.5%;
+    top: 5%;
+    transform: rotate(-18deg);
+}
+
+
+/* Top right bow */
+
+.bow-top-right {
+    width: 85px;
+    right: 3%;
+    top: 7%;
+    transform: rotate(12deg);
+}
+
+
+/* Left side heart */
+
+.heart-left {
+    width: 42px;
+    left: 4%;
+    top: 34%;
+    transform: rotate(-15deg);
+    opacity: 0.6;
+}
+
+
+/* Right side flower */
+
+.flower-right {
+    width: 62px;
+    right: 3%;
+    top: 48%;
+    transform: rotate(17deg);
+}
+
+
+/* Bottom left heart */
+
+.heart-bottom-left {
+    width: 48px;
+    left: 6%;
+    bottom: 8%;
+    transform: rotate(12deg);
+    opacity: 0.6;
+}
+
+
+/* Bottom right flower */
+
+.flower-bottom-right {
+    width: 68px;
+    right: 5%;
+    bottom: 5%;
+    transform: rotate(-14deg);
+}
+
+
+/* =========================================
    HERO
 ========================================= */
 
@@ -47,6 +130,8 @@ img {
         #fff5f9 0%,
         #fffafd 100%
     );
+
+    z-index: 2;
 }
 
 
@@ -103,7 +188,7 @@ img {
 
 
 /* =========================================
-   HERO HEART EMOJI
+   HERO HEART
 ========================================= */
 
 .hero-decoration {
@@ -201,6 +286,8 @@ img {
     background: white;
 
     overflow: hidden;
+
+    z-index: 2;
 }
 
 
@@ -305,21 +392,22 @@ img {
 
 
 /* =========================================
-   CARD EMOJIS
+   DIFFERENT CARD EMOJIS
 ========================================= */
 
 .card-decoration {
-    font-size: 34px;
-
-    color: #ed719b;
+    font-size: 35px;
 
     margin-bottom: 18px;
 
     display: inline-block;
 }
 
+
+/* Slightly different rotations */
+
 .cute-card:nth-child(1) .card-decoration {
-    transform: rotate(-10deg);
+    transform: rotate(-8deg);
 }
 
 .cute-card:nth-child(2) .card-decoration {
@@ -331,7 +419,7 @@ img {
 }
 
 .cute-card:nth-child(4) .card-decoration {
-    transform: rotate(10deg);
+    transform: rotate(8deg);
 }
 
 
@@ -578,6 +666,22 @@ footer {
         flex-wrap: wrap;
     }
 
+    .flower-top-left {
+        width: 50px;
+    }
+
+    .bow-top-right {
+        width: 60px;
+    }
+
+    .flower-right {
+        width: 48px;
+    }
+
+    .flower-bottom-right {
+        width: 52px;
+    }
+
 }
 
 
@@ -622,9 +726,38 @@ footer {
         height: 240px;
     }
 
-    .ending-heart {
+    .corner-icon {
+        opacity: 0.5;
+    }
+
+    .flower-top-left {
+        width: 42px;
+        left: 1%;
+    }
+
+    .bow-top-right {
         width: 50px;
-        height: 50px;
+        right: 1%;
+    }
+
+    .heart-left {
+        width: 30px;
+        left: 2%;
+    }
+
+    .flower-right {
+        width: 40px;
+        right: 1%;
+    }
+
+    .heart-bottom-left {
+        width: 34px;
+        left: 3%;
+    }
+
+    .flower-bottom-right {
+        width: 42px;
+        right: 2%;
     }
 
 }
