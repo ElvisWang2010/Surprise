@@ -29,81 +29,159 @@ img {
 ========================================= */
 
 .corner-decorations {
-    position: absolute;
+    position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
-    height: 100%;
+    height: 100vh;
+
     pointer-events: none;
-    z-index: 1;
+
+    z-index: 20;
 }
 
 .corner-icon {
     position: absolute;
+
     object-fit: contain;
+
     opacity: 0.72;
+
+    pointer-events: none;
 }
 
 
-/* Top left flower */
+/* =========================================
+   FLOWERS
+========================================= */
+
+/* Large flower - top left */
 
 .flower-top-left {
-    width: 70px;
+    width: 75px;
+
     left: 2.5%;
     top: 5%;
+
     transform: rotate(-18deg);
 }
 
 
-/* Top right bow */
+/* Small flower - upper left */
 
-.bow-top-right {
-    width: 85px;
-    right: 3%;
-    top: 7%;
-    transform: rotate(12deg);
-}
-
-
-/* Left side heart */
-
-.heart-left {
+.flower-upper-left {
     width: 42px;
-    left: 4%;
-    top: 34%;
-    transform: rotate(-15deg);
-    opacity: 0.6;
+
+    left: 14%;
+    top: 18%;
+
+    transform: rotate(22deg);
+
+    opacity: 0.58;
 }
 
 
-/* Right side flower */
+/* Flower - middle left */
+
+.flower-middle-left {
+    width: 58px;
+
+    left: 3%;
+    top: 63%;
+
+    transform: rotate(-12deg);
+}
+
+
+/* Large flower - right */
 
 .flower-right {
-    width: 62px;
+    width: 65px;
+
     right: 3%;
-    top: 48%;
+    top: 47%;
+
     transform: rotate(17deg);
 }
 
 
-/* Bottom left heart */
+/* Small flower - upper right */
 
-.heart-bottom-left {
+.flower-upper-right {
+    width: 45px;
+
+    right: 13%;
+    top: 22%;
+
+    transform: rotate(-20deg);
+
+    opacity: 0.58;
+}
+
+
+/* Small flower - bottom left */
+
+.flower-bottom-left {
     width: 48px;
-    left: 6%;
-    bottom: 8%;
+
+    left: 12%;
+    bottom: 7%;
+
+    transform: rotate(16deg);
+
+    opacity: 0.62;
+}
+
+
+/* Large flower - bottom right */
+
+.flower-bottom-right {
+    width: 72px;
+
+    right: 5%;
+    bottom: 5%;
+
+    transform: rotate(-14deg);
+}
+
+
+/* =========================================
+   OTHER DECORATIONS
+========================================= */
+
+.bow-top-right {
+    width: 85px;
+
+    right: 3%;
+    top: 7%;
+
     transform: rotate(12deg);
+}
+
+
+.heart-left {
+    width: 42px;
+
+    left: 4%;
+    top: 36%;
+
+    transform: rotate(-15deg);
+
     opacity: 0.6;
 }
 
 
-/* Bottom right flower */
+.heart-bottom-left {
+    width: 48px;
 
-.flower-bottom-right {
-    width: 68px;
-    right: 5%;
-    bottom: 5%;
-    transform: rotate(-14deg);
+    left: 6%;
+    bottom: 8%;
+
+    transform: rotate(12deg);
+
+    opacity: 0.6;
 }
 
 
@@ -116,6 +194,7 @@ img {
 
     display: flex;
     flex-direction: column;
+
     justify-content: center;
     align-items: center;
 
@@ -130,8 +209,6 @@ img {
         #fff5f9 0%,
         #fffafd 100%
     );
-
-    z-index: 2;
 }
 
 
@@ -188,7 +265,7 @@ img {
 
 
 /* =========================================
-   HERO HEART
+   HERO DECORATION
 ========================================= */
 
 .hero-decoration {
@@ -286,8 +363,6 @@ img {
     background: white;
 
     overflow: hidden;
-
-    z-index: 2;
 }
 
 
@@ -392,7 +467,7 @@ img {
 
 
 /* =========================================
-   DIFFERENT CARD EMOJIS
+   CARD EMOJIS
 ========================================= */
 
 .card-decoration {
@@ -404,7 +479,7 @@ img {
 }
 
 
-/* Slightly different rotations */
+/* Different rotations */
 
 .cute-card:nth-child(1) .card-decoration {
     transform: rotate(-8deg);
@@ -651,7 +726,7 @@ footer {
 
 
 /* =========================================
-   MOBILE
+   TABLET
 ========================================= */
 
 @media (max-width: 850px) {
@@ -667,7 +742,11 @@ footer {
     }
 
     .flower-top-left {
-        width: 50px;
+        width: 55px;
+    }
+
+    .flower-upper-left {
+        width: 32px;
     }
 
     .bow-top-right {
@@ -678,12 +757,24 @@ footer {
         width: 48px;
     }
 
+    .flower-upper-right {
+        width: 34px;
+    }
+
     .flower-bottom-right {
-        width: 52px;
+        width: 55px;
+    }
+
+    .flower-bottom-left {
+        width: 38px;
     }
 
 }
 
+
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 650px) {
 
@@ -735,6 +826,12 @@ footer {
         left: 1%;
     }
 
+    .flower-upper-left {
+        width: 28px;
+        left: 7%;
+        top: 20%;
+    }
+
     .bow-top-right {
         width: 50px;
         right: 1%;
@@ -745,14 +842,29 @@ footer {
         left: 2%;
     }
 
+    .flower-middle-left {
+        width: 38px;
+        left: 1%;
+    }
+
     .flower-right {
         width: 40px;
         right: 1%;
     }
 
+    .flower-upper-right {
+        width: 28px;
+        right: 6%;
+    }
+
     .heart-bottom-left {
         width: 34px;
         left: 3%;
+    }
+
+    .flower-bottom-left {
+        width: 32px;
+        left: 8%;
     }
 
     .flower-bottom-right {
