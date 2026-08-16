@@ -74,3 +74,60 @@ function createHeart(x, y) {
     }, 1100);
 
 }
+
+/* =========================================
+   REASONS
+========================================= */
+
+function openReason(card) {
+
+    card.classList.toggle("flipped");
+
+}
+
+
+/* =========================================
+   OPEN ALL REASONS
+========================================= */
+
+function openAllReasons() {
+
+    const cards = document.querySelectorAll(".reason-card");
+
+    cards.forEach(function(card) {
+
+        card.classList.add("flipped");
+
+    });
+
+}
+
+
+/* =========================================
+   LETTERS
+========================================= */
+
+function openLetter(button) {
+
+    const wrapper = button.closest(".letter-wrapper");
+
+    if (!wrapper) return;
+
+    wrapper.classList.add("opened");
+
+}
+
+
+/* =========================================
+   CLOSE LETTER
+========================================= */
+
+function closeLetter(button) {
+
+    const wrapper = button.closest(".letter-wrapper");
+
+    if (!wrapper) return;
+
+    wrapper.classList.remove("opened");
+
+}
