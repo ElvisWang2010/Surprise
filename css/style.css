@@ -1531,3 +1531,536 @@ footer {
 .memory-photo img[src*="IMG_0531.jpg"] {
     transform: rotate(180deg);
 }
+
+/* =========================================
+   REASONS PAGE
+========================================= */
+
+.reasons-page {
+    min-height: 100vh;
+    background: #fff8fb;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   REASONS HEADER
+========================================= */
+
+.reasons-hero {
+    position: relative;
+
+    text-align: center;
+
+    padding: 120px 20px 70px;
+
+    background: linear-gradient(
+        180deg,
+        #fff5f9 0%,
+        #fffafd 100%
+    );
+}
+
+.reasons-hero h1 {
+    font-family: 'Pacifico', cursive;
+
+    font-size: clamp(45px, 7vw, 70px);
+
+    line-height: 1.15;
+
+    font-weight: 400;
+
+    color: #6b4352;
+}
+
+.reasons-hero h1 span {
+    color: #e96b98;
+}
+
+.reasons-subtitle {
+    margin-top: 18px;
+
+    color: #876873;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   OPEN ALL BUTTON
+========================================= */
+
+.open-all-button {
+    margin-top: 28px;
+
+    border: none;
+
+    background: #ec719b;
+
+    color: white;
+
+    padding: 14px 28px;
+
+    border-radius: 50px;
+
+    font-family: 'DM Sans', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(236, 113, 155, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.open-all-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(236, 113, 155, 0.3);
+}
+
+
+/* =========================================
+   REASONS DECORATIONS
+========================================= */
+
+.reasons-flower {
+    position: absolute;
+
+    width: 55px;
+    height: 55px;
+
+    object-fit: contain;
+
+    opacity: 0.55;
+
+    pointer-events: none;
+
+    z-index: 3;
+}
+
+.reasons-flower-left {
+    left: 3%;
+    top: 15%;
+
+    transform: rotate(-18deg);
+}
+
+.reasons-flower-right {
+    right: 3%;
+    top: 48%;
+
+    transform: rotate(28deg);
+}
+
+.reasons-bow {
+    position: absolute;
+
+    width: 58px;
+    height: 58px;
+
+    right: 8%;
+    top: 18%;
+
+    object-fit: contain;
+
+    opacity: 0.5;
+
+    transform: rotate(15deg);
+
+    pointer-events: none;
+
+    z-index: 3;
+}
+
+.reasons-heart {
+    position: absolute;
+
+    width: 35px;
+    height: 35px;
+
+    left: 8%;
+    top: 55%;
+
+    object-fit: contain;
+
+    opacity: 0.5;
+
+    transform: rotate(-12deg);
+
+    pointer-events: none;
+
+    z-index: 3;
+}
+
+
+/* =========================================
+   REASONS SECTION
+========================================= */
+
+.reasons-container {
+    padding: 75px 20px 100px;
+
+    background: white;
+}
+
+.reasons-grid {
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+
+/* =========================================
+   REASON CARD
+========================================= */
+
+.reason-card {
+    height: 280px;
+
+    perspective: 1000px;
+
+    cursor: pointer;
+}
+
+.reason-card-inner {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform 0.7s cubic-bezier(
+            0.4,
+            0.2,
+            0.2,
+            1
+        );
+}
+
+
+/* FLIPPED STATE */
+
+.reason-card.flipped .reason-card-inner {
+    transform: rotateY(180deg);
+}
+
+
+/* =========================================
+   FRONT + BACK
+========================================= */
+
+.reason-front,
+.reason-back {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    border-radius: 25px;
+
+    padding: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    backface-visibility: hidden;
+
+    -webkit-backface-visibility: hidden;
+
+    border: 1px solid #f6dce7;
+
+    box-shadow:
+        0 12px 30px rgba(
+            190,
+            105,
+            135,
+            0.1
+        );
+}
+
+
+/* =========================================
+   FRONT
+========================================= */
+
+.reason-front {
+    background:
+        linear-gradient(
+            145deg,
+            #fff8fb,
+            #fffafd
+        );
+}
+
+.reason-front:hover {
+    box-shadow:
+        0 18px 35px rgba(
+            190,
+            105,
+            135,
+            0.16
+        );
+}
+
+.reason-icon {
+    font-size: 40px;
+
+    margin-bottom: 18px;
+
+    display: inline-block;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.reason-card:hover .reason-icon {
+    transform:
+        scale(1.08)
+        rotate(-5deg);
+}
+
+.reason-front h2 {
+    font-family: 'Pacifico', cursive;
+
+    font-size: 24px;
+
+    font-weight: 400;
+
+    color: #704654;
+}
+
+.reason-front p {
+    margin-top: 10px;
+
+    font-size: 13px;
+
+    color: #c18a9c;
+}
+
+
+/* =========================================
+   BACK
+========================================= */
+
+.reason-back {
+    background:
+        linear-gradient(
+            145deg,
+            #fff5f9,
+            #ffeef5
+        );
+
+    transform: rotateY(180deg);
+}
+
+.reason-number {
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    color: #d76b91;
+
+    margin-bottom: 12px;
+}
+
+.reason-back h2 {
+    font-family: 'Pacifico', cursive;
+
+    font-size: 28px;
+
+    font-weight: 400;
+
+    color: #e06a95;
+
+    margin-bottom: 15px;
+}
+
+.reason-back p {
+    max-width: 230px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: #8e6b78;
+}
+
+
+/* =========================================
+   ENDING
+========================================= */
+
+.reasons-ending {
+    text-align: center;
+
+    padding: 80px 20px 100px;
+
+    background: #fff8fb;
+}
+
+.reasons-ending img {
+    width: 50px;
+    height: 50px;
+
+    object-fit: contain;
+
+    margin-bottom: 20px;
+
+    animation:
+        heartbeat 2.2s ease-in-out infinite;
+}
+
+.reasons-ending h2 {
+    font-family: 'Pacifico', cursive;
+
+    font-size: 35px;
+
+    font-weight: 400;
+
+    color: #694552;
+}
+
+.reasons-ending p {
+    margin-top: 10px;
+
+    color: #957480;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   REASONS MOBILE
+========================================= */
+
+@media (max-width: 850px) {
+
+    .reasons-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        max-width: 650px;
+    }
+
+    .reason-card {
+        height: 270px;
+    }
+
+    .reasons-flower {
+        width: 45px;
+        height: 45px;
+    }
+
+    .reasons-bow {
+        width: 48px;
+        height: 48px;
+    }
+
+    .reasons-heart {
+        width: 30px;
+        height: 30px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .reasons-hero {
+        padding:
+            100px
+            20px
+            60px;
+    }
+
+    .reasons-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 360px;
+
+        gap: 25px;
+    }
+
+    .reason-card {
+        height: 260px;
+    }
+
+    .reason-front,
+    .reason-back {
+        padding: 25px;
+    }
+
+    .reason-icon {
+        font-size: 36px;
+    }
+
+    .reasons-flower {
+        width: 38px;
+        height: 38px;
+    }
+
+    .reasons-bow {
+        width: 42px;
+        height: 42px;
+    }
+
+    .reasons-heart {
+        width: 28px;
+        height: 28px;
+    }
+
+}
+
+
+/* =========================================
+   REDUCE DECORATIONS ON VERY SMALL SCREENS
+========================================= */
+
+@media (max-width: 400px) {
+
+    .reasons-flower-left {
+        left: 1%;
+    }
+
+    .reasons-flower-right {
+        right: 1%;
+    }
+
+    .reasons-bow {
+        right: 3%;
+    }
+
+    .reasons-heart {
+        left: 3%;
+    }
+
+}
