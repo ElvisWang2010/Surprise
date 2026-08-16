@@ -977,44 +977,37 @@ footer {
 
 }
 
-
 /* =========================================
    MEMORIES PAGE
 ========================================= */
 
 .memory-nav {
     position: absolute;
-
-    top: 25px;
-    left: 25px;
-
+    top: 22px;
+    left: 22px;
     z-index: 20;
 }
 
 .memory-home-button {
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
 
     text-decoration: none;
 
     background: #ec719b;
-
     color: white;
 
-    padding: 12px 22px;
+    padding: 10px 20px;
 
     border-radius: 50px;
 
     font-family: 'DM Sans', sans-serif;
-
-    font-size: 14px;
-
+    font-size: 13px;
     font-weight: 600;
 
     box-shadow:
-        0 8px 20px rgba(236, 113, 155, 0.22);
+        0 7px 18px rgba(236, 113, 155, 0.2);
 
     transition:
         transform 0.2s ease,
@@ -1025,7 +1018,7 @@ footer {
     transform: translateY(-3px);
 
     box-shadow:
-        0 12px 25px rgba(236, 113, 155, 0.3);
+        0 12px 24px rgba(236, 113, 155, 0.28);
 }
 
 
@@ -1034,23 +1027,21 @@ footer {
 ========================================= */
 
 .memory-hero {
-    min-height: 60vh;
+    min-height: 48vh;
 
     width: 100%;
 
     display: flex;
-
     flex-direction: column;
 
     justify-content: center;
-
     align-items: center;
 
     text-align: center;
 
     position: relative;
 
-    padding: 100px 20px 70px;
+    padding: 90px 20px 60px;
 
     background:
         linear-gradient(
@@ -1065,15 +1056,13 @@ footer {
 .memory-hero h1 {
     font-family: 'Pacifico', cursive;
 
-    font-size: clamp(48px, 7vw, 75px);
+    font-size: clamp(45px, 6vw, 70px);
 
     line-height: 1.1;
 
     font-weight: 400;
 
     color: #6b4352;
-
-    margin: 0;
 }
 
 .memory-hero h1 span {
@@ -1081,13 +1070,13 @@ footer {
 }
 
 .memory-subtitle {
-    font-size: 17px;
+    font-size: 16px;
 
     line-height: 1.7;
 
     color: #876873;
 
-    margin-top: 20px;
+    margin-top: 15px;
 
     max-width: 500px;
 }
@@ -1100,49 +1089,55 @@ footer {
 .memory-hero-flower {
     position: absolute;
 
-    width: 70px;
-    height: 70px;
+    width: 48px;
+    height: 48px;
 
-    left: 5%;
-    top: 15%;
+    left: 7%;
+    top: 20%;
 
     object-fit: contain;
 
     transform: rotate(-18deg);
 
-    opacity: 0.65;
+    opacity: 0.55;
+
+    pointer-events: none;
 }
 
 .memory-hero-bow {
     position: absolute;
 
-    width: 80px;
-    height: 80px;
+    width: 55px;
+    height: 55px;
 
-    right: 5%;
-    top: 15%;
+    right: 7%;
+    top: 18%;
 
     object-fit: contain;
 
-    transform: rotate(14deg);
+    transform: rotate(15deg);
 
-    opacity: 0.65;
+    opacity: 0.55;
+
+    pointer-events: none;
 }
 
 .memory-hero-heart {
     position: absolute;
 
-    width: 42px;
-    height: 42px;
+    width: 30px;
+    height: 30px;
 
-    left: 12%;
-    bottom: 14%;
+    left: 13%;
+    bottom: 15%;
 
     object-fit: contain;
 
-    transform: rotate(-15deg);
+    transform: rotate(-12deg);
 
-    opacity: 0.55;
+    opacity: 0.45;
+
+    pointer-events: none;
 }
 
 
@@ -1155,9 +1150,11 @@ footer {
 
     background: white;
 
-    padding: 90px 20px 120px;
+    padding: 70px 25px 100px;
 
     overflow: hidden;
+
+    position: relative;
 }
 
 
@@ -1174,15 +1171,18 @@ footer {
 
     display: grid;
 
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(4, 1fr);
 
-    gap: 45px 35px;
+    gap: 25px;
+
+    position: relative;
+
+    z-index: 5;
 }
 
 
 /* =========================================
-   MEMORY PHOTO
+   MEMORY CARD
 ========================================= */
 
 .memory-photo {
@@ -1190,12 +1190,12 @@ footer {
 
     background: white;
 
-    padding: 12px 12px 20px;
+    padding: 8px 8px 15px;
 
-    border-radius: 8px;
+    border-radius: 6px;
 
     box-shadow:
-        0 10px 30px rgba(100, 50, 70, 0.12);
+        0 7px 20px rgba(100, 50, 70, 0.1);
 
     overflow: hidden;
 
@@ -1205,20 +1205,20 @@ footer {
 }
 
 .memory-photo:nth-child(odd) {
-    transform: rotate(-1.5deg);
+    transform: rotate(-1.2deg);
 }
 
 .memory-photo:nth-child(even) {
-    transform: rotate(1.5deg);
+    transform: rotate(1.2deg);
 }
 
 .memory-photo:hover {
     transform:
-        translateY(-8px)
+        translateY(-6px)
         rotate(0deg);
 
     box-shadow:
-        0 18px 35px rgba(100, 50, 70, 0.17);
+        0 14px 28px rgba(100, 50, 70, 0.15);
 }
 
 
@@ -1231,7 +1231,7 @@ footer {
 
     width: 100%;
 
-    height: 400px;
+    height: 210px;
 
     object-fit: cover;
 
@@ -1244,17 +1244,72 @@ footer {
 ========================================= */
 
 .memory-photo p {
-    margin: 15px 5px 0;
+    margin: 10px 3px 0;
 
     font-family: 'Pacifico', cursive;
 
-    font-size: 17px;
+    font-size: 14px;
 
-    line-height: 1.4;
+    line-height: 1.3;
 
     color: #815363;
 
     text-align: center;
+}
+
+
+/* =========================================
+   MEMORY DECORATIONS
+========================================= */
+
+.memories-page::before {
+    content: "";
+
+    position: absolute;
+
+    width: 45px;
+    height: 45px;
+
+    background-image:
+        url("../assets/icons/Flower1.png");
+
+    background-size: contain;
+
+    background-repeat: no-repeat;
+
+    left: 2%;
+    top: 12%;
+
+    opacity: 0.35;
+
+    transform: rotate(-20deg);
+
+    pointer-events: none;
+}
+
+.memories-page::after {
+    content: "";
+
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+
+    background-image:
+        url("../assets/icons/Flower2.png");
+
+    background-size: contain;
+
+    background-repeat: no-repeat;
+
+    right: 2%;
+    top: 45%;
+
+    opacity: 0.35;
+
+    transform: rotate(28deg);
+
+    pointer-events: none;
 }
 
 
@@ -1265,22 +1320,26 @@ footer {
 .memory-ending {
     width: 100%;
 
-    max-width: 650px;
+    max-width: 600px;
 
-    margin: 120px auto 0;
+    margin: 90px auto 0;
 
     text-align: center;
+
+    position: relative;
+
+    z-index: 5;
 }
 
 .memory-ending > img {
-    width: 58px;
-    height: 58px;
+    width: 48px;
+    height: 48px;
 
     object-fit: contain;
 
     display: block;
 
-    margin: 0 auto 25px;
+    margin: 0 auto 20px;
 
     animation: heartbeat 2.2s ease-in-out infinite;
 }
@@ -1290,382 +1349,181 @@ footer {
 
     font-weight: 400;
 
-    font-size: clamp(32px, 5vw, 50px);
+    font-size: clamp(30px, 4vw, 45px);
 
     line-height: 1.2;
 
     color: #694552;
 
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .memory-ending p {
     color: #957480;
 
-    font-size: 16px;
+    font-size: 15px;
 
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 
 /* =========================================
-   HOMEPAGE — TABLET
+   MEMORY PAGE — TABLET
 ========================================= */
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
 
-    .card-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .memory-gallery {
+        grid-template-columns: repeat(3, 1fr);
 
-        max-width: 650px;
+        gap: 22px;
     }
 
-    .photo-placeholder {
-        flex-wrap: wrap;
-    }
-
-    .flower-top-left {
-        width: 50px;
-    }
-
-    .flower-top-left-small {
-        width: 35px;
-    }
-
-    .bow-top-right {
-        width: 60px;
-    }
-
-    .flower-right {
-        width: 48px;
-    }
-
-    .flower-right-small {
-        width: 35px;
-    }
-
-    .story-flower-left,
-    .middle-flower-left,
-    .photo-flower-left,
-    .ending-flower-left {
-        width: 50px;
-    }
-
-    .story-flower-right,
-    .middle-flower-right,
-    .photo-flower-right,
-    .ending-flower-right {
-        width: 48px;
-    }
-
-    .story-bow-right,
-    .middle-bow-right,
-    .photo-bow-right,
-    .ending-bow-right {
-        width: 60px;
+    .memory-photo img {
+        height: 200px;
     }
 
 }
 
 
 /* =========================================
-   HOMEPAGE — MOBILE
-========================================= */
-
-@media (max-width: 650px) {
-
-    .hero {
-        padding: 70px 20px;
-    }
-
-    .hero-heart {
-        width: 65px;
-        height: 65px;
-    }
-
-    .gift-section {
-        padding-top: 80px;
-    }
-
-    .card-grid {
-        grid-template-columns: 1fr;
-
-        max-width: 400px;
-    }
-
-    .cute-card {
-        min-height: 220px;
-    }
-
-    .photo-placeholder {
-        flex-direction: column;
-
-        align-items: center;
-
-        gap: 35px;
-    }
-
-    .polaroid {
-        width: min(280px, 90vw);
-    }
-
-    .photo-box {
-        height: 240px;
-    }
-
-
-    /* Hero decorations */
-
-    .corner-icon,
-    .section-icon {
-        opacity: 0.5;
-    }
-
-    .flower-top-left {
-        width: 42px;
-
-        left: 1%;
-    }
-
-    .flower-top-left-small {
-        width: 28px;
-
-        left: 7%;
-    }
-
-    .bow-top-right {
-        width: 50px;
-
-        right: 1%;
-    }
-
-    .heart-left {
-        width: 30px;
-
-        left: 2%;
-    }
-
-    .flower-right {
-        width: 40px;
-
-        right: 1%;
-    }
-
-    .flower-right-small {
-        width: 30px;
-
-        right: 7%;
-    }
-
-
-    /* Story decorations */
-
-    .story-flower-left {
-        width: 42px;
-
-        left: 1%;
-    }
-
-    .story-heart-left {
-        width: 34px;
-
-        left: 3%;
-    }
-
-    .story-bow-right {
-        width: 50px;
-
-        right: 1%;
-    }
-
-    .story-flower-right {
-        width: 40px;
-
-        right: 1%;
-    }
-
-    .story-flower-left-lower {
-        width: 35px;
-
-        left: 2%;
-    }
-
-    .story-heart-right {
-        width: 30px;
-
-        right: 4%;
-    }
-
-
-    /* Middle decorations */
-
-    .middle-flower-left {
-        width: 42px;
-
-        left: 1%;
-    }
-
-    .middle-heart-left {
-        width: 32px;
-
-        left: 4%;
-    }
-
-    .middle-flower-right {
-        width: 42px;
-
-        right: 1%;
-    }
-
-    .middle-bow-right {
-        width: 50px;
-
-        right: 4%;
-    }
-
-
-    /* Photo decorations */
-
-    .photo-flower-left {
-        width: 42px;
-
-        left: 0;
-    }
-
-    .photo-heart-left {
-        width: 32px;
-
-        left: 3%;
-    }
-
-    .photo-bow-right {
-        width: 50px;
-
-        right: 1%;
-    }
-
-    .photo-flower-right {
-        width: 42px;
-
-        right: 0;
-    }
-
-
-    /* Ending decorations */
-
-    .ending-flower-left {
-        width: 42px;
-
-        left: 1%;
-    }
-
-    .ending-heart-left {
-        width: 32px;
-
-        left: 3%;
-    }
-
-    .ending-bow-right {
-        width: 50px;
-
-        right: 1%;
-    }
-
-    .ending-flower-right {
-        width: 42px;
-
-        right: 1%;
-    }
-
-    .ending-flower-right-small {
-        width: 30px;
-
-        right: 7%;
-    }
-
-}
-
-
-/* =========================================
-   MEMORIES PAGE — TABLET / MOBILE
+   MEMORY PAGE — SMALL TABLET
 ========================================= */
 
 @media (max-width: 700px) {
 
-    .memory-nav {
-        top: 18px;
-        left: 18px;
-    }
-
-    .memory-home-button {
-        padding: 10px 18px;
-
-        font-size: 13px;
-    }
-
-    .memory-hero {
-        min-height: 55vh;
-
-        padding: 90px 20px 60px;
-    }
-
-    .memory-hero-flower {
-        width: 45px;
-        height: 45px;
-
-        left: 2%;
-    }
-
-    .memory-hero-bow {
-        width: 52px;
-        height: 52px;
-
-        right: 2%;
-    }
-
-    .memory-hero-heart {
-        width: 32px;
-        height: 32px;
-
-        left: 5%;
-    }
-
     .memory-gallery {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
 
-        max-width: 500px;
-
-        gap: 35px;
+        gap: 22px;
     }
 
     .memory-photo img {
-        height: 350px;
+        height: 210px;
+    }
+
+    .memory-hero {
+        min-height: 45vh;
+    }
+
+    .memory-hero-flower {
+        width: 40px;
+        height: 40px;
+
+        left: 3%;
+    }
+
+    .memory-hero-bow {
+        width: 45px;
+        height: 45px;
+
+        right: 3%;
+    }
+
+    .memory-hero-heart {
+        width: 27px;
+        height: 27px;
+
+        left: 7%;
     }
 
 }
 
 
 /* =========================================
-   MEMORIES PAGE — SMALL PHONES
+   MEMORY PAGE — PHONE
 ========================================= */
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
+
+    .memory-nav {
+        top: 15px;
+        left: 15px;
+    }
+
+    .memory-home-button {
+        padding: 9px 16px;
+
+        font-size: 12px;
+    }
+
+    .memory-hero {
+        min-height: 42vh;
+
+        padding:
+            80px
+            18px
+            50px;
+    }
 
     .memory-hero h1 {
-        font-size: 45px;
+        font-size: 43px;
     }
 
     .memory-subtitle {
-        font-size: 15px;
+        font-size: 14px;
+    }
+
+    .memory-gallery {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 15px;
     }
 
     .memories-page {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding:
+            50px
+            12px
+            80px;
+    }
+
+    .memory-photo {
+        padding: 6px 6px 12px;
     }
 
     .memory-photo img {
-        height: 300px;
+        height: 150px;
+    }
+
+    .memory-photo p {
+        font-size: 12px;
+
+        margin-top: 8px;
+    }
+
+    .memories-page::before {
+        width: 32px;
+        height: 32px;
+
+        left: 1%;
+    }
+
+    .memories-page::after {
+        width: 35px;
+        height: 35px;
+
+        right: 1%;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+
+    .memory-gallery {
+        gap: 10px;
+    }
+
+    .memory-photo img {
+        height: 125px;
+    }
+
+    .memory-photo p {
+        font-size: 11px;
     }
 
 }
