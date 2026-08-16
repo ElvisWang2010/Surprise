@@ -1,1 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Open When... ♡</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Pacifico&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body class="letters-page">
+
+    <!-- HOME BUTTON -->
+
+    <div class="memory-nav">
+        <a href="../index.html" class="memory-home-button">
+            ← Home
+        </a>
+    </div>
+
+
+    <!-- DECORATIONS -->
+
+    <img
+        class="letters-flower letters-flower-left"
+        src="../assets/icons/Flower1.png"
+        alt=""
+    >
+
+    <img
+        class="letters-flower letters-flower-right"
+        src="../assets/icons/Flower2.png"
+        alt=""
+    >
+
+    <img
+        class="letters-bow"
+        src="../assets/icons/PinkBow.png"
+        alt=""
+    >
+
+
+    <!-- HEADER -->
+
+    <header class="letters-hero">
+
+        <div class="little-heart">
+            ♡
+        </div>
+
+        <p class="eyebrow">
+            For whenever you need one
+        </p>
+
+        <h1>
+            Open
+            <span>When...</span>
+        </h1>
+
+        <p class="letters-subtitle">
+            Little letters for little moments.
+            <br>
+            Pick one whenever you need it ♡
+        </p>
+
+    </header>
+
+
+    <!-- LETTERS -->
+
+    <main class="letters-container">
+
+        <div class="letters-grid">
+
+
+            <!-- LETTER 1 -->
+
+            <div class="letter-wrapper">
+
+                <button
+                    class="letter-envelope"
+                    onclick="openLetter(this)"
+                >
+
+                    <div class="envelope-back">
+
+                        <div class="envelope-flap"></div>
+
+                        <div class="envelope-heart">
+                            💌
+                        </div>
+
+                    </div>
+
+                    <span class="envelope-label">
+                        Open when you're sad ♡
+                    </span>
+
+                </button>
+
+
+                <div class="letter-content">
+
+                    <button
+                        class="close-letter"
+                        onclick="closeLetter(this)"
+                    >
+                        ×
+                    </button>
+
+                    <p class="letter-small-title">
+                        Open when you're sad
+                    </p>
+
+                    <h2>
+                        A little reminder ♡
+                    </h2>
+
+                    <p>
+                        Dear you,
+                    </p>
+
+                    <p>
+                        [placeholder words for now]
+                        <br><br>
+                        Whatever you're going through,
+                        I hope you remember that you are
+                        loved and that tomorrow can be
+                        a little brighter.
+                    </p>
+
+                    <p class="letter-signature">
+                        — yours ♡
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- LETTER 2 -->
+
+            <div class="letter-wrapper">
+
+                <button
+                    class="letter-envelope"
+                    onclick="openLetter(this)"
+                >
+
+                    <div class="envelope-back">
+
+                        <div class="envelope-flap"></div>
+
+                        <div class="envelope-heart">
+                            💗
+                        </div>
+
+                    </div>
+
+                    <span class="envelope-label">
+                        Open when you miss me ♡
+                    </span>
+
+                </button>
+
+
+                <div class="letter-content">
+
+                    <button
+                        class="close-letter"
+                        onclick="closeLetter(this)"
+                    >
+                        ×
+                    </button>
+
+                    <p class="letter-small-title">
+                        Open when you miss me
+                    </p>
+
+                    <h2>
+                        I'm thinking of you ♡
+                    </h2>
+
+                    <p>
+                        Hi love,
+                    </p>
+
+                    <p>
+                        [placeholder words for now]
+                        <br><br>
+                        Even when we're apart,
+                        you're still a little part
+                        of my day.
+                    </p>
+
+                    <p class="letter-signature">
+                        — yours ♡
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- LETTER 3 -->
+
+            <div class="letter-wrapper">
+
+                <button
+                    class="letter-envelope"
+                    onclick="openLetter(this)"
+                >
+
+                    <div class="envelope-back">
+
+                        <div class="envelope-flap"></div>
+
+                        <div class="envelope-heart">
+                            🌸
+                        </div>
+
+                    </div>
+
+                    <span class="envelope-label">
+                        Open when you need a smile ♡
+                    </span>
+
+                </button>
+
+
+                <div class="letter-content">
+
+                    <button
+                        class="close-letter"
+                        onclick="closeLetter(this)"
+                    >
+                        ×
+                    </button>
+
+                    <p class="letter-small-title">
+                        Open when you need a smile
+                    </p>
+
+                    <h2>
+                        Smile for me ♡
+                    </h2>
+
+                    <p>
+                        Hey you,
+                    </p>
+
+                    <p>
+                        [placeholder words for now]
+                        <br><br>
+                        Here's your reminder that
+                        you're pretty amazing.
+                        Yes, you specifically.
+                    </p>
+
+                    <p class="letter-signature">
+                        — yours ♡
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- LETTER 4 -->
+
+            <div class="letter-wrapper">
+
+                <button
+                    class="letter-envelope"
+                    onclick="openLetter(this)"
+                >
+
+                    <div class="envelope-back">
+
+                        <div class="envelope-flap"></div>
+
+                        <div class="envelope-heart">
+                            🎀
+                        </div>
+
+                    </div>
+
+                    <span class="envelope-label">
+                        Open when you need encouragement ♡
+                    </span>
+
+                </button>
+
+
+                <div class="letter-content">
+
+                    <button
+                        class="close-letter"
+                        onclick="closeLetter(this)"
+                    >
+                        ×
+                    </button>
+
+                    <p class="letter-small-title">
+                        Open when you need encouragement
+                    </p>
+
+                    <h2>
+                        You can do this ♡
+                    </h2>
+
+                    <p>
+                        Dear you,
+                    </p>
+
+                    <p>
+                        [placeholder words for now]
+                        <br><br>
+                        I believe in you more than you
+                        probably realize.
+                    </p>
+
+                    <p class="letter-signature">
+                        — yours ♡
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- END -->
+
+    <section class="letters-ending">
+
+        <div>
+            ♡
+        </div>
+
+        <h2>
+            More letters coming soon...
+        </h2>
+
+        <p>
+            These are just little placeholders for now.
+        </p>
+
+    </section>
+
+
+    <footer>
+        made with way too much love ♡
+    </footer>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>
