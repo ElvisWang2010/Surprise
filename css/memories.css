@@ -1,0 +1,978 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #fff8fb;
+    color: #5a3d48;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* =========================================
+   GENERAL DECORATION
+========================================= */
+
+.corner-icon,
+.section-icon {
+    position: absolute;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+
+/* =========================================
+   HOMEPAGE — HERO DECORATIONS
+========================================= */
+
+.hero-decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 3;
+}
+
+.flower-top-left {
+    width: 70px;
+
+    left: 2.5%;
+    top: 5%;
+
+    opacity: 0.72;
+
+    transform: rotate(-18deg);
+}
+
+.flower-top-left-small {
+    width: 45px;
+
+    left: 13%;
+    top: 24%;
+
+    opacity: 0.55;
+
+    transform: rotate(28deg);
+}
+
+.bow-top-right {
+    width: 85px;
+
+    right: 3%;
+    top: 7%;
+
+    opacity: 0.72;
+
+    transform: rotate(12deg);
+}
+
+.heart-left {
+    width: 42px;
+
+    left: 4%;
+    top: 34%;
+
+    opacity: 0.6;
+
+    transform: rotate(-15deg);
+}
+
+.flower-right {
+    width: 62px;
+
+    right: 3%;
+    top: 48%;
+
+    opacity: 0.72;
+
+    transform: rotate(17deg);
+}
+
+.flower-right-small {
+    width: 45px;
+
+    right: 12%;
+    top: 26%;
+
+    opacity: 0.55;
+
+    transform: rotate(-32deg);
+}
+
+
+/* =========================================
+   HOMEPAGE — HERO
+========================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    position: relative;
+
+    padding: 80px 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff5f9 0%,
+            #fffafd 100%
+        );
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   HERO HEART
+========================================= */
+
+.hero-heart {
+    width: 78px;
+    height: 78px;
+
+    object-fit: contain;
+
+    margin-bottom: 22px;
+
+    transform: rotate(-7deg);
+
+    animation: heartbeat 2.2s ease-in-out infinite;
+}
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+.eyebrow {
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #d76b91;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: 'Pacifico', cursive;
+
+    font-size: clamp(55px, 8vw, 90px);
+
+    line-height: 1.05;
+
+    color: #6b4352;
+
+    font-weight: 400;
+}
+
+.hero h1 span {
+    color: #e96b98;
+}
+
+
+/* =========================================
+   HERO DECORATION
+========================================= */
+
+.hero-decoration {
+    margin: 28px 0;
+}
+
+.hero-decoration span {
+    color: #ed6c98;
+
+    font-size: 32px;
+
+    display: inline-block;
+
+    transform: rotate(-8deg);
+}
+
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+.subtitle {
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #876873;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.start-button {
+    border: none;
+
+    background: #ec719b;
+
+    color: white;
+
+    padding: 16px 30px;
+
+    border-radius: 50px;
+
+    font-family: 'DM Sans', sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(236, 113, 155, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.start-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(236, 113, 155, 0.3);
+}
+
+.start-button span {
+    margin-left: 8px;
+}
+
+.hint {
+    margin-top: 18px;
+
+    font-size: 12px;
+
+    color: #b58c9b;
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   HOMEPAGE — STORY SECTION
+========================================= */
+
+.gift-section {
+    position: relative;
+
+    padding: 110px 20px 90px;
+
+    background: white;
+
+    overflow: hidden;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   STORY DECORATIONS
+========================================= */
+
+.story-decorations {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 900px;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.story-flower-left {
+    width: 70px;
+
+    left: 2.5%;
+    top: 9%;
+
+    opacity: 0.7;
+
+    transform: rotate(22deg);
+}
+
+.story-heart-left {
+    width: 48px;
+
+    left: 6%;
+    top: 32%;
+
+    opacity: 0.58;
+
+    transform: rotate(-18deg);
+}
+
+.story-bow-right {
+    width: 85px;
+
+    right: 3%;
+    top: 11%;
+
+    opacity: 0.7;
+
+    transform: rotate(-11deg);
+}
+
+.story-flower-right {
+    width: 62px;
+
+    right: 3%;
+    top: 43%;
+
+    opacity: 0.7;
+
+    transform: rotate(-28deg);
+}
+
+.story-flower-left-lower {
+    width: 55px;
+
+    left: 3%;
+    top: 70%;
+
+    opacity: 0.6;
+
+    transform: rotate(-32deg);
+}
+
+.story-heart-right {
+    width: 42px;
+
+    right: 7%;
+    top: 73%;
+
+    opacity: 0.55;
+
+    transform: rotate(17deg);
+}
+
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+.section-header {
+    max-width: 700px;
+
+    margin: 0 auto 70px;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.little-heart {
+    font-size: 28px;
+
+    color: #ed719b;
+
+    margin-bottom: 20px;
+
+    transform: rotate(-8deg);
+}
+
+.section-header h2,
+.photo-section h2,
+.ending h2 {
+    font-family: 'Pacifico', cursive;
+
+    font-weight: 400;
+
+    font-size: clamp(38px, 5vw, 58px);
+
+    line-height: 1.2;
+
+    color: #694552;
+}
+
+.section-header h2 span,
+.photo-section h2 span,
+.ending h2 span {
+    color: #e96b98;
+}
+
+.section-header > p:last-child {
+    max-width: 570px;
+
+    margin: 20px auto 0;
+
+    line-height: 1.8;
+
+    color: #927481;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.card-grid {
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 22px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.cute-card {
+    position: relative;
+
+    text-decoration: none;
+
+    color: inherit;
+
+    background: #fff8fb;
+
+    border: 1px solid #f6dce7;
+
+    border-radius: 24px;
+
+    padding: 30px 25px;
+
+    min-height: 245px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.cute-card:hover {
+    transform:
+        translateY(-8px)
+        rotate(-1deg);
+
+    box-shadow:
+        0 18px 35px rgba(190, 105, 135, 0.12);
+}
+
+
+/* =========================================
+   CARD EMOJIS
+========================================= */
+
+.card-decoration {
+    font-size: 35px;
+
+    margin-bottom: 18px;
+
+    display: inline-block;
+}
+
+.cute-card:nth-child(1) .card-decoration {
+    transform: rotate(-8deg);
+}
+
+.cute-card:nth-child(2) .card-decoration {
+    transform: rotate(7deg);
+}
+
+.cute-card:nth-child(3) .card-decoration {
+    transform: rotate(-5deg);
+}
+
+.cute-card:nth-child(4) .card-decoration {
+    transform: rotate(8deg);
+}
+
+.cute-card h3 {
+    font-family: 'Pacifico', cursive;
+
+    font-size: 25px;
+
+    font-weight: 400;
+
+    color: #704654;
+
+    margin-bottom: 10px;
+}
+
+.cute-card p {
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #987985;
+}
+
+.card-arrow {
+    position: absolute;
+
+    right: 22px;
+    bottom: 20px;
+
+    font-size: 22px;
+
+    color: #e66c97;
+
+    transition: transform 0.2s ease;
+}
+
+.cute-card:hover .card-arrow {
+    transform: translateX(5px);
+}
+
+
+/* =========================================
+   MIDDLE DECORATIONS
+========================================= */
+
+.middle-decorations {
+    position: absolute;
+
+    top: 900px;
+    left: 0;
+
+    width: 100%;
+    height: 500px;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.middle-flower-left {
+    width: 70px;
+
+    left: 2.5%;
+    top: 12%;
+
+    opacity: 0.68;
+
+    transform: rotate(-14deg);
+}
+
+.middle-heart-left {
+    width: 48px;
+
+    left: 8%;
+    top: 55%;
+
+    opacity: 0.55;
+
+    transform: rotate(18deg);
+}
+
+.middle-flower-right {
+    width: 62px;
+
+    right: 3%;
+    top: 25%;
+
+    opacity: 0.7;
+
+    transform: rotate(36deg);
+}
+
+.middle-bow-right {
+    width: 85px;
+
+    right: 7%;
+    top: 68%;
+
+    opacity: 0.68;
+
+    transform: rotate(-18deg);
+}
+
+
+/* =========================================
+   FAVORITE MEMORIES
+========================================= */
+
+.photo-section {
+    max-width: 1100px;
+
+    margin: 130px auto 0;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.photo-placeholder {
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 35px;
+
+    margin-top: 60px;
+
+    position: relative;
+
+    z-index: 6;
+}
+
+
+/* =========================================
+   PHOTO DECORATIONS
+========================================= */
+
+.photo-decorations {
+    position: absolute;
+
+    top: 80px;
+    left: 0;
+
+    width: 100%;
+    height: 700px;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.photo-flower-left {
+    width: 70px;
+
+    left: 1%;
+    top: 15%;
+
+    opacity: 0.68;
+
+    transform: rotate(25deg);
+}
+
+.photo-heart-left {
+    width: 48px;
+
+    left: 8%;
+    top: 63%;
+
+    opacity: 0.55;
+
+    transform: rotate(-13deg);
+}
+
+.photo-bow-right {
+    width: 85px;
+
+    right: 3%;
+    top: 18%;
+
+    opacity: 0.7;
+
+    transform: rotate(16deg);
+}
+
+.photo-flower-right {
+    width: 62px;
+
+    right: 1%;
+    top: 52%;
+
+    opacity: 0.7;
+
+    transform: rotate(-39deg);
+}
+
+
+/* =========================================
+   POLAROIDS
+========================================= */
+
+.polaroid {
+    width: 280px;
+
+    flex-shrink: 0;
+
+    background: white;
+
+    padding: 12px 12px 20px;
+
+    box-shadow:
+        0 10px 30px rgba(100, 50, 70, 0.12);
+
+    transform: rotate(-2deg);
+
+    transition:
+        transform 0.25s ease;
+}
+
+.polaroid:hover {
+    transform:
+        translateY(-8px)
+        rotate(0deg);
+}
+
+.polaroid.tilted {
+    transform: rotate(3deg);
+}
+
+.polaroid.tilted:hover {
+    transform:
+        translateY(-8px)
+        rotate(0deg);
+}
+
+
+/* =========================================
+   PHOTO BOX
+========================================= */
+
+.photo-box {
+    width: 100%;
+
+    height: 260px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe8f0,
+            #fff5f8
+        );
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    color: #d89aaa;
+}
+
+.photo-box img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.polaroid-caption {
+    font-family: 'Pacifico', cursive;
+
+    font-size: 17px;
+
+    color: #815363;
+
+    margin-top: 15px;
+}
+
+
+/* =========================================
+   ENDING DECORATIONS
+========================================= */
+
+.ending-decorations {
+    position: absolute;
+
+    top: 1950px;
+    left: 0;
+
+    width: 100%;
+    height: 650px;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.ending-flower-left {
+    width: 70px;
+
+    left: 3%;
+    top: 18%;
+
+    opacity: 0.68;
+
+    transform: rotate(-25deg);
+}
+
+.ending-heart-left {
+    width: 48px;
+
+    left: 8%;
+    top: 67%;
+
+    opacity: 0.55;
+
+    transform: rotate(14deg);
+}
+
+.ending-bow-right {
+    width: 85px;
+
+    right: 3%;
+    top: 14%;
+
+    opacity: 0.7;
+
+    transform: rotate(17deg);
+}
+
+.ending-flower-right {
+    width: 62px;
+
+    right: 4%;
+    top: 48%;
+
+    opacity: 0.7;
+
+    transform: rotate(-42deg);
+}
+
+.ending-flower-right-small {
+    width: 45px;
+
+    right: 13%;
+    top: 75%;
+
+    opacity: 0.55;
+
+    transform: rotate(29deg);
+}
+
+
+/* =========================================
+   HOMEPAGE ENDING
+========================================= */
+
+.ending {
+    text-align: center;
+
+    margin-top: 140px;
+
+    padding-bottom: 50px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.ending-heart {
+    width: 58px;
+    height: 58px;
+
+    object-fit: contain;
+
+    margin: 0 auto 30px;
+
+    display: block;
+
+    transform: rotate(10deg);
+
+    animation: heartbeat 2.2s ease-in-out infinite;
+}
+
+.ending h2 {
+    max-width: 650px;
+
+    margin: 0 auto 20px;
+}
+
+.ending > p {
+    color: #957480;
+
+    font-size: 16px;
+}
+
+.signature {
+    margin-top: 10px;
+
+    font-family: 'Pacifico', cursive;
+
+    color: #e36a95 !important;
+
+    font-size: 20px !important;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    text-align: center;
+
+    padding: 30px 20px;
+
+    background: #fff5f9;
+
+    color: #b58a9a;
+
+    font-size: 12px;
+
+    position: relative;
+
+    z-index: 10;
+}
+
+
+/* =========================================
+   HEARTBEAT
+========================================= */
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
