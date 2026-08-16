@@ -1,0 +1,853 @@
+/* =========================================
+   LETTERS PAGE
+========================================= */
+
+.letters-page {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff5f9 0%,
+            #fffafd 100%
+        );
+
+    overflow-x: hidden;
+
+    position: relative;
+}
+
+
+/* =========================================
+   LETTERS HOME BUTTON
+========================================= */
+
+.letters-nav {
+    position: absolute;
+
+    top: 22px;
+    left: 22px;
+
+    z-index: 20;
+}
+
+.letters-home-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    background: #ec719b;
+
+    color: white;
+
+    padding: 10px 20px;
+
+    border-radius: 50px;
+
+    font-family: 'DM Sans', sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 7px 18px rgba(236, 113, 155, 0.2);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.letters-home-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 24px rgba(236, 113, 155, 0.28);
+}
+
+
+/* =========================================
+   LETTER HERO
+========================================= */
+
+.letters-hero {
+    min-height: 48vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 100px 20px 60px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.letters-hero h1 {
+    font-family: 'Pacifico', cursive;
+
+    font-size: clamp(
+        45px,
+        7vw,
+        70px
+    );
+
+    line-height: 1.1;
+
+    font-weight: 400;
+
+    color: #6b4352;
+}
+
+.letters-hero h1 span {
+    color: #e96b98;
+}
+
+.letters-subtitle {
+    max-width: 520px;
+
+    margin-top: 18px;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: #876873;
+}
+
+
+/* =========================================
+   LETTER HERO ICON
+========================================= */
+
+.letters-hero-icon {
+    width: 60px;
+
+    height: 60px;
+
+    object-fit: contain;
+
+    margin-bottom: 20px;
+
+    animation:
+        letterFloat 3s ease-in-out infinite;
+}
+
+@keyframes letterFloat {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(-4deg);
+    }
+
+    50% {
+        transform:
+            translateY(-7px)
+            rotate(4deg);
+    }
+
+    100% {
+        transform:
+            translateY(0)
+            rotate(-4deg);
+    }
+
+}
+
+
+/* =========================================
+   LETTER DECORATIONS
+========================================= */
+
+.letters-flower {
+    position: absolute;
+
+    width: 55px;
+    height: 55px;
+
+    object-fit: contain;
+
+    opacity: 0.55;
+
+    pointer-events: none;
+}
+
+.letters-flower-left {
+    left: 4%;
+
+    top: 20%;
+
+    transform:
+        rotate(-20deg);
+}
+
+.letters-flower-right {
+    right: 4%;
+
+    top: 55%;
+
+    transform:
+        rotate(27deg);
+}
+
+.letters-flower-right-small {
+    right: 13%;
+
+    top: 18%;
+
+    width: 42px;
+    height: 42px;
+
+    opacity: 0.4;
+
+    transform:
+        rotate(-30deg);
+}
+
+.letters-heart-left {
+    position: absolute;
+
+    width: 38px;
+    height: 38px;
+
+    left: 10%;
+
+    bottom: 15%;
+
+    object-fit: contain;
+
+    opacity: 0.45;
+
+    transform:
+        rotate(-12deg);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   LETTER SECTION
+========================================= */
+
+.letters-container {
+    background: white;
+
+    padding:
+        75px
+        20px
+        110px;
+
+    position: relative;
+}
+
+
+/* =========================================
+   LETTER GRID
+========================================= */
+
+.letters-grid {
+    width: 100%;
+
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+
+/* =========================================
+   LETTER CARD
+========================================= */
+
+.letter-card {
+    position: relative;
+
+    min-height: 270px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff8fb,
+            #fffafd
+        );
+
+    border:
+        1px solid #f6dce7;
+
+    border-radius: 25px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 28px
+        rgba(
+            190,
+            105,
+            135,
+            0.08
+        );
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.letter-card:hover {
+    transform:
+        translateY(-7px)
+        rotate(-1deg);
+
+    box-shadow:
+        0 18px 35px
+        rgba(
+            190,
+            105,
+            135,
+            0.14
+        );
+}
+
+
+/* =========================================
+   ENVELOPE
+========================================= */
+
+.letter-envelope {
+    width: 90px;
+
+    height: 70px;
+
+    margin:
+        0 auto
+        20px;
+
+    position: relative;
+
+    background: #ffdce8;
+
+    border:
+        1px solid #f4b8cd;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.letter-card:hover .letter-envelope {
+    transform:
+        translateY(-5px)
+        rotate(-3deg);
+}
+
+
+/* Envelope flap */
+
+.letter-envelope::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left:
+        45px solid transparent;
+
+    border-right:
+        45px solid transparent;
+
+    border-top:
+        35px solid #f8b8cf;
+
+    z-index: 2;
+}
+
+
+/* Envelope heart */
+
+.letter-envelope::after {
+    content: "♡";
+
+    position: absolute;
+
+    z-index: 3;
+
+    color: #e66c97;
+
+    font-size: 25px;
+
+    top: 27px;
+}
+
+
+/* =========================================
+   LETTER CARD TEXT
+========================================= */
+
+.letter-card h2 {
+    font-family:
+        'Pacifico',
+        cursive;
+
+    font-size: 24px;
+
+    font-weight: 400;
+
+    color: #704654;
+
+    margin-bottom: 10px;
+}
+
+.letter-card > p {
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    color: #987985;
+
+    max-width: 240px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   OPEN BUTTON
+========================================= */
+
+.open-letter {
+    margin-top: 20px;
+
+    border: none;
+
+    background: #ec719b;
+
+    color: white;
+
+    padding:
+        10px
+        20px;
+
+    border-radius: 50px;
+
+    font-family:
+        'DM Sans',
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.open-letter:hover {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 7px 15px
+        rgba(
+            236,
+            113,
+            155,
+            0.25
+        );
+}
+
+
+/* =========================================
+   OPENED LETTER
+========================================= */
+
+.letter-card.open {
+    cursor: default;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff5f9,
+            #fffafd
+        );
+
+    transform:
+        translateY(-4px);
+}
+
+
+/* Hide envelope when open */
+
+.letter-card.open .letter-envelope {
+    animation:
+        envelopeOpen
+        0.5s
+        ease
+        forwards;
+}
+
+@keyframes envelopeOpen {
+
+    0% {
+        transform:
+            scale(1)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            scale(1.08)
+            rotate(-4deg);
+    }
+
+    100% {
+        transform:
+            scale(0.85)
+            translateY(-15px);
+    }
+
+}
+
+
+/* =========================================
+   LETTER CONTENT
+========================================= */
+
+.letter-content {
+    display: none;
+
+    opacity: 0;
+
+    transform:
+        translateY(15px);
+
+    animation:
+        letterAppear
+        0.6s
+        ease
+        forwards;
+}
+
+.letter-card.open .letter-content {
+    display: block;
+}
+
+@keyframes letterAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   LETTER CONTENT TEXT
+========================================= */
+
+.letter-content .letter-title {
+    font-family:
+        'Pacifico',
+        cursive;
+
+    font-size: 25px;
+
+    color: #e06a95;
+
+    margin-bottom: 15px;
+}
+
+.letter-content p {
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #8e6b78;
+
+    margin-bottom: 12px;
+}
+
+.letter-content .letter-signature {
+    font-family:
+        'Pacifico',
+        cursive;
+
+    color: #e36a95;
+
+    font-size: 18px;
+
+    margin-top: 18px;
+}
+
+
+/* =========================================
+   CLOSE LETTER
+========================================= */
+
+.close-letter {
+    margin-top: 15px;
+
+    background: transparent;
+
+    border: none;
+
+    color: #c9879e;
+
+    font-family:
+        'DM Sans',
+        sans-serif;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    text-decoration: underline;
+}
+
+.close-letter:hover {
+    color: #e06a95;
+}
+
+
+/* =========================================
+   LETTER ENDING
+========================================= */
+
+.letters-ending {
+    text-align: center;
+
+    max-width: 600px;
+
+    margin:
+        100px auto
+        0;
+
+    padding-bottom: 20px;
+}
+
+.letters-ending img {
+    width: 50px;
+    height: 50px;
+
+    object-fit: contain;
+
+    margin-bottom: 20px;
+
+    animation:
+        heartbeat
+        2.2s
+        ease-in-out
+        infinite;
+}
+
+.letters-ending h2 {
+    font-family:
+        'Pacifico',
+        cursive;
+
+    font-size:
+        clamp(
+            30px,
+            5vw,
+            45px
+        );
+
+    font-weight: 400;
+
+    color: #694552;
+}
+
+.letters-ending h2 span {
+    color: #e96b98;
+}
+
+.letters-ending p {
+    margin-top: 12px;
+
+    color: #957480;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   LETTER PAGE — TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+    .letters-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        max-width: 650px;
+    }
+
+    .letter-card {
+        min-height: 260px;
+    }
+
+    .letters-flower {
+        width: 45px;
+        height: 45px;
+    }
+
+    .letters-flower-right-small {
+        width: 36px;
+        height: 36px;
+    }
+
+}
+
+
+/* =========================================
+   LETTER PAGE — PHONE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .letters-nav {
+        top: 15px;
+
+        left: 15px;
+    }
+
+    .letters-home-button {
+        padding:
+            9px
+            16px;
+
+        font-size: 12px;
+    }
+
+    .letters-hero {
+        min-height: 43vh;
+
+        padding:
+            90px
+            18px
+            50px;
+    }
+
+    .letters-hero h1 {
+        font-size: 43px;
+    }
+
+    .letters-subtitle {
+        font-size: 14px;
+    }
+
+    .letters-hero-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .letters-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 360px;
+
+        gap: 25px;
+    }
+
+    .letters-container {
+        padding:
+            60px
+            15px
+            80px;
+    }
+
+    .letter-card {
+        min-height: 255px;
+
+        padding: 25px;
+    }
+
+    .letters-flower {
+        width: 38px;
+        height: 38px;
+    }
+
+    .letters-flower-right-small {
+        width: 30px;
+        height: 30px;
+    }
+
+    .letters-heart-left {
+        width: 28px;
+        height: 28px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .letter-card {
+        padding: 22px;
+
+        min-height: 245px;
+    }
+
+    .letter-envelope {
+        width: 80px;
+        height: 62px;
+    }
+
+    .letter-envelope::before {
+        border-left-width: 40px;
+        border-right-width: 40px;
+        border-top-width: 31px;
+    }
+
+}
