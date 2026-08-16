@@ -1527,3 +1527,7 @@ footer {
     }
 
 }
+
+.memory-photo img[src*="IMG_0531.jpg"] {
+    transform: rotate(180deg);
+}
