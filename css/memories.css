@@ -1,5 +1,5 @@
 /* =========================================
-   RESET
+   MEMORIES PAGE
 ========================================= */
 
 * {
@@ -25,107 +25,57 @@ img {
 
 
 /* =========================================
-   GENERAL DECORATION
+   HOME BUTTON
 ========================================= */
 
-.corner-icon,
-.section-icon {
+.memory-nav {
     position: absolute;
-    object-fit: contain;
-    pointer-events: none;
+    top: 22px;
+    left: 22px;
+    z-index: 20;
+}
+
+.memory-home-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    background: #ec719b;
+    color: white;
+
+    padding: 10px 20px;
+
+    border-radius: 50px;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+
+    box-shadow:
+        0 7px 18px rgba(236, 113, 155, 0.2);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.memory-home-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 24px rgba(236, 113, 155, 0.28);
 }
 
 
 /* =========================================
-   HOMEPAGE — HERO DECORATIONS
+   HERO
 ========================================= */
 
-.hero-decorations {
-    position: absolute;
-    top: 0;
-    left: 0;
-
+.memory-hero {
     width: 100%;
-    height: 100%;
-
-    pointer-events: none;
-
-    z-index: 3;
-}
-
-.flower-top-left {
-    width: 70px;
-
-    left: 2.5%;
-    top: 5%;
-
-    opacity: 0.72;
-
-    transform: rotate(-18deg);
-}
-
-.flower-top-left-small {
-    width: 45px;
-
-    left: 13%;
-    top: 24%;
-
-    opacity: 0.55;
-
-    transform: rotate(28deg);
-}
-
-.bow-top-right {
-    width: 85px;
-
-    right: 3%;
-    top: 7%;
-
-    opacity: 0.72;
-
-    transform: rotate(12deg);
-}
-
-.heart-left {
-    width: 42px;
-
-    left: 4%;
-    top: 34%;
-
-    opacity: 0.6;
-
-    transform: rotate(-15deg);
-}
-
-.flower-right {
-    width: 62px;
-
-    right: 3%;
-    top: 48%;
-
-    opacity: 0.72;
-
-    transform: rotate(17deg);
-}
-
-.flower-right-small {
-    width: 45px;
-
-    right: 12%;
-    top: 26%;
-
-    opacity: 0.55;
-
-    transform: rotate(-32deg);
-}
-
-
-/* =========================================
-   HOMEPAGE — HERO
-========================================= */
-
-.hero {
-    min-height: 100vh;
+    min-height: 46vh;
 
     display: flex;
     flex-direction: column;
@@ -137,7 +87,7 @@ img {
 
     position: relative;
 
-    padding: 80px 20px;
+    padding: 90px 20px 60px;
 
     background:
         linear-gradient(
@@ -146,313 +96,122 @@ img {
             #fffafd 100%
         );
 
-    z-index: 2;
+    overflow: hidden;
 }
 
-
-/* =========================================
-   HERO HEART
-========================================= */
-
-.hero-heart {
-    width: 78px;
-    height: 78px;
-
-    object-fit: contain;
-
-    margin-bottom: 22px;
-
-    transform: rotate(-7deg);
-
-    animation: heartbeat 2.2s ease-in-out infinite;
-}
-
-
-/* =========================================
-   TEXT
-========================================= */
-
-.eyebrow {
-    font-size: 13px;
-
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
-
-    color: #d76b91;
-
-    margin-bottom: 15px;
-}
-
-.hero h1 {
+.memory-hero h1 {
     font-family: 'Pacifico', cursive;
 
-    font-size: clamp(55px, 8vw, 90px);
+    font-size: clamp(45px, 6vw, 70px);
 
-    line-height: 1.05;
-
-    color: #6b4352;
+    line-height: 1.1;
 
     font-weight: 400;
+
+    color: #6b4352;
 }
 
-.hero h1 span {
+.memory-hero h1 span {
     color: #e96b98;
 }
 
+.memory-subtitle {
+    max-width: 500px;
 
-/* =========================================
-   HERO DECORATION
-========================================= */
+    margin-top: 15px;
 
-.hero-decoration {
-    margin: 28px 0;
-}
-
-.hero-decoration span {
-    color: #ed6c98;
-
-    font-size: 32px;
-
-    display: inline-block;
-
-    transform: rotate(-8deg);
-}
-
-
-/* =========================================
-   SUBTITLE
-========================================= */
-
-.subtitle {
-    font-size: 17px;
+    font-size: 16px;
 
     line-height: 1.7;
 
     color: #876873;
-
-    margin-bottom: 30px;
 }
 
 
 /* =========================================
-   BUTTON
+   HERO DECORATIONS
 ========================================= */
 
-.start-button {
-    border: none;
+.memory-hero-flower {
+    position: absolute;
 
-    background: #ec719b;
+    width: 52px;
+    height: 52px;
 
-    color: white;
+    left: 7%;
+    top: 22%;
 
-    padding: 16px 30px;
+    object-fit: contain;
 
-    border-radius: 50px;
+    opacity: 0.55;
 
-    font-family: 'DM Sans', sans-serif;
+    transform: rotate(-18deg);
 
-    font-size: 15px;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 10px 25px rgba(236, 113, 155, 0.25);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+    pointer-events: none;
 }
 
-.start-button:hover {
-    transform: translateY(-3px);
+.memory-hero-bow {
+    position: absolute;
 
-    box-shadow:
-        0 15px 30px rgba(236, 113, 155, 0.3);
+    width: 58px;
+    height: 58px;
+
+    right: 7%;
+    top: 20%;
+
+    object-fit: contain;
+
+    opacity: 0.55;
+
+    transform: rotate(15deg);
+
+    pointer-events: none;
 }
 
-.start-button span {
-    margin-left: 8px;
-}
+.memory-hero-heart {
+    position: absolute;
 
-.hint {
-    margin-top: 18px;
+    width: 32px;
+    height: 32px;
 
-    font-size: 12px;
+    left: 13%;
+    bottom: 15%;
 
-    color: #b58c9b;
+    object-fit: contain;
 
-    font-style: italic;
+    opacity: 0.45;
+
+    transform: rotate(-12deg);
+
+    pointer-events: none;
 }
 
 
 /* =========================================
-   HOMEPAGE — STORY SECTION
+   MEMORIES SECTION
 ========================================= */
 
-.gift-section {
+.memories-page {
+    width: 100%;
+
     position: relative;
 
-    padding: 110px 20px 90px;
+    padding: 70px 25px 100px;
 
     background: white;
 
     overflow: hidden;
-
-    z-index: 2;
 }
 
 
 /* =========================================
-   STORY DECORATIONS
+   MEMORY GRID
 ========================================= */
 
-.story-decorations {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
+.memory-gallery {
     width: 100%;
-    height: 900px;
 
-    pointer-events: none;
-
-    z-index: 1;
-}
-
-.story-flower-left {
-    width: 70px;
-
-    left: 2.5%;
-    top: 9%;
-
-    opacity: 0.7;
-
-    transform: rotate(22deg);
-}
-
-.story-heart-left {
-    width: 48px;
-
-    left: 6%;
-    top: 32%;
-
-    opacity: 0.58;
-
-    transform: rotate(-18deg);
-}
-
-.story-bow-right {
-    width: 85px;
-
-    right: 3%;
-    top: 11%;
-
-    opacity: 0.7;
-
-    transform: rotate(-11deg);
-}
-
-.story-flower-right {
-    width: 62px;
-
-    right: 3%;
-    top: 43%;
-
-    opacity: 0.7;
-
-    transform: rotate(-28deg);
-}
-
-.story-flower-left-lower {
-    width: 55px;
-
-    left: 3%;
-    top: 70%;
-
-    opacity: 0.6;
-
-    transform: rotate(-32deg);
-}
-
-.story-heart-right {
-    width: 42px;
-
-    right: 7%;
-    top: 73%;
-
-    opacity: 0.55;
-
-    transform: rotate(17deg);
-}
-
-
-/* =========================================
-   SECTION HEADER
-========================================= */
-
-.section-header {
-    max-width: 700px;
-
-    margin: 0 auto 70px;
-
-    text-align: center;
-
-    position: relative;
-
-    z-index: 5;
-}
-
-.little-heart {
-    font-size: 28px;
-
-    color: #ed719b;
-
-    margin-bottom: 20px;
-
-    transform: rotate(-8deg);
-}
-
-.section-header h2,
-.photo-section h2,
-.ending h2 {
-    font-family: 'Pacifico', cursive;
-
-    font-weight: 400;
-
-    font-size: clamp(38px, 5vw, 58px);
-
-    line-height: 1.2;
-
-    color: #694552;
-}
-
-.section-header h2 span,
-.photo-section h2 span,
-.ending h2 span {
-    color: #e96b98;
-}
-
-.section-header > p:last-child {
-    max-width: 570px;
-
-    margin: 20px auto 0;
-
-    line-height: 1.8;
-
-    color: #927481;
-}
-
-
-/* =========================================
-   CARDS
-========================================= */
-
-.card-grid {
-    max-width: 1050px;
+    max-width: 1000px;
 
     margin: 0 auto;
 
@@ -460,500 +219,231 @@ img {
 
     grid-template-columns: repeat(4, 1fr);
 
-    gap: 22px;
+    gap: 20px;
 
     position: relative;
 
     z-index: 5;
 }
 
-.cute-card {
-    position: relative;
 
-    text-decoration: none;
+/* =========================================
+   MEMORY CARD
+========================================= */
 
-    color: inherit;
+.memory-photo {
+    width: 100%;
 
-    background: #fff8fb;
+    background: white;
 
-    border: 1px solid #f6dce7;
+    padding: 7px 7px 13px;
 
-    border-radius: 24px;
+    border-radius: 8px;
 
-    padding: 30px 25px;
+    box-shadow:
+        0 7px 20px rgba(100, 50, 70, 0.10);
 
-    min-height: 245px;
+    overflow: hidden;
 
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
 }
 
-.cute-card:hover {
+
+/* Slight natural rotation */
+
+.memory-photo:nth-child(odd) {
+    transform: rotate(-1.2deg);
+}
+
+.memory-photo:nth-child(even) {
+    transform: rotate(1.2deg);
+}
+
+
+/* Hover */
+
+.memory-photo:hover {
     transform:
-        translateY(-8px)
-        rotate(-1deg);
+        translateY(-6px)
+        rotate(0deg);
 
     box-shadow:
-        0 18px 35px rgba(190, 105, 135, 0.12);
+        0 14px 28px rgba(100, 50, 70, 0.15);
 }
 
 
 /* =========================================
-   CARD EMOJIS
+   MEMORY IMAGE
 ========================================= */
 
-.card-decoration {
-    font-size: 35px;
-
-    margin-bottom: 18px;
-
-    display: inline-block;
-}
-
-.cute-card:nth-child(1) .card-decoration {
-    transform: rotate(-8deg);
-}
-
-.cute-card:nth-child(2) .card-decoration {
-    transform: rotate(7deg);
-}
-
-.cute-card:nth-child(3) .card-decoration {
-    transform: rotate(-5deg);
-}
-
-.cute-card:nth-child(4) .card-decoration {
-    transform: rotate(8deg);
-}
-
-.cute-card h3 {
-    font-family: 'Pacifico', cursive;
-
-    font-size: 25px;
-
-    font-weight: 400;
-
-    color: #704654;
-
-    margin-bottom: 10px;
-}
-
-.cute-card p {
-    font-size: 14px;
-
-    line-height: 1.6;
-
-    color: #987985;
-}
-
-.card-arrow {
-    position: absolute;
-
-    right: 22px;
-    bottom: 20px;
-
-    font-size: 22px;
-
-    color: #e66c97;
-
-    transition: transform 0.2s ease;
-}
-
-.cute-card:hover .card-arrow {
-    transform: translateX(5px);
-}
-
-
-/* =========================================
-   MIDDLE DECORATIONS
-========================================= */
-
-.middle-decorations {
-    position: absolute;
-
-    top: 900px;
-    left: 0;
+.memory-photo img {
+    display: block;
 
     width: 100%;
-    height: 500px;
 
-    pointer-events: none;
+    /*
+       IMPORTANT:
+       Keeps every picture the same size
+       regardless of the original photo ratio.
+    */
 
-    z-index: 1;
-}
-
-.middle-flower-left {
-    width: 70px;
-
-    left: 2.5%;
-    top: 12%;
-
-    opacity: 0.68;
-
-    transform: rotate(-14deg);
-}
-
-.middle-heart-left {
-    width: 48px;
-
-    left: 8%;
-    top: 55%;
-
-    opacity: 0.55;
-
-    transform: rotate(18deg);
-}
-
-.middle-flower-right {
-    width: 62px;
-
-    right: 3%;
-    top: 25%;
-
-    opacity: 0.7;
-
-    transform: rotate(36deg);
-}
-
-.middle-bow-right {
-    width: 85px;
-
-    right: 7%;
-    top: 68%;
-
-    opacity: 0.68;
-
-    transform: rotate(-18deg);
-}
-
-
-/* =========================================
-   FAVORITE MEMORIES
-========================================= */
-
-.photo-section {
-    max-width: 1100px;
-
-    margin: 130px auto 0;
-
-    text-align: center;
-
-    position: relative;
-
-    z-index: 5;
-}
-
-.photo-placeholder {
-    display: flex;
-
-    justify-content: center;
-    align-items: flex-start;
-
-    gap: 35px;
-
-    margin-top: 60px;
-
-    position: relative;
-
-    z-index: 6;
-}
-
-
-/* =========================================
-   PHOTO DECORATIONS
-========================================= */
-
-.photo-decorations {
-    position: absolute;
-
-    top: 80px;
-    left: 0;
-
-    width: 100%;
-    height: 700px;
-
-    pointer-events: none;
-
-    z-index: 1;
-}
-
-.photo-flower-left {
-    width: 70px;
-
-    left: 1%;
-    top: 15%;
-
-    opacity: 0.68;
-
-    transform: rotate(25deg);
-}
-
-.photo-heart-left {
-    width: 48px;
-
-    left: 8%;
-    top: 63%;
-
-    opacity: 0.55;
-
-    transform: rotate(-13deg);
-}
-
-.photo-bow-right {
-    width: 85px;
-
-    right: 3%;
-    top: 18%;
-
-    opacity: 0.7;
-
-    transform: rotate(16deg);
-}
-
-.photo-flower-right {
-    width: 62px;
-
-    right: 1%;
-    top: 52%;
-
-    opacity: 0.7;
-
-    transform: rotate(-39deg);
-}
-
-
-/* =========================================
-   POLAROIDS
-========================================= */
-
-.polaroid {
-    width: 280px;
-
-    flex-shrink: 0;
-
-    background: white;
-
-    padding: 12px 12px 20px;
-
-    box-shadow:
-        0 10px 30px rgba(100, 50, 70, 0.12);
-
-    transform: rotate(-2deg);
-
-    transition:
-        transform 0.25s ease;
-}
-
-.polaroid:hover {
-    transform:
-        translateY(-8px)
-        rotate(0deg);
-}
-
-.polaroid.tilted {
-    transform: rotate(3deg);
-}
-
-.polaroid.tilted:hover {
-    transform:
-        translateY(-8px)
-        rotate(0deg);
-}
-
-
-/* =========================================
-   PHOTO BOX
-========================================= */
-
-.photo-box {
-    width: 100%;
-
-    height: 260px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffe8f0,
-            #fff5f8
-        );
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    overflow: hidden;
-
-    color: #d89aaa;
-}
-
-.photo-box img {
-    width: 100%;
-    height: 100%;
+    height: 175px;
 
     object-fit: cover;
 
-    display: block;
+    border-radius: 5px;
 }
 
-.polaroid-caption {
+
+/* =========================================
+   CAPTION
+========================================= */
+
+.memory-photo p {
+    margin: 9px 3px 0;
+
     font-family: 'Pacifico', cursive;
 
-    font-size: 17px;
+    font-size: 13px;
+
+    line-height: 1.3;
 
     color: #815363;
 
-    margin-top: 15px;
+    text-align: center;
 }
 
 
 /* =========================================
-   ENDING DECORATIONS
+   FLIPPED PHOTOS
 ========================================= */
 
-.ending-decorations {
+/*
+   These are the photos you told me
+   were upside down.
+
+   IMG_0238
+   IMG_0531
+*/
+
+.memory-photo img[src*="IMG_0238"] {
+    transform: rotate(180deg);
+}
+
+.memory-photo img[src*="IMG_0531"] {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================
+   DECORATIONS AROUND GALLERY
+========================================= */
+
+.memories-page::before {
+    content: "";
+
     position: absolute;
 
-    top: 1950px;
-    left: 0;
+    width: 45px;
+    height: 45px;
 
-    width: 100%;
-    height: 650px;
+    left: 2%;
+    top: 12%;
+
+    background-image:
+        url("../assets/icons/Flower1.png");
+
+    background-size: contain;
+
+    background-repeat: no-repeat;
+
+    opacity: 0.35;
+
+    transform: rotate(-20deg);
 
     pointer-events: none;
-
-    z-index: 1;
 }
 
-.ending-flower-left {
-    width: 70px;
+.memories-page::after {
+    content: "";
 
-    left: 3%;
-    top: 18%;
+    position: absolute;
 
-    opacity: 0.68;
+    width: 50px;
+    height: 50px;
 
-    transform: rotate(-25deg);
-}
+    right: 2%;
+    top: 45%;
 
-.ending-heart-left {
-    width: 48px;
+    background-image:
+        url("../assets/icons/Flower2.png");
 
-    left: 8%;
-    top: 67%;
+    background-size: contain;
 
-    opacity: 0.55;
+    background-repeat: no-repeat;
 
-    transform: rotate(14deg);
-}
+    opacity: 0.35;
 
-.ending-bow-right {
-    width: 85px;
+    transform: rotate(28deg);
 
-    right: 3%;
-    top: 14%;
-
-    opacity: 0.7;
-
-    transform: rotate(17deg);
-}
-
-.ending-flower-right {
-    width: 62px;
-
-    right: 4%;
-    top: 48%;
-
-    opacity: 0.7;
-
-    transform: rotate(-42deg);
-}
-
-.ending-flower-right-small {
-    width: 45px;
-
-    right: 13%;
-    top: 75%;
-
-    opacity: 0.55;
-
-    transform: rotate(29deg);
+    pointer-events: none;
 }
 
 
 /* =========================================
-   HOMEPAGE ENDING
+   ENDING
 ========================================= */
 
-.ending {
+.memory-ending {
+    width: 100%;
+
+    max-width: 600px;
+
+    margin: 90px auto 0;
+
     text-align: center;
-
-    margin-top: 140px;
-
-    padding-bottom: 50px;
 
     position: relative;
 
     z-index: 5;
 }
 
-.ending-heart {
-    width: 58px;
-    height: 58px;
+.memory-ending > img {
+    width: 48px;
+    height: 48px;
 
     object-fit: contain;
 
-    margin: 0 auto 30px;
-
     display: block;
 
-    transform: rotate(10deg);
-
-    animation: heartbeat 2.2s ease-in-out infinite;
-}
-
-.ending h2 {
-    max-width: 650px;
-
     margin: 0 auto 20px;
+
+    animation:
+        heartbeat 2.2s ease-in-out infinite;
 }
 
-.ending > p {
-    color: #957480;
-
-    font-size: 16px;
-}
-
-.signature {
-    margin-top: 10px;
-
+.memory-ending h2 {
     font-family: 'Pacifico', cursive;
 
-    color: #e36a95 !important;
+    font-weight: 400;
 
-    font-size: 20px !important;
+    font-size: clamp(30px, 4vw, 45px);
+
+    line-height: 1.2;
+
+    color: #694552;
+
+    margin-bottom: 12px;
 }
 
+.memory-ending p {
+    color: #957480;
 
-/* =========================================
-   FOOTER
-========================================= */
+    font-size: 15px;
 
-footer {
-    text-align: center;
-
-    padding: 30px 20px;
-
-    background: #fff5f9;
-
-    color: #b58a9a;
-
-    font-size: 12px;
-
-    position: relative;
-
-    z-index: 10;
+    margin-bottom: 20px;
 }
 
 
@@ -974,5 +464,221 @@ footer {
     100% {
         transform: scale(1);
     }
+}
 
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .memory-gallery {
+        max-width: 720px;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 18px;
+    }
+
+    .memory-photo img {
+        height: 175px;
+    }
+
+    .memory-hero-flower {
+        width: 45px;
+        height: 45px;
+    }
+
+    .memory-hero-bow {
+        width: 50px;
+        height: 50px;
+    }
+
+    .memory-hero-heart {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+
+/* =========================================
+   SMALL TABLET
+========================================= */
+
+@media (max-width: 700px) {
+
+    .memory-gallery {
+        max-width: 520px;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 16px;
+    }
+
+    .memory-photo img {
+        height: 165px;
+    }
+
+    .memories-page {
+        padding:
+            60px
+            18px
+            90px;
+    }
+
+    .memory-hero {
+        min-height: 43vh;
+
+        padding:
+            85px
+            18px
+            55px;
+    }
+
+    .memory-hero h1 {
+        font-size: 48px;
+    }
+
+    .memory-subtitle {
+        font-size: 14px;
+    }
+
+    .memory-hero-flower {
+        width: 40px;
+        height: 40px;
+
+        left: 3%;
+    }
+
+    .memory-hero-bow {
+        width: 45px;
+        height: 45px;
+
+        right: 3%;
+    }
+
+    .memory-hero-heart {
+        width: 26px;
+        height: 26px;
+
+        left: 7%;
+    }
+}
+
+
+/* =========================================
+   PHONE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .memory-nav {
+        top: 15px;
+        left: 15px;
+    }
+
+    .memory-home-button {
+        padding: 9px 16px;
+
+        font-size: 12px;
+    }
+
+    .memory-hero {
+        min-height: 42vh;
+
+        padding:
+            80px
+            18px
+            50px;
+    }
+
+    .memory-hero h1 {
+        font-size: 43px;
+    }
+
+    .memory-subtitle {
+        font-size: 14px;
+    }
+
+    .memories-page {
+        padding:
+            50px
+            12px
+            80px;
+    }
+
+    .memory-gallery {
+        max-width: 390px;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 13px;
+    }
+
+    .memory-photo {
+        padding:
+            5px
+            5px
+            10px;
+
+        border-radius: 7px;
+    }
+
+    .memory-photo img {
+        height: 145px;
+
+        border-radius: 4px;
+    }
+
+    .memory-photo p {
+        font-size: 12px;
+
+        margin-top: 7px;
+    }
+
+    .memories-page::before {
+        width: 30px;
+        height: 30px;
+
+        left: 1%;
+    }
+
+    .memories-page::after {
+        width: 32px;
+        height: 32px;
+
+        right: 1%;
+    }
+
+    .memory-ending {
+        margin-top: 70px;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+
+    .memory-gallery {
+        gap: 9px;
+    }
+
+    .memory-photo img {
+        height: 125px;
+    }
+
+    .memory-photo p {
+        font-size: 11px;
+    }
+
+    .memory-hero h1 {
+        font-size: 38px;
+    }
 }
