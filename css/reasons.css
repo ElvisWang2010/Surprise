@@ -2,28 +2,42 @@
    REASONS PAGE
 ========================================= */
 
-.reasons-page {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
 
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'DM Sans', sans-serif;
+
+    background: #fff8fb;
+
+    color: #5a3d48;
+
+    overflow-x: hidden;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.reasons-page {
     min-height: 100vh;
 
-    font-family: "DM Sans", sans-serif;
-
-    background:
-        radial-gradient(
-            circle at top left,
-            rgba(255, 220, 232, 0.8),
-            transparent 35%
-        ),
-        radial-gradient(
-            circle at bottom right,
-            rgba(255, 230, 240, 0.8),
-            transparent 35%
-        ),
-        #fff8fb;
-
-    color: #4d3440;
+    background: #fff8fb;
 
     overflow-x: hidden;
 }
@@ -31,16 +45,16 @@
 
 /* =========================================
    HOME BUTTON
-   MATCHES THE OTHER PAGES
+   SAME STYLE FAMILY AS THE OTHER PAGES
 ========================================= */
 
 .memory-nav {
     position: absolute;
 
-    top: 22px;
-    left: 22px;
+    top: 24px;
+    left: 24px;
 
-    z-index: 100;
+    z-index: 20;
 }
 
 
@@ -56,22 +70,22 @@
 
     color: white;
 
-    padding: 10px 20px;
+    padding: 10px 19px;
 
     border-radius: 50px;
 
-    font-family: "DM Sans", sans-serif;
+    font-family: 'DM Sans', sans-serif;
 
     font-size: 13px;
 
     font-weight: 600;
 
     box-shadow:
-        0 7px 18px rgba(
+        0 8px 20px rgba(
             236,
             113,
             155,
-            0.2
+            0.22
         );
 
     transition:
@@ -84,7 +98,7 @@
     transform: translateY(-3px);
 
     box-shadow:
-        0 12px 24px rgba(
+        0 12px 25px rgba(
             236,
             113,
             155,
@@ -100,82 +114,98 @@
 .reasons-hero {
     position: relative;
 
-    max-width: 1000px;
-
-    margin: 0 auto;
+    text-align: center;
 
     padding:
-        55px
-        25px
-        70px;
+        100px
+        20px
+        60px;
 
-    text-align: center;
+    background:
+        linear-gradient(
+            180deg,
+            #fff5f9 0%,
+            #fffafd 100%
+        );
+
+    overflow: hidden;
+}
+
+
+.reasons-hero h1 {
+    font-family: 'Pacifico', cursive;
+
+    font-size:
+        clamp(
+            42px,
+            6vw,
+            64px
+        );
+
+    line-height: 1.15;
+
+    font-weight: 400;
+
+    color: #6b4352;
+}
+
+
+.reasons-hero h1 span {
+    color: #e96b98;
 }
 
 
 .eyebrow {
-    margin: 0 0 12px;
-
-    font-size: 14px;
+    font-size: 12px;
 
     letter-spacing: 3px;
 
     text-transform: uppercase;
 
-    color: #c87b95;
-}
+    color: #d76b91;
 
-
-.reasons-hero h1 {
-    margin: 0;
-
-    font-family: "Pacifico", cursive;
-
-    font-size: clamp(48px, 7vw, 78px);
-
-    line-height: 1.1;
-
-    font-weight: 400;
-
-    color: #633f4d;
-}
-
-
-.reasons-hero h1 span {
-    display: block;
-
-    color: #d66f93;
+    margin-bottom: 14px;
 }
 
 
 .reasons-subtitle {
+    max-width: 550px;
+
     margin:
-        18px
+        15px
         auto
-        25px;
+        0;
 
-    max-width: 520px;
+    color: #876873;
 
-    font-size: 16px;
+    font-size: 15px;
 
-    color: #86616f;
+    line-height: 1.7;
 }
 
 
+/* =========================================
+   OPEN ALL BUTTON
+========================================= */
+
 .open-all-button {
+    margin-top: 24px;
+
     border: none;
 
-    padding: 13px 25px;
-
-    border-radius: 30px;
-
-    background: #df83a2;
+    background: #ec719b;
 
     color: white;
 
-    font-family: "DM Sans", sans-serif;
+    padding:
+        12px
+        25px;
 
-    font-size: 14px;
+    border-radius: 50px;
+
+    font-family: 'DM Sans', sans-serif;
+
+    font-size: 13px;
 
     font-weight: 600;
 
@@ -183,9 +213,9 @@
 
     box-shadow:
         0 8px 20px rgba(
-            205,
-            105,
-            140,
+            236,
+            113,
+            155,
             0.22
         );
 
@@ -196,149 +226,197 @@
 
 
 .open-all-button:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 
     box-shadow:
         0 12px 25px rgba(
-            205,
-            105,
-            140,
-            0.3
+            236,
+            113,
+            155,
+            0.28
         );
 }
 
 
 /* =========================================
-   HERO DECORATIONS
+   DECORATIONS
 ========================================= */
 
-.reasons-flower,
-.reasons-bow,
-.reasons-heart {
+.reasons-flower {
     position: absolute;
+
+    width: 40px;
+    height: 40px;
+
+    object-fit: contain;
+
+    opacity: 0.45;
 
     pointer-events: none;
 
-    user-select: none;
-}
-
-
-.reasons-flower {
-    width: 95px;
-
-    opacity: 0.85;
+    z-index: 1;
 }
 
 
 .reasons-flower-left {
-    left: 0;
-    bottom: 30px;
+    left: 4%;
+    top: 18%;
 
-    transform: rotate(-12deg);
+    transform: rotate(-18deg);
 }
 
 
 .reasons-flower-right {
-    right: 0;
-    top: 30px;
+    right: 4%;
+    top: 55%;
 
-    transform: rotate(15deg);
+    transform: rotate(28deg);
 }
 
 
 .reasons-bow {
-    width: 70px;
+    position: absolute;
 
-    left: 14%;
-    top: 40px;
+    width: 45px;
+    height: 45px;
 
-    transform: rotate(-12deg);
+    right: 9%;
+    top: 17%;
+
+    object-fit: contain;
+
+    opacity: 0.42;
+
+    transform: rotate(15deg);
+
+    pointer-events: none;
+
+    z-index: 1;
 }
 
 
 .reasons-heart {
-    width: 65px;
+    position: absolute;
 
-    right: 15%;
-    bottom: 35px;
+    width: 28px;
+    height: 28px;
 
-    transform: rotate(12deg);
+    left: 9%;
+    top: 58%;
+
+    object-fit: contain;
+
+    opacity: 0.42;
+
+    transform: rotate(-12deg);
+
+    pointer-events: none;
+
+    z-index: 1;
 }
 
 
 /* =========================================
-   REASONS CONTAINER
+   REASONS SECTION
 ========================================= */
 
 .reasons-container {
-    width: min(
-        1100px,
-        calc(100% - 40px)
-    );
+    padding:
+        60px
+        20px
+        80px;
 
-    margin: 0 auto;
+    background: white;
 }
 
 
-/* =========================================
-   GRID
-========================================= */
-
 .reasons-grid {
+    width: 100%;
+
+    max-width: 820px;
+
+    margin: 0 auto;
+
     display: grid;
 
     grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+        repeat(
+            3,
+            1fr
+        );
 
-    gap: 25px;
+    gap: 18px;
+
+    /*
+       IMPORTANT:
+
+       This makes the grid row expand when
+       Reason 6 becomes taller.
+
+       The card itself starts at the exact
+       same top position and grows downward.
+    */
 
     align-items: start;
 }
 
 
 /* =========================================
-   NORMAL CARD
+   NORMAL REASON CARD
 ========================================= */
 
 .reason-card {
     width: 100%;
 
-    height: 330px;
+    height: 220px;
 
-    perspective: 1200px;
+    perspective: 1000px;
 
     cursor: pointer;
 
     position: relative;
 
-    transition:
-        z-index 0s linear 0.35s;
+    /*
+       Prevents the card from visually
+       affecting neighboring cards while
+       it is flipping.
+    */
+
+    z-index: 1;
 }
 
+
+/* =========================================
+   CARD INNER
+========================================= */
 
 .reason-card-inner {
     position: relative;
 
     width: 100%;
+
     height: 100%;
 
     transform-style: preserve-3d;
 
     transition:
-        transform 0.7s cubic-bezier(
+        transform
+        0.65s
+        cubic-bezier(
+            0.4,
             0.2,
-            0.75,
-            0.25,
+            0.2,
             1
         );
 }
 
 
-.reason-card.flipped {
-    z-index: 50;
+/* =========================================
+   FLIPPED
+========================================= */
 
-    transition:
-        z-index 0s;
+.reason-card.flipped {
+    z-index: 10;
 }
 
 
@@ -356,26 +434,41 @@
 .reason-back {
     position: absolute;
 
-    inset: 0;
+    top: 0;
+    left: 0;
 
     width: 100%;
     height: 100%;
 
-    box-sizing: border-box;
+    padding:
+        22px
+        18px;
 
-    border-radius: 28px;
+    border-radius: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
 
     backface-visibility: hidden;
+
     -webkit-backface-visibility: hidden;
 
-    overflow: hidden;
+    border:
+        1px solid #f6dce7;
 
     box-shadow:
-        0 15px 40px rgba(
+        0 8px 22px rgba(
             190,
             105,
             135,
-            0.13
+            0.09
         );
 }
 
@@ -385,80 +478,70 @@
 ========================================= */
 
 .reason-front {
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 30px;
-
-    text-align: center;
-
     background:
         linear-gradient(
             145deg,
-            #ffffff,
-            #fff1f6
+            #fff8fb,
+            #fffafd
         );
+}
 
-    border:
-        1px solid rgba(
-            222,
-            141,
-            169,
-            0.18
+
+.reason-front:hover {
+    box-shadow:
+        0 12px 27px rgba(
+            190,
+            105,
+            135,
+            0.14
         );
 }
 
 
 .reason-icon {
-    width: 62px;
-    height: 62px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    margin-bottom: 18px;
-
-    border-radius: 50%;
-
-    background: #ffe1eb;
-
     font-size: 28px;
 
-    box-shadow:
-        0 8px 20px rgba(
-            210,
-            115,
-            145,
-            0.12
-        );
+    line-height: 1;
+
+    margin-bottom: 13px;
+
+    display: inline-block;
+
+    transition:
+        transform
+        0.3s ease;
+}
+
+
+.reason-card:hover
+.reason-icon {
+    transform:
+        scale(1.06)
+        rotate(-5deg);
 }
 
 
 .reason-front h2 {
-    margin: 0;
+    font-family: 'Pacifico', cursive;
 
-    font-family: "Pacifico", cursive;
+    font-size: 20px;
 
-    font-size: 26px;
+    line-height: 1.25;
 
     font-weight: 400;
 
-    color: #704352;
+    color: #704654;
 }
 
 
 .reason-front p {
-    margin: 10px 0 0;
+    margin-top: 8px;
 
-    font-size: 13px;
+    font-size: 11px;
 
-    color: #a37483;
+    line-height: 1.5;
+
+    color: #c18a9c;
 }
 
 
@@ -467,104 +550,99 @@
 ========================================= */
 
 .reason-back {
-    transform: rotateY(180deg);
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 35px;
-
-    text-align: center;
-
     background:
         linear-gradient(
             145deg,
-            #ffe7ef,
-            #fff7fa
+            #fff5f9,
+            #ffeef5
         );
 
-    border:
-        1px solid rgba(
-            214,
-            118,
-            150,
-            0.2
-        );
+    transform: rotateY(180deg);
 }
 
 
 .reason-number {
-    margin-bottom: 10px;
-
-    font-size: 11px;
-
-    font-weight: 600;
+    font-size: 10px;
 
     letter-spacing: 2px;
 
-    color: #c97996;
+    color: #d76b91;
+
+    margin-bottom: 8px;
 }
 
 
 .reason-back h2 {
-    margin: 0 0 14px;
+    font-family: 'Pacifico', cursive;
 
-    font-family: "Pacifico", cursive;
+    font-size: 22px;
 
-    font-size: 27px;
+    line-height: 1.2;
 
     font-weight: 400;
 
-    color: #704352;
+    color: #e06a95;
+
+    margin-bottom: 10px;
 }
 
 
 .reason-back p {
-    margin: 0;
+    width: 100%;
 
-    max-width: 400px;
+    max-width: 210px;
 
-    font-size: 14px;
+    font-size: 12px;
 
-    line-height: 1.7;
+    line-height: 1.55;
 
-    color: #805d69;
+    color: #8e6b78;
 }
 
 
 /* =========================================
    REASON 6
-   CLOSED SIZE IS EXACTLY 330px
+   CLOSED STATE
 ========================================= */
 
-.reason-card-six {
-    height: 330px;
-
-    position: relative;
-
+.reason-six {
     /*
-       IMPORTANT:
-       The grid position does not change.
-       The card grows downward from its
-       original top edge.
+       THIS IS THE SAME HEIGHT AS EVERY
+       OTHER CARD ON DESKTOP.
     */
 
-    transform-origin: top center;
+    height: 220px;
+
+    /*
+       The important part:
+
+       The top of this element stays fixed.
+       When its height changes, the extra
+       space is added below it.
+    */
+
+    align-self: start;
 }
 
 
 /* =========================================
-   REASON 6 OPEN
+   REASON 6
+   OPEN STATE
 ========================================= */
 
-.reason-card-six.flipped {
+.reason-six.flipped {
     /*
-       This is the total height when opened.
-       It gets taller downward.
+       CLOSED:
+       220px
+
+       OPEN:
+       650px
+
+       Because the element is not translated,
+       its TOP DOES NOT MOVE.
+
+       The additional 430px is added
+       underneath the original card.
     */
 
     height: 650px;
@@ -572,43 +650,47 @@
 
 
 /*
-   The actual inner card also becomes taller.
+   The inner wrapper MUST also become
+   the new height.
 
-   Because the top edge stays in exactly
-   the same place, the extra 320px is
-   added underneath.
+   Otherwise the pink back would remain
+   220px tall.
 */
 
-.reason-card-six.flipped
+.reason-six.flipped
 .reason-card-inner {
     height: 650px;
 }
 
 
 /* =========================================
-   REASON 6 BACKING
+   REASON 6 BACK
 ========================================= */
 
 .reason-six-back {
     /*
-       The pink background belongs to the
-       entire back itself, so it stretches
-       with the card.
+       This is the actual pink backing.
+
+       Because it has height: 100%, it follows
+       the expanded 650px card.
     */
 
-    justify-content: flex-start;
+    height: 100%;
+
+    justify-content:
+        flex-start;
 
     padding:
-        30px
-        30px
-        25px;
+        25px
+        24px
+        22px;
 
     overflow: hidden;
 
     background:
         linear-gradient(
             145deg,
-            #ffe0eb,
+            #ffe5ee,
             #fff3f7
         );
 }
@@ -620,6 +702,7 @@
 
 .reason-six-content {
     width: 100%;
+
     height: 100%;
 
     min-height: 0;
@@ -633,134 +716,83 @@
 
 
 .reason-six-intro {
-    max-width: 600px !important;
+    width: 100%;
+
+    max-width: 100% !important;
 
     margin:
-        2px
         0
-        5px !important;
+        0
+        8px;
 }
 
 
 /* =========================================
-   EXTRA REASONS SCROLLING AREA
+   THE BIG LIST
 ========================================= */
 
-.extra-reasons {
+.tiny-reasons {
     width: 100%;
 
     flex: 1;
 
     min-height: 0;
 
-    margin-top: 15px;
+    margin-top: 10px;
 
     padding:
-        8px
-        15px
         10px
-        5px;
-
-    box-sizing: border-box;
+        13px;
 
     overflow-y: auto;
 
     text-align: left;
 
-    border-radius: 18px;
+    border-radius: 15px;
 
     background:
         rgba(
             255,
             255,
             255,
-            0.42
+            0.48
         );
-}
 
-
-.extra-reasons p {
-    margin: 0 !important;
-
-    padding: 6px 4px;
-
-    max-width: none !important;
-
-    font-size: 14px;
-
-    line-height: 1.45;
-
-    color: #805d69;
-}
-
-
-.extra-reasons p:hover {
-    color: #c05e82;
+    border:
+        1px solid rgba(
+            215,
+            107,
+            145,
+            0.12
+        );
 }
 
 
 /* =========================================
-   SCROLLBAR
+   LIST ITEMS
 ========================================= */
 
-.extra-reasons::-webkit-scrollbar {
-    width: 7px;
+.tiny-reasons p {
+    width: 100%;
+
+    max-width: none;
+
+    margin: 0;
+
+    padding:
+        5px
+        2px;
+
+    font-size: 12px;
+
+    line-height: 1.45;
+
+    color: #8e6b78;
 }
 
 
-.extra-reasons::-webkit-scrollbar-track {
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.5
-        );
-
-    border-radius: 20px;
-}
-
-
-.extra-reasons::-webkit-scrollbar-thumb {
-    background:
-        rgba(
-            202,
-            111,
-            143,
-            0.45
-        );
-
-    border-radius: 20px;
-}
-
-
-.extra-reasons::-webkit-scrollbar-thumb:hover {
-    background:
-        rgba(
-            202,
-            111,
-            143,
-            0.7
-        );
-}
-
-
-.extra-reasons {
-    scrollbar-width: thin;
-
-    scrollbar-color:
-        rgba(
-            202,
-            111,
-            143,
-            0.45
-        )
-        rgba(
-            255,
-            255,
-            255,
-            0.5
-        );
+.tiny-reasons p:hover {
+    color: #d76b91;
 }
 
 
@@ -768,26 +800,118 @@
    FINAL REASON
 ========================================= */
 
-.extra-reasons .final-reason {
-    margin-top: 12px !important;
+.tiny-reasons
+.final-reason {
+    margin-top: 12px;
 
-    padding-top: 15px;
+    padding:
+        14px
+        5px
+        6px;
 
     border-top:
         1px solid rgba(
-            202,
-            111,
-            143,
-            0.18
+            215,
+            107,
+            145,
+            0.2
         );
 
     text-align: center;
 
-    font-family: "Pacifico", cursive;
+    font-family: 'Pacifico', cursive;
 
-    font-size: 16px;
+    font-size: 15px;
 
-    color: #c05e82;
+    color: #e06a95;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.tiny-reasons::-webkit-scrollbar {
+    width: 7px;
+}
+
+
+.tiny-reasons::-webkit-scrollbar-track {
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.55
+        );
+
+    border-radius: 20px;
+}
+
+
+.tiny-reasons::-webkit-scrollbar-thumb {
+    background:
+        rgba(
+            215,
+            107,
+            145,
+            0.45
+        );
+
+    border-radius: 20px;
+}
+
+
+.tiny-reasons::-webkit-scrollbar-thumb:hover {
+    background:
+        rgba(
+            215,
+            107,
+            145,
+            0.65
+        );
+}
+
+
+/* Firefox */
+
+.tiny-reasons {
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(
+            215,
+            107,
+            145,
+            0.45
+        )
+        rgba(
+            255,
+            255,
+            255,
+            0.55
+        );
+}
+
+
+/* =========================================
+   LAST SURPRISE CARD
+========================================= */
+
+.reason-card:last-child
+.reason-front {
+    background:
+        linear-gradient(
+            145deg,
+            #fff1f6,
+            #fff8fb
+        );
+}
+
+
+.reason-card:last-child
+.reason-front h2 {
+    color: #e06a95;
 }
 
 
@@ -796,64 +920,78 @@
 ========================================= */
 
 .reasons-ending {
+    text-align: center;
+
     padding:
-        100px
+        65px
         20px
         80px;
 
-    text-align: center;
+    background: #fff8fb;
 }
 
 
 .reasons-ending img {
-    width: 65px;
+    width: 40px;
+    height: 40px;
+
+    object-fit: contain;
 
     margin-bottom: 15px;
+
+    animation:
+        heartbeat
+        2.2s
+        ease-in-out
+        infinite;
 }
 
 
 .reasons-ending h2 {
-    margin: 0;
+    font-family: 'Pacifico', cursive;
 
-    font-family: "Pacifico", cursive;
+    font-size: 30px;
 
-    font-size: 35px;
+    line-height: 1.25;
 
     font-weight: 400;
 
-    color: #704352;
+    color: #694552;
 }
 
 
 .reasons-ending h2 span {
-    color: #d66f93;
+    color: #e96b98;
 }
 
 
 .reasons-ending p {
-    margin-top: 12px;
+    margin-top: 8px;
 
-    font-size: 14px;
+    color: #957480;
 
-    color: #96717e;
+    font-size: 13px;
 }
 
 
 /* =========================================
-   FOOTER
+   HEARTBEAT
 ========================================= */
 
-footer {
-    padding:
-        25px
-        20px
-        40px;
+@keyframes heartbeat {
 
-    text-align: center;
+    0% {
+        transform: scale(1);
+    }
 
-    font-size: 12px;
+    50% {
+        transform: scale(1.07);
+    }
 
-    color: #b08391;
+    100% {
+        transform: scale(1);
+    }
+
 }
 
 
@@ -861,30 +999,96 @@ footer {
    TABLET
 ========================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 850px) {
+
+    .reasons-hero {
+        padding:
+            90px
+            20px
+            55px;
+    }
+
 
     .reasons-grid {
+        max-width: 600px;
+
         grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+            repeat(
+                2,
+                1fr
+            );
+
+        gap: 18px;
+    }
+
+
+    .reason-card {
+        height: 215px;
+    }
+
+
+    /*
+       Reason 6 must use the same closed
+       height as the other tablet cards.
+    */
+
+    .reason-six {
+        height: 215px;
+    }
+
+
+    /*
+       When opened it still grows DOWN.
+    */
+
+    .reason-six.flipped {
+        height: 600px;
+    }
+
+
+    .reason-six.flipped
+    .reason-card-inner {
+        height: 600px;
+    }
+
+
+    .reasons-flower {
+        width: 34px;
+        height: 34px;
+    }
+
+
+    .reasons-bow {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .reasons-heart {
+        width: 25px;
+        height: 25px;
     }
 
 }
 
 
 /* =========================================
-   PHONE
+   MOBILE
 ========================================= */
 
 @media (max-width: 600px) {
 
     .memory-nav {
-        top: 15px;
-        left: 15px;
+        top: 18px;
+
+        left: 18px;
     }
 
 
     .memory-home-button {
-        padding: 9px 16px;
+        padding:
+            9px
+            16px;
 
         font-size: 12px;
     }
@@ -892,129 +1096,289 @@ footer {
 
     .reasons-hero {
         padding:
-            40px
-            20px
-            55px;
+            80px
+            18px
+            50px;
     }
 
 
     .reasons-hero h1 {
-        font-size: 48px;
+        font-size: 42px;
+    }
+
+
+    .reasons-subtitle {
+        font-size: 14px;
+
+        max-width: 330px;
     }
 
 
     .reasons-container {
-        width:
-            min(
-                calc(100% - 30px),
-                500px
-            );
+        padding:
+            45px
+            18px
+            65px;
     }
 
 
     .reasons-grid {
+        max-width: 330px;
+
         grid-template-columns: 1fr;
 
-        gap: 20px;
+        gap: 16px;
+    }
+
+
+    .reason-card {
+        height: 205px;
     }
 
 
     /*
-       CLOSED REASON 6
-       Same exact size as the others.
+       Closed Reason 6 is exactly the
+       same size as the other cards.
     */
 
-    .reason-card-six {
-        height: 330px;
+    .reason-six {
+        height: 205px;
     }
 
 
     /*
-       OPEN REASON 6
-       Grows downward.
+       Open Reason 6.
+
+       TOP STAYS FIXED.
+
+       EXTRA HEIGHT GOES DOWN.
     */
 
-    .reason-card-six.flipped {
-        height: 600px;
+    .reason-six.flipped {
+        height: 570px;
     }
 
 
-    .reason-card-six.flipped
+    .reason-six.flipped
     .reason-card-inner {
-        height: 600px;
+        height: 570px;
+    }
+
+
+    .reason-front,
+    .reason-back {
+        padding:
+            20px
+            16px;
+
+        border-radius: 19px;
     }
 
 
     .reason-six-back {
         padding:
-            25px
-            20px;
+            20px
+            16px;
     }
 
 
-    .reason-back {
-        padding: 25px;
+    .reason-icon {
+        font-size: 27px;
+
+        margin-bottom: 11px;
     }
 
 
     .reason-front h2 {
-        font-size: 24px;
+        font-size: 20px;
     }
 
 
     .reason-back h2 {
-        font-size: 24px;
+        font-size: 21px;
     }
 
 
-    .extra-reasons {
-        padding-right: 10px;
+    .reason-back p {
+        max-width: 250px;
+
+        font-size: 12px;
     }
 
 
-    .extra-reasons p {
-        font-size: 13px;
+    .tiny-reasons {
+        margin-top: 8px;
 
-        padding: 6px 2px;
+        padding:
+            8px
+            10px;
+    }
+
+
+    .tiny-reasons p {
+        font-size: 12px;
+
+        padding:
+            5px
+            2px;
     }
 
 
     .reasons-flower {
-        width: 75px;
-    }
-
-
-    .reasons-flower-left {
-        left: -15px;
-    }
-
-
-    .reasons-flower-right {
-        right: -15px;
+        width: 30px;
+        height: 30px;
     }
 
 
     .reasons-bow {
-        width: 50px;
-
-        left: 5%;
+        width: 35px;
+        height: 35px;
     }
 
 
     .reasons-heart {
-        width: 50px;
-
-        right: 5%;
+        width: 22px;
+        height: 22px;
     }
 
 
     .reasons-ending {
-        padding-top: 70px;
+        padding:
+            55px
+            18px
+            70px;
+    }
+
+
+    .reasons-ending img {
+        width: 35px;
+        height: 35px;
     }
 
 
     .reasons-ending h2 {
-        font-size: 29px;
+        font-size: 27px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 400px) {
+
+    .reasons-hero {
+        padding:
+            70px
+            15px
+            45px;
+    }
+
+
+    .reasons-hero h1 {
+        font-size: 38px;
+    }
+
+
+    .reasons-grid {
+        max-width: 290px;
+    }
+
+
+    .reason-card {
+        height: 195px;
+    }
+
+
+    .reason-six {
+        height: 195px;
+    }
+
+
+    /*
+       Expanded version still grows
+       downward from the same top.
+    */
+
+    .reason-six.flipped {
+        height: 540px;
+    }
+
+
+    .reason-six.flipped
+    .reason-card-inner {
+        height: 540px;
+    }
+
+
+    .reason-front,
+    .reason-back {
+        padding:
+            17px
+            14px;
+
+        border-radius: 18px;
+    }
+
+
+    .reason-six-back {
+        padding:
+            17px
+            14px;
+    }
+
+
+    .reason-icon {
+        font-size: 25px;
+    }
+
+
+    .reason-front h2 {
+        font-size: 18px;
+    }
+
+
+    .reason-front p {
+        font-size: 10px;
+    }
+
+
+    .reason-back h2 {
+        font-size: 19px;
+    }
+
+
+    .reason-back p {
+        font-size: 11px;
+
+        line-height: 1.5;
+    }
+
+
+    .tiny-reasons p {
+        font-size: 11px;
+    }
+
+
+    .reasons-flower-left {
+        left: 2%;
+    }
+
+
+    .reasons-flower-right {
+        right: 2%;
+    }
+
+
+    .reasons-bow {
+        right: 4%;
+    }
+
+
+    .reasons-heart {
+        left: 4%;
     }
 
 }
