@@ -25,7 +25,8 @@ function openGift() {
 
 document.addEventListener("click", function(event) {
 
-    // Don't create hearts when clicking buttons or links
+    // Don't create a heart when clicking
+    // buttons or links.
     if (
         event.target.closest("button") ||
         event.target.closest("a")
@@ -66,7 +67,7 @@ function createHeart(x, y) {
     document.body.appendChild(heart);
 
 
-    // Animate upward
+    // Move the heart upward
     setTimeout(function() {
 
         heart.style.transform =
@@ -77,7 +78,7 @@ function createHeart(x, y) {
     }, 50);
 
 
-    // Remove after animation
+    // Remove the heart
     setTimeout(function() {
 
         heart.remove();
@@ -119,6 +120,24 @@ function openAllReasons() {
 
 
 /* =========================================
+   CLOSE ALL REASONS
+========================================= */
+
+function closeAllReasons() {
+
+    const cards =
+        document.querySelectorAll(".reason-card");
+
+    cards.forEach(function(card) {
+
+        card.classList.remove("flipped");
+
+    });
+
+}
+
+
+/* =========================================
    LETTERS
 ========================================= */
 
@@ -150,5 +169,23 @@ function closeLetter(button) {
     if (!wrapper) return;
 
     wrapper.classList.remove("opened");
+
+}
+
+
+/* =========================================
+   LETTER CARD TOGGLE
+========================================= */
+
+function toggleLetter(button) {
+
+    if (!button) return;
+
+    const card =
+        button.closest(".letter-card");
+
+    if (!card) return;
+
+    card.classList.toggle("opened");
 
 }
