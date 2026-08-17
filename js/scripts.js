@@ -7,13 +7,13 @@ function openGift() {
     const gift = document.getElementById("gift");
 
     if (!gift) {
-        console.error("Could not find the #gift section.");
+        console.error("Gift section not found.");
         return;
     }
 
-    gift.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
+    window.scrollTo({
+        top: gift.offsetTop,
+        behavior: "smooth"
     });
 
 }
@@ -25,7 +25,7 @@ function openGift() {
 
 document.addEventListener("click", function(event) {
 
-    // Don't create a heart when clicking
+    // Don't create hearts when clicking
     // buttons or links.
     if (
         event.target.closest("button") ||
@@ -49,16 +49,13 @@ function createHeart(x, y) {
     heart.innerHTML = "♥";
 
     heart.style.position = "fixed";
-
     heart.style.left = `${x}px`;
     heart.style.top = `${y}px`;
 
     heart.style.pointerEvents = "none";
-
     heart.style.zIndex = "9999";
 
     heart.style.color = "#ef6593";
-
     heart.style.fontSize = "18px";
 
     heart.style.transition =
@@ -67,7 +64,7 @@ function createHeart(x, y) {
     document.body.appendChild(heart);
 
 
-    // Move the heart upward
+    // Float upward
     setTimeout(function() {
 
         heart.style.transform =
@@ -78,7 +75,7 @@ function createHeart(x, y) {
     }, 50);
 
 
-    // Remove the heart
+    // Remove after animation
     setTimeout(function() {
 
         heart.remove();
@@ -141,15 +138,6 @@ function closeAllReasons() {
    LETTERS
 ========================================= */
 
-/*
-    Your letters.html uses:
-
-    onclick="toggleLetter(this)"
-
-    So this function handles both
-    opening AND closing the letter.
-*/
-
 function toggleLetter(button) {
 
     if (!button) return;
@@ -157,10 +145,7 @@ function toggleLetter(button) {
     const card =
         button.closest(".letter-card");
 
-    if (!card) {
-        console.error("Could not find .letter-card.");
-        return;
-    }
+    if (!card) return;
 
     card.classList.toggle("opened");
 
