@@ -10,7 +10,6 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 20px;
 }
 
 body {
@@ -22,6 +21,7 @@ body {
 
 img {
     max-width: 100%;
+    height: auto;
 }
 
 
@@ -38,24 +38,20 @@ img {
 
 
 /* =========================================
-   HOMEPAGE — HERO DECORATIONS
+   HERO DECORATIONS
 ========================================= */
 
 .hero-decorations {
     position: absolute;
-    top: 0;
-    left: 0;
-
+    inset: 0;
     width: 100%;
     height: 100%;
-
     pointer-events: none;
-
     z-index: 3;
 }
 
 .flower-top-left {
-    width: 70px;
+    width: clamp(45px, 5vw, 70px);
     left: 2.5%;
     top: 5%;
     opacity: 0.72;
@@ -63,7 +59,7 @@ img {
 }
 
 .flower-top-left-small {
-    width: 45px;
+    width: clamp(30px, 3.2vw, 45px);
     left: 13%;
     top: 24%;
     opacity: 0.55;
@@ -71,7 +67,7 @@ img {
 }
 
 .bow-top-right {
-    width: 85px;
+    width: clamp(55px, 6vw, 85px);
     right: 3%;
     top: 7%;
     opacity: 0.72;
@@ -79,7 +75,7 @@ img {
 }
 
 .heart-left {
-    width: 42px;
+    width: clamp(30px, 3.2vw, 42px);
     left: 4%;
     top: 34%;
     opacity: 0.6;
@@ -87,7 +83,7 @@ img {
 }
 
 .flower-right {
-    width: 62px;
+    width: clamp(40px, 4.5vw, 62px);
     right: 3%;
     top: 48%;
     opacity: 0.72;
@@ -95,7 +91,7 @@ img {
 }
 
 .flower-right-small {
-    width: 45px;
+    width: clamp(30px, 3.2vw, 45px);
     right: 12%;
     top: 26%;
     opacity: 0.55;
@@ -104,15 +100,14 @@ img {
 
 
 /* =========================================
-   HOMEPAGE — HERO
+   HERO
 ========================================= */
 
 .hero {
-    min-height: 100vh;
+    min-height: 100svh;
 
     display: flex;
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
 
@@ -120,7 +115,9 @@ img {
 
     position: relative;
 
-    padding: 80px 20px;
+    padding:
+        clamp(60px, 8vw, 100px)
+        clamp(20px, 5vw, 60px);
 
     background:
         linear-gradient(
@@ -138,12 +135,12 @@ img {
 ========================================= */
 
 .hero-heart {
-    width: 78px;
-    height: 78px;
+    width: clamp(55px, 7vw, 78px);
+    height: clamp(55px, 7vw, 78px);
 
     object-fit: contain;
 
-    margin-bottom: 22px;
+    margin-bottom: clamp(16px, 2vw, 22px);
 
     transform: rotate(-7deg);
 
@@ -156,21 +153,21 @@ img {
 ========================================= */
 
 .eyebrow {
-    font-size: 13px;
+    font-size: clamp(10px, 1.2vw, 13px);
 
-    letter-spacing: 3px;
+    letter-spacing: clamp(2px, 0.3vw, 3px);
 
     text-transform: uppercase;
 
     color: #d76b91;
 
-    margin-bottom: 15px;
+    margin-bottom: clamp(10px, 1.5vw, 15px);
 }
 
 .hero h1 {
     font-family: 'Pacifico', cursive;
 
-    font-size: clamp(55px, 8vw, 90px);
+    font-size: clamp(48px, 8vw, 90px);
 
     line-height: 1.05;
 
@@ -189,13 +186,15 @@ img {
 ========================================= */
 
 .hero-decoration {
-    margin: 28px 0;
+    margin:
+        clamp(18px, 2.5vw, 28px)
+        0;
 }
 
 .hero-decoration span {
     color: #ed6c98;
 
-    font-size: 32px;
+    font-size: clamp(24px, 3vw, 32px);
 
     display: inline-block;
 
@@ -208,18 +207,18 @@ img {
 ========================================= */
 
 .subtitle {
-    font-size: 17px;
+    font-size: clamp(14px, 1.5vw, 17px);
 
     line-height: 1.7;
 
     color: #876873;
 
-    margin-bottom: 30px;
+    margin-bottom: clamp(22px, 3vw, 30px);
 }
 
 
 /* =========================================
-   OPEN YOUR GIFT BUTTON
+   BUTTON
 ========================================= */
 
 .start-button {
@@ -229,13 +228,15 @@ img {
 
     color: white;
 
-    padding: 16px 30px;
+    padding:
+        clamp(13px, 1.5vw, 16px)
+        clamp(24px, 3vw, 30px);
 
     border-radius: 50px;
 
     font-family: 'DM Sans', sans-serif;
 
-    font-size: 15px;
+    font-size: clamp(13px, 1.3vw, 15px);
 
     font-weight: 600;
 
@@ -247,10 +248,6 @@ img {
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
-
-    position: relative;
-
-    z-index: 10;
 }
 
 .start-button:hover {
@@ -260,10 +257,6 @@ img {
         0 15px 30px rgba(236, 113, 155, 0.3);
 }
 
-.start-button:active {
-    transform: translateY(0);
-}
-
 .start-button span {
     margin-left: 8px;
 }
@@ -271,7 +264,7 @@ img {
 .hint {
     margin-top: 18px;
 
-    font-size: 12px;
+    font-size: clamp(10px, 1.1vw, 12px);
 
     color: #b58c9b;
 
@@ -280,25 +273,22 @@ img {
 
 
 /* =========================================
-   HOMEPAGE — STORY SECTION
+   STORY SECTION
 ========================================= */
 
 .gift-section {
     position: relative;
 
-    padding: 110px 20px 90px;
+    padding:
+        clamp(75px, 10vw, 110px)
+        clamp(18px, 4vw, 40px)
+        clamp(65px, 8vw, 90px);
 
     background: white;
 
     overflow: hidden;
 
     z-index: 2;
-
-    /*
-       This makes the section begin cleanly
-       when Open Your Gift scrolls here.
-    */
-    scroll-margin-top: 20px;
 }
 
 
@@ -321,68 +311,50 @@ img {
 }
 
 .story-flower-left {
-    width: 70px;
-
+    width: clamp(45px, 5vw, 70px);
     left: 2.5%;
     top: 9%;
-
     opacity: 0.7;
-
     transform: rotate(22deg);
 }
 
 .story-heart-left {
-    width: 48px;
-
+    width: clamp(32px, 3.5vw, 48px);
     left: 6%;
     top: 32%;
-
     opacity: 0.58;
-
     transform: rotate(-18deg);
 }
 
 .story-bow-right {
-    width: 85px;
-
+    width: clamp(55px, 6vw, 85px);
     right: 3%;
     top: 11%;
-
     opacity: 0.7;
-
     transform: rotate(-11deg);
 }
 
 .story-flower-right {
-    width: 62px;
-
+    width: clamp(40px, 4.5vw, 62px);
     right: 3%;
     top: 43%;
-
     opacity: 0.7;
-
     transform: rotate(-28deg);
 }
 
 .story-flower-left-lower {
-    width: 55px;
-
+    width: clamp(35px, 4vw, 55px);
     left: 3%;
     top: 70%;
-
     opacity: 0.6;
-
     transform: rotate(-32deg);
 }
 
 .story-heart-right {
-    width: 42px;
-
+    width: clamp(30px, 3.2vw, 42px);
     right: 7%;
     top: 73%;
-
     opacity: 0.55;
-
     transform: rotate(17deg);
 }
 
@@ -392,9 +364,10 @@ img {
 ========================================= */
 
 .section-header {
+    width: 100%;
     max-width: 700px;
 
-    margin: 0 auto 70px;
+    margin: 0 auto clamp(45px, 6vw, 70px);
 
     text-align: center;
 
@@ -404,11 +377,11 @@ img {
 }
 
 .little-heart {
-    font-size: 28px;
+    font-size: clamp(22px, 3vw, 28px);
 
     color: #ed719b;
 
-    margin-bottom: 20px;
+    margin-bottom: clamp(14px, 2vw, 20px);
 
     transform: rotate(-8deg);
 }
@@ -420,7 +393,7 @@ img {
 
     font-weight: 400;
 
-    font-size: clamp(38px, 5vw, 58px);
+    font-size: clamp(34px, 5vw, 58px);
 
     line-height: 1.2;
 
@@ -440,6 +413,8 @@ img {
 
     line-height: 1.8;
 
+    font-size: clamp(14px, 1.5vw, 16px);
+
     color: #927481;
 }
 
@@ -449,15 +424,16 @@ img {
 ========================================= */
 
 .card-grid {
+    width: 100%;
     max-width: 1050px;
 
     margin: 0 auto;
 
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 
-    gap: 22px;
+    gap: clamp(12px, 2vw, 22px);
 
     position: relative;
 
@@ -475,11 +451,13 @@ img {
 
     border: 1px solid #f6dce7;
 
-    border-radius: 24px;
+    border-radius: clamp(18px, 2vw, 24px);
 
-    padding: 30px 25px;
+    padding:
+        clamp(20px, 2.5vw, 30px)
+        clamp(16px, 2vw, 25px);
 
-    min-height: 245px;
+    min-height: clamp(210px, 20vw, 245px);
 
     transition:
         transform 0.25s ease,
@@ -501,9 +479,9 @@ img {
 ========================================= */
 
 .card-decoration {
-    font-size: 35px;
+    font-size: clamp(27px, 3vw, 35px);
 
-    margin-bottom: 18px;
+    margin-bottom: clamp(12px, 1.5vw, 18px);
 
     display: inline-block;
 }
@@ -527,7 +505,7 @@ img {
 .cute-card h3 {
     font-family: 'Pacifico', cursive;
 
-    font-size: 25px;
+    font-size: clamp(20px, 2.2vw, 25px);
 
     font-weight: 400;
 
@@ -537,7 +515,7 @@ img {
 }
 
 .cute-card p {
-    font-size: 14px;
+    font-size: clamp(12px, 1.3vw, 14px);
 
     line-height: 1.6;
 
@@ -547,10 +525,10 @@ img {
 .card-arrow {
     position: absolute;
 
-    right: 22px;
-    bottom: 20px;
+    right: clamp(15px, 2vw, 22px);
+    bottom: clamp(15px, 2vw, 20px);
 
-    font-size: 22px;
+    font-size: clamp(18px, 2vw, 22px);
 
     color: #e66c97;
 
@@ -581,46 +559,34 @@ img {
 }
 
 .middle-flower-left {
-    width: 70px;
-
+    width: clamp(45px, 5vw, 70px);
     left: 2.5%;
     top: 12%;
-
     opacity: 0.68;
-
     transform: rotate(-14deg);
 }
 
 .middle-heart-left {
-    width: 48px;
-
+    width: clamp(32px, 3.5vw, 48px);
     left: 8%;
     top: 55%;
-
     opacity: 0.55;
-
     transform: rotate(18deg);
 }
 
 .middle-flower-right {
-    width: 62px;
-
+    width: clamp(40px, 4.5vw, 62px);
     right: 3%;
     top: 25%;
-
     opacity: 0.7;
-
     transform: rotate(36deg);
 }
 
 .middle-bow-right {
-    width: 85px;
-
+    width: clamp(55px, 6vw, 85px);
     right: 7%;
     top: 68%;
-
     opacity: 0.68;
-
     transform: rotate(-18deg);
 }
 
@@ -630,9 +596,13 @@ img {
 ========================================= */
 
 .photo-section {
+    width: 100%;
     max-width: 1100px;
 
-    margin: 130px auto 0;
+    margin:
+        clamp(90px, 12vw, 130px)
+        auto
+        0;
 
     text-align: center;
 
@@ -642,14 +612,16 @@ img {
 }
 
 .photo-placeholder {
+    width: 100%;
+
     display: flex;
 
     justify-content: center;
     align-items: flex-start;
 
-    gap: 35px;
+    gap: clamp(15px, 3vw, 35px);
 
-    margin-top: 60px;
+    margin-top: clamp(40px, 5vw, 60px);
 
     position: relative;
 
@@ -676,46 +648,34 @@ img {
 }
 
 .photo-flower-left {
-    width: 70px;
-
+    width: clamp(45px, 5vw, 70px);
     left: 1%;
     top: 15%;
-
     opacity: 0.68;
-
     transform: rotate(25deg);
 }
 
 .photo-heart-left {
-    width: 48px;
-
+    width: clamp(32px, 3.5vw, 48px);
     left: 8%;
     top: 63%;
-
     opacity: 0.55;
-
     transform: rotate(-13deg);
 }
 
 .photo-bow-right {
-    width: 85px;
-
+    width: clamp(55px, 6vw, 85px);
     right: 3%;
     top: 18%;
-
     opacity: 0.7;
-
     transform: rotate(16deg);
 }
 
 .photo-flower-right {
-    width: 62px;
-
+    width: clamp(40px, 4.5vw, 62px);
     right: 1%;
     top: 52%;
-
     opacity: 0.7;
-
     transform: rotate(-39deg);
 }
 
@@ -725,13 +685,18 @@ img {
 ========================================= */
 
 .polaroid {
-    width: 280px;
+    width: clamp(180px, 25vw, 280px);
 
-    flex-shrink: 0;
+    flex: 1 1 0;
+
+    max-width: 280px;
 
     background: white;
 
-    padding: 12px 12px 20px;
+    padding:
+        clamp(8px, 1vw, 12px)
+        clamp(8px, 1vw, 12px)
+        clamp(14px, 1.8vw, 20px);
 
     box-shadow:
         0 10px 30px rgba(100, 50, 70, 0.12);
@@ -766,7 +731,9 @@ img {
 .photo-box {
     width: 100%;
 
-    height: 260px;
+    aspect-ratio: 1 / 1;
+
+    height: auto;
 
     background:
         linear-gradient(
@@ -797,11 +764,13 @@ img {
 .polaroid-caption {
     font-family: 'Pacifico', cursive;
 
-    font-size: 17px;
+    font-size: clamp(12px, 1.5vw, 17px);
+
+    line-height: 1.3;
 
     color: #815363;
 
-    margin-top: 15px;
+    margin-top: clamp(10px, 1.5vw, 15px);
 }
 
 
@@ -824,71 +793,56 @@ img {
 }
 
 .ending-flower-left {
-    width: 70px;
-
+    width: clamp(45px, 5vw, 70px);
     left: 3%;
     top: 18%;
-
     opacity: 0.68;
-
     transform: rotate(-25deg);
 }
 
 .ending-heart-left {
-    width: 48px;
-
+    width: clamp(32px, 3.5vw, 48px);
     left: 8%;
     top: 67%;
-
     opacity: 0.55;
-
     transform: rotate(14deg);
 }
 
 .ending-bow-right {
-    width: 85px;
-
+    width: clamp(55px, 6vw, 85px);
     right: 3%;
     top: 14%;
-
     opacity: 0.7;
-
     transform: rotate(17deg);
 }
 
 .ending-flower-right {
-    width: 62px;
-
+    width: clamp(40px, 4.5vw, 62px);
     right: 4%;
     top: 48%;
-
     opacity: 0.7;
-
     transform: rotate(-42deg);
 }
 
 .ending-flower-right-small {
-    width: 45px;
-
+    width: clamp(30px, 3.2vw, 45px);
     right: 13%;
     top: 75%;
-
     opacity: 0.55;
-
     transform: rotate(29deg);
 }
 
 
 /* =========================================
-   HOMEPAGE ENDING
+   ENDING
 ========================================= */
 
 .ending {
     text-align: center;
 
-    margin-top: 140px;
+    margin-top: clamp(90px, 12vw, 140px);
 
-    padding-bottom: 50px;
+    padding-bottom: clamp(35px, 5vw, 50px);
 
     position: relative;
 
@@ -896,12 +850,15 @@ img {
 }
 
 .ending-heart {
-    width: 58px;
-    height: 58px;
+    width: clamp(45px, 5vw, 58px);
+    height: clamp(45px, 5vw, 58px);
 
     object-fit: contain;
 
-    margin: 0 auto 30px;
+    margin:
+        0
+        auto
+        clamp(20px, 3vw, 30px);
 
     display: block;
 
@@ -911,6 +868,7 @@ img {
 }
 
 .ending h2 {
+    width: 100%;
     max-width: 650px;
 
     margin: 0 auto 20px;
@@ -919,7 +877,7 @@ img {
 .ending > p {
     color: #957480;
 
-    font-size: 16px;
+    font-size: clamp(13px, 1.5vw, 16px);
 }
 
 .signature {
@@ -929,7 +887,7 @@ img {
 
     color: #e36a95 !important;
 
-    font-size: 20px !important;
+    font-size: clamp(17px, 2vw, 20px) !important;
 }
 
 
@@ -940,13 +898,15 @@ img {
 footer {
     text-align: center;
 
-    padding: 30px 20px;
+    padding:
+        clamp(22px, 3vw, 30px)
+        20px;
 
     background: #fff5f9;
 
     color: #b58a9a;
 
-    font-size: 12px;
+    font-size: clamp(10px, 1.1vw, 12px);
 
     position: relative;
 
@@ -979,15 +939,24 @@ footer {
    TABLET
 ========================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
 
     .card-grid {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 750px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        max-width: 700px;
+    }
+
+    .cute-card {
+        min-height: 220px;
     }
 
     .photo-placeholder {
-        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .polaroid {
+        width: 30%;
     }
 
 }
@@ -997,56 +966,57 @@ footer {
    MOBILE
 ========================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
 
     .hero {
-        padding: 70px 18px;
+        min-height: 100svh;
+
+        padding:
+            60px
+            18px;
     }
 
     .hero h1 {
-        font-size: clamp(48px, 13vw, 70px);
-    }
-
-    .hero-heart {
-        width: 65px;
-        height: 65px;
+        font-size: clamp(42px, 14vw, 65px);
     }
 
     .subtitle {
-        font-size: 15px;
+        font-size: 14px;
     }
 
-    .gift-section {
-        padding: 85px 16px 70px;
+    .start-button {
+        padding: 14px 25px;
     }
 
-    .section-header {
-        margin-bottom: 50px;
-    }
 
-    .section-header h2,
-    .photo-section h2,
-    .ending h2 {
-        font-size: clamp(34px, 10vw, 48px);
-    }
+    /* Cards become one column */
 
     .card-grid {
         grid-template-columns: 1fr;
 
         max-width: 430px;
 
-        gap: 18px;
+        gap: 16px;
     }
 
     .cute-card {
-        min-height: 210px;
+        min-height: 190px;
 
-        padding: 26px 23px;
+        padding: 24px 22px;
     }
 
-    .photo-section {
-        margin-top: 100px;
+    .cute-card h3 {
+        font-size: 24px;
     }
+
+    .cute-card p {
+        font-size: 14px;
+
+        max-width: 85%;
+    }
+
+
+    /* Photos stack */
 
     .photo-placeholder {
         flex-direction: column;
@@ -1054,83 +1024,73 @@ footer {
         align-items: center;
 
         gap: 35px;
-
-        margin-top: 45px;
     }
 
     .polaroid {
-        width: min(280px, 90vw);
+        width: min(82vw, 300px);
+
+        max-width: 300px;
+
+        flex: none;
     }
 
-    .photo-box {
-        height: 260px;
-    }
 
-    /*
-       Smaller decorations on phones
-       so they don't cover the content.
-    */
+    /* Keep decorations away from content */
 
     .flower-top-left {
-        width: 52px;
         left: 1%;
     }
 
-    .flower-top-left-small {
-        width: 34px;
-        left: 10%;
-    }
-
     .bow-top-right {
-        width: 62px;
         right: 1%;
-    }
-
-    .heart-left {
-        width: 32px;
-        left: 2%;
     }
 
     .flower-right {
-        width: 48px;
         right: 1%;
-    }
-
-    .flower-right-small {
-        width: 34px;
-        right: 8%;
     }
 
     .story-flower-left,
     .middle-flower-left,
-    .ending-flower-left,
-    .photo-flower-left {
-        width: 50px;
-        left: 0;
+    .photo-flower-left,
+    .ending-flower-left {
+        left: -10px;
     }
 
     .story-bow-right,
     .middle-bow-right,
-    .ending-bow-right,
-    .photo-bow-right {
-        width: 62px;
-        right: 0;
+    .photo-bow-right,
+    .ending-bow-right {
+        right: -10px;
     }
 
-    .story-flower-right,
-    .middle-flower-right,
-    .ending-flower-right,
-    .photo-flower-right {
-        width: 45px;
-        right: 0;
+
+    /* Smaller section decorations */
+
+    .story-decorations {
+        height: 800px;
     }
 
-    .story-heart-left,
-    .story-heart-right,
-    .middle-heart-left,
-    .ending-heart-left,
-    .photo-heart-left {
-        width: 34px;
+    .middle-decorations {
+        top: 850px;
+    }
+
+    .photo-decorations {
+        height: 650px;
+    }
+
+    .ending-decorations {
+        top: 2100px;
+    }
+
+
+    /* Better mobile spacing */
+
+    .photo-section {
+        margin-top: 100px;
+    }
+
+    .ending {
+        margin-top: 100px;
     }
 
 }
@@ -1140,7 +1100,7 @@ footer {
    VERY SMALL PHONES
 ========================================= */
 
-@media (max-width: 420px) {
+@media (max-width: 380px) {
 
     .hero {
         padding-left: 14px;
@@ -1148,25 +1108,21 @@ footer {
     }
 
     .hero h1 {
-        font-size: 45px;
+        font-size: 42px;
     }
 
-    .start-button {
-        padding: 14px 25px;
-        font-size: 14px;
-    }
-
-    .gift-section {
-        padding-left: 13px;
-        padding-right: 13px;
+    .section-header h2,
+    .photo-section h2,
+    .ending h2 {
+        font-size: 34px;
     }
 
     .cute-card {
-        border-radius: 20px;
+        padding: 21px 18px;
     }
 
     .polaroid {
-        width: 92vw;
+        width: 88vw;
     }
 
 }
