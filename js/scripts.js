@@ -141,41 +141,14 @@ function closeAllReasons() {
    LETTERS
 ========================================= */
 
-function openLetter(button) {
+/*
+    Your letters.html uses:
 
-    if (!button) return;
+    onclick="toggleLetter(this)"
 
-    const wrapper =
-        button.closest(".letter-wrapper");
-
-    if (!wrapper) return;
-
-    wrapper.classList.add("opened");
-
-}
-
-
-/* =========================================
-   CLOSE LETTER
-========================================= */
-
-function closeLetter(button) {
-
-    if (!button) return;
-
-    const wrapper =
-        button.closest(".letter-wrapper");
-
-    if (!wrapper) return;
-
-    wrapper.classList.remove("opened");
-
-}
-
-
-/* =========================================
-   LETTER CARD TOGGLE
-========================================= */
+    So this function handles both
+    opening AND closing the letter.
+*/
 
 function toggleLetter(button) {
 
@@ -184,7 +157,10 @@ function toggleLetter(button) {
     const card =
         button.closest(".letter-card");
 
-    if (!card) return;
+    if (!card) {
+        console.error("Could not find .letter-card.");
+        return;
+    }
 
     card.classList.toggle("opened");
 
