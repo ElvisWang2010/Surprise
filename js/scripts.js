@@ -6,8 +6,14 @@ function openGift() {
 
     const gift = document.getElementById("gift");
 
+    if (!gift) {
+        console.error("Could not find the #gift section.");
+        return;
+    }
+
     gift.scrollIntoView({
-        behavior: "smooth"
+        behavior: "smooth",
+        block: "start"
     });
 
 }
@@ -19,7 +25,7 @@ function openGift() {
 
 document.addEventListener("click", function(event) {
 
-    // Don't trigger on cards/buttons
+    // Don't create hearts when clicking buttons or links
     if (
         event.target.closest("button") ||
         event.target.closest("a")
@@ -27,7 +33,10 @@ document.addEventListener("click", function(event) {
         return;
     }
 
-    createHeart(event.clientX, event.clientY);
+    createHeart(
+        event.clientX,
+        event.clientY
+    );
 
 });
 
@@ -41,7 +50,6 @@ function createHeart(x, y) {
     heart.style.position = "fixed";
 
     heart.style.left = `${x}px`;
-
     heart.style.top = `${y}px`;
 
     heart.style.pointerEvents = "none";
@@ -52,12 +60,14 @@ function createHeart(x, y) {
 
     heart.style.fontSize = "18px";
 
-    heart.style.transition = "all 1s ease";
+    heart.style.transition =
+        "transform 1s ease, opacity 1s ease";
 
     document.body.appendChild(heart);
 
 
-    setTimeout(() => {
+    // Animate upward
+    setTimeout(function() {
 
         heart.style.transform =
             "translateY(-80px) scale(1.5)";
@@ -67,7 +77,8 @@ function createHeart(x, y) {
     }, 50);
 
 
-    setTimeout(() => {
+    // Remove after animation
+    setTimeout(function() {
 
         heart.remove();
 
@@ -75,11 +86,14 @@ function createHeart(x, y) {
 
 }
 
+
 /* =========================================
    REASONS
 ========================================= */
 
 function openReason(card) {
+
+    if (!card) return;
 
     card.classList.toggle("flipped");
 
@@ -92,7 +106,8 @@ function openReason(card) {
 
 function openAllReasons() {
 
-    const cards = document.querySelectorAll(".reason-card");
+    const cards =
+        document.querySelectorAll(".reason-card");
 
     cards.forEach(function(card) {
 
@@ -109,7 +124,10 @@ function openAllReasons() {
 
 function openLetter(button) {
 
-    const wrapper = button.closest(".letter-wrapper");
+    if (!button) return;
+
+    const wrapper =
+        button.closest(".letter-wrapper");
 
     if (!wrapper) return;
 
@@ -124,7 +142,10 @@ function openLetter(button) {
 
 function closeLetter(button) {
 
-    const wrapper = button.closest(".letter-wrapper");
+    if (!button) return;
+
+    const wrapper =
+        button.closest(".letter-wrapper");
 
     if (!wrapper) return;
 
