@@ -49,16 +49,13 @@ img {
 
     border-radius: 50px;
 
-    font-family: 'DM Sans', sans-serif;
     font-size: 13px;
     font-weight: 600;
 
     box-shadow:
         0 7px 18px rgba(236, 113, 155, 0.2);
 
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+    transition: 0.2s ease;
 }
 
 .letter-home-button:hover {
@@ -74,9 +71,7 @@ img {
 ========================================= */
 
 .letter-hero {
-    min-height: 48vh;
-
-    position: relative;
+    min-height: 45vh;
 
     display: flex;
     flex-direction: column;
@@ -86,7 +81,9 @@ img {
 
     text-align: center;
 
-    padding: 100px 20px 70px;
+    padding: 100px 20px 60px;
+
+    position: relative;
 
     background:
         linear-gradient(
@@ -113,11 +110,11 @@ img {
 .letter-hero h1 {
     font-family: 'Pacifico', cursive;
 
-    font-size: clamp(45px, 7vw, 75px);
-
-    line-height: 1.1;
+    font-size: clamp(48px, 7vw, 75px);
 
     font-weight: 400;
+
+    line-height: 1.1;
 
     color: #6b4352;
 }
@@ -127,9 +124,9 @@ img {
 }
 
 .letter-subtitle {
-    margin-top: 18px;
-
     max-width: 550px;
+
+    margin-top: 18px;
 
     font-size: 16px;
 
@@ -143,50 +140,58 @@ img {
    HERO DECORATIONS
 ========================================= */
 
-.letter-flower,
-.letter-bow,
-.letter-heart {
+.letter-flower-left {
     position: absolute;
 
-    object-fit: contain;
-
-    pointer-events: none;
-}
-
-.letter-flower-left {
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
 
     left: 4%;
     top: 25%;
 
+    object-fit: contain;
+
     opacity: 0.55;
 
     transform: rotate(-18deg);
+
+    pointer-events: none;
 }
 
 .letter-bow-right {
-    width: 75px;
-    height: 75px;
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
 
     right: 4%;
     top: 20%;
 
+    object-fit: contain;
+
     opacity: 0.55;
 
     transform: rotate(15deg);
+
+    pointer-events: none;
 }
 
 .letter-heart-left {
-    width: 40px;
-    height: 40px;
+    position: absolute;
 
-    left: 13%;
+    width: 38px;
+    height: 38px;
+
+    left: 12%;
     bottom: 15%;
+
+    object-fit: contain;
 
     opacity: 0.5;
 
     transform: rotate(-12deg);
+
+    pointer-events: none;
 }
 
 
@@ -195,36 +200,35 @@ img {
 ========================================= */
 
 .letters-section {
-    position: relative;
+    width: 100%;
 
-    padding: 80px 20px 100px;
+    padding: 90px 20px 110px;
 
     background: white;
+
+    text-align: center;
+
+    position: relative;
 
     overflow: hidden;
 }
 
 
 /* =========================================
-   LETTER GRID
+   LETTER CONTAINER
 ========================================= */
 
 .letters-grid {
     width: 100%;
 
-    max-width: 520px;
+    max-width: 620px;
 
     margin: 0 auto;
 
-    display: grid;
+    display: flex;
 
-    grid-template-columns: 1fr;
-
-    gap: 30px;
-
-    position: relative;
-
-    z-index: 5;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -235,27 +239,24 @@ img {
 .letter-card {
     width: 100%;
 
-    min-height: 360px;
+    max-width: 620px;
+
+    min-height: 430px;
 
     position: relative;
-
-    perspective: 1000px;
 }
 
 
 /* =========================================
-   ENVELOPE
+   ENVELOPE BUTTON
 ========================================= */
 
 .letter-envelope {
     width: 100%;
-    height: 360px;
 
-    position: relative;
+    height: 430px;
 
     border: none;
-
-    background: transparent;
 
     padding: 0;
 
@@ -263,14 +264,18 @@ img {
 
     font-family: 'DM Sans', sans-serif;
 
+    position: relative;
+
+    background: transparent;
+
+    display: block;
+
     transition:
         transform 0.3s ease;
-
-    perspective: 1000px;
 }
 
 .letter-envelope:hover {
-    transform: translateY(-7px);
+    transform: translateY(-8px);
 }
 
 
@@ -279,107 +284,78 @@ img {
 ========================================= */
 
 .envelope-body {
-    position: absolute;
-
-    left: 0;
-    bottom: 0;
-
     width: 100%;
     height: 100%;
 
-    border-radius: 22px;
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 30px;
 
     background:
         linear-gradient(
             145deg,
-            #ffe9f1,
-            #fff5f8
+            #ffe4ee,
+            #fff3f7
         );
 
-    border: 1px solid #f4d4df;
+    border: 2px solid #f3cfdd;
 
     box-shadow:
-        0 12px 30px rgba(
+        0 18px 40px rgba(
             190,
             105,
             135,
-            0.12
+            0.15
         );
 
     display: flex;
 
     flex-direction: column;
 
-    align-items: center;
-
     justify-content: center;
 
-    padding: 80px 30px 30px;
+    align-items: center;
+
+    padding: 40px;
+
+    text-align: center;
 
     overflow: hidden;
-
-    transition:
-        box-shadow 0.3s ease;
-}
-
-.letter-envelope:hover .envelope-body {
-    box-shadow:
-        0 18px 35px rgba(
-            190,
-            105,
-            135,
-            0.18
-        );
 }
 
 
 /* =========================================
-   ENVELOPE TRIANGLE
+   NO TRIANGLE
 ========================================= */
 
-.envelope-top {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 42%;
-
-    z-index: 3;
-
-    background: #f8a7c2;
-
-    clip-path:
-        polygon(
-            0 0,
-            100% 0,
-            50% 100%
-        );
-
-    pointer-events: none;
-}
+/*
+   The old envelope triangle has been
+   completely removed.
+*/
 
 
 /* =========================================
    ENVELOPE HEART
 ========================================= */
 
-.envelope-body::after {
+.envelope-body::before {
     content: "♡";
 
     position: absolute;
 
-    top: 17px;
+    top: 25px;
+
     left: 50%;
 
     transform: translateX(-50%);
 
-    z-index: 4;
+    color: #ec719b;
 
-    color: white;
+    font-size: 38px;
 
-    font-size: 28px;
+    z-index: 3;
 
     pointer-events: none;
 }
@@ -390,9 +366,9 @@ img {
 ========================================= */
 
 .envelope-icon {
-    font-size: 48px;
+    font-size: 65px;
 
-    margin-bottom: 18px;
+    margin-bottom: 22px;
 
     display: block;
 
@@ -406,49 +382,61 @@ img {
 
 .letter-envelope:hover .envelope-icon {
     transform:
-        scale(1.1)
+        scale(1.12)
         rotate(-5deg);
 }
 
 
 /* =========================================
-   ENVELOPE TEXT
+   ENVELOPE TITLE
 ========================================= */
 
 .envelope-body h2 {
     font-family: 'Pacifico', cursive;
 
-    font-size: 28px;
+    font-size: 34px;
 
     font-weight: 400;
 
     color: #704654;
 
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 
     position: relative;
 
     z-index: 5;
 }
 
+
+/* =========================================
+   ENVELOPE DESCRIPTION
+========================================= */
+
 .envelope-body p {
-    font-size: 15px;
+    max-width: 400px;
+
+    font-size: 16px;
+
+    line-height: 1.7;
 
     color: #987985;
 
-    line-height: 1.5;
-
     position: relative;
 
     z-index: 5;
 }
 
+
+/* =========================================
+   OPEN TEXT
+========================================= */
+
 .open-text {
-    margin-top: 20px;
+    margin-top: 25px;
 
-    font-size: 11px;
+    font-size: 12px;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
 
     text-transform: uppercase;
 
@@ -469,7 +457,8 @@ img {
 
     inset: 0;
 
-    z-index: 10;
+    width: 100%;
+    height: 100%;
 
     opacity: 0;
 
@@ -478,18 +467,20 @@ img {
     pointer-events: none;
 
     transform:
-        translateY(30px)
-        scale(0.92);
+        translateY(25px)
+        scale(0.94);
 
     transition:
-        opacity 0.5s ease,
-        transform 0.5s ease,
-        visibility 0.5s ease;
+        opacity 0.45s ease,
+        transform 0.45s ease,
+        visibility 0.45s ease;
+
+    z-index: 20;
 }
 
 
 /* =========================================
-   OPENED LETTER
+   OPENED
 ========================================= */
 
 .letter-card.opened .letter-content {
@@ -509,8 +500,7 @@ img {
 
     pointer-events: none;
 
-    transform:
-        scale(0.9);
+    transform: scale(0.9);
 }
 
 
@@ -520,35 +510,36 @@ img {
 
 .letter-paper {
     width: 100%;
+    height: 100%;
 
-    min-height: 360px;
+    min-height: 430px;
 
     background:
         linear-gradient(
-            135deg,
+            145deg,
             #fffdfd,
             #fff7fa
         );
 
-    border: 1px solid #f2dbe3;
+    border: 1px solid #f0d7e0;
 
-    border-radius: 22px;
-
-    padding: 40px 38px 30px;
+    border-radius: 25px;
 
     box-shadow:
-        0 15px 35px rgba(
+        0 18px 40px rgba(
             100,
             50,
             70,
             0.12
         );
 
+    padding: 45px 50px 35px;
+
     text-align: left;
 
     position: relative;
 
-    overflow: hidden;
+    overflow-y: auto;
 }
 
 
@@ -557,34 +548,20 @@ img {
 ========================================= */
 
 .letter-paper::before {
-    content: "";
+    content: "♡";
 
     position: absolute;
 
-    width: 90px;
-    height: 90px;
+    top: 20px;
+    right: 25px;
 
-    right: -25px;
-    top: -25px;
-
-    background:
-        url("../assets/icons/Flower1.png")
-        center / contain
-        no-repeat;
-
-    opacity: 0.12;
-
-    transform: rotate(20deg);
-
-    pointer-events: none;
-}
-
-.letter-paper-heart {
-    font-size: 28px;
+    font-size: 32px;
 
     color: #ed719b;
 
-    margin-bottom: 12px;
+    opacity: 0.5;
+
+    pointer-events: none;
 }
 
 
@@ -595,13 +572,13 @@ img {
 .letter-paper h2 {
     font-family: 'Pacifico', cursive;
 
-    font-size: 30px;
+    font-size: 32px;
 
     font-weight: 400;
 
     color: #704654;
 
-    margin-bottom: 22px;
+    margin-bottom: 25px;
 }
 
 
@@ -610,7 +587,7 @@ img {
 ========================================= */
 
 .letter-paper p {
-    font-size: 15px;
+    font-size: 16px;
 
     line-height: 1.9;
 
@@ -629,7 +606,7 @@ img {
 
     color: #e36a95 !important;
 
-    font-size: 20px !important;
+    font-size: 21px !important;
 
     text-align: right;
 
@@ -638,14 +615,19 @@ img {
     margin-bottom: 10px !important;
 }
 
+
+/* =========================================
+   HEART BESIDE RAYRAY
+========================================= */
+
 .signature-heart {
     display: inline-block;
 
-    margin-left: 5px;
+    margin-left: 6px;
 
     color: #e96b98;
 
-    font-size: 22px;
+    font-size: 24px;
 
     animation:
         heartbeat 2.2s ease-in-out infinite;
@@ -667,7 +649,7 @@ img {
 
     color: white;
 
-    padding: 10px 20px;
+    padding: 11px 22px;
 
     border-radius: 50px;
 
@@ -688,7 +670,7 @@ img {
     transform: translateY(-2px);
 
     box-shadow:
-        0 7px 15px rgba(
+        0 8px 18px rgba(
             236,
             113,
             155,
@@ -707,10 +689,6 @@ img {
     margin: 110px auto 0;
 
     text-align: center;
-
-    position: relative;
-
-    z-index: 5;
 }
 
 .letters-ending img {
@@ -735,8 +713,6 @@ img {
     );
 
     font-weight: 400;
-
-    line-height: 1.2;
 
     color: #694552;
 
@@ -784,7 +760,7 @@ img {
 @media (max-width: 700px) {
 
     .letter-hero {
-        min-height: 45vh;
+        min-height: 43vh;
 
         padding:
             90px
@@ -796,42 +772,46 @@ img {
         font-size: 48px;
     }
 
-    .letter-subtitle {
-        font-size: 14px;
+    .letters-section {
+        padding:
+            70px
+            18px
+            90px;
+    }
+
+    .letter-card {
+        max-width: 560px;
+
+        min-height: 400px;
+    }
+
+    .letter-envelope {
+        height: 400px;
+    }
+
+    .letter-paper {
+        min-height: 400px;
+
+        padding:
+            40px
+            35px
+            30px;
     }
 
     .letter-flower-left {
-        width: 50px;
-        height: 50px;
-
-        left: 2%;
+        width: 48px;
+        height: 48px;
     }
 
     .letter-bow-right {
-        width: 58px;
-        height: 58px;
-
-        right: 2%;
+        width: 55px;
+        height: 55px;
     }
 
     .letter-heart-left {
-        width: 32px;
-        height: 32px;
-
-        left: 5%;
+        width: 30px;
+        height: 30px;
     }
-
-    .letters-section {
-        padding:
-            65px
-            18px
-            80px;
-    }
-
-    .letters-grid {
-        max-width: 500px;
-    }
-
 }
 
 
@@ -853,7 +833,7 @@ img {
     }
 
     .letter-hero {
-        min-height: 43vh;
+        min-height: 42vh;
 
         padding:
             85px
@@ -873,36 +853,65 @@ img {
 
     .letters-section {
         padding:
-            55px
+            60px
             14px
-            70px;
-    }
-
-    .letters-grid {
-        max-width: 100%;
+            80px;
     }
 
     .letter-card {
-        min-height: 340px;
+        width: 100%;
+
+        min-height: 380px;
     }
 
     .letter-envelope {
-        height: 340px;
+        width: 100%;
+
+        height: 380px;
+    }
+
+    .envelope-body {
+        padding:
+            45px
+            20px
+            30px;
+    }
+
+    .envelope-body::before {
+        top: 20px;
+
+        font-size: 32px;
+    }
+
+    .envelope-icon {
+        font-size: 55px;
+
+        margin-bottom: 18px;
+    }
+
+    .envelope-body h2 {
+        font-size: 28px;
+    }
+
+    .envelope-body p {
+        font-size: 14px;
+
+        max-width: 290px;
     }
 
     .letter-paper {
-        min-height: 340px;
+        min-height: 380px;
 
         padding:
-            30px
+            35px
             24px
             25px;
     }
 
     .letter-paper h2 {
-        font-size: 26px;
+        font-size: 27px;
 
-        margin-bottom: 18px;
+        margin-bottom: 20px;
     }
 
     .letter-paper p {
@@ -915,40 +924,9 @@ img {
         font-size: 18px !important;
     }
 
-    .envelope-body {
-        padding:
-            70px
-            20px
-            25px;
+    .signature-heart {
+        font-size: 21px;
     }
-
-    .envelope-top {
-        height: 40%;
-    }
-
-    .envelope-icon {
-        font-size: 42px;
-    }
-
-    .envelope-body h2 {
-        font-size: 25px;
-    }
-
-    .letter-flower-left {
-        width: 38px;
-        height: 38px;
-    }
-
-    .letter-bow-right {
-        width: 45px;
-        height: 45px;
-    }
-
-    .letter-heart-left {
-        width: 28px;
-        height: 28px;
-    }
-
 }
 
 
@@ -963,18 +941,18 @@ img {
     }
 
     .letter-card {
-        min-height: 320px;
+        min-height: 350px;
     }
 
     .letter-envelope {
-        height: 320px;
+        height: 350px;
     }
 
     .letter-paper {
-        min-height: 320px;
+        min-height: 350px;
 
         padding:
-            25px
+            28px
             20px
             20px;
     }
@@ -992,7 +970,6 @@ img {
     .letter-signature {
         font-size: 17px !important;
     }
-
 }
 
 
