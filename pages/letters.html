@@ -7,8 +7,10 @@
 
     <title>Open When... ♡</title>
 
+    <!-- LETTERS PAGE CSS -->
     <link rel="stylesheet" href="../css/letter.css">
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -18,357 +20,588 @@
     >
 </head>
 
-<body class="letters-page">
 
-    <!-- HOME BUTTON -->
+<body>
 
-    <div class="memory-nav">
-        <a href="../index.html" class="memory-home-button">
+    <!-- =========================================
+         HOME BUTTON
+    ========================================== -->
+
+    <nav class="letter-nav">
+
+        <a
+            href="../index.html"
+            class="letter-home-button"
+        >
             ← Home
         </a>
-    </div>
+
+    </nav>
 
 
-    <!-- DECORATIONS -->
+    <!-- =========================================
+         HERO
+    ========================================== -->
 
-    <img
-        class="letters-flower letters-flower-left"
-        src="../assets/icons/Flower1.png"
-        alt=""
-    >
+    <header class="letter-hero">
 
-    <img
-        class="letters-flower letters-flower-right"
-        src="../assets/icons/Flower2.png"
-        alt=""
-    >
+        <img
+            class="letter-flower letter-flower-left"
+            src="../assets/icons/Flower1.png"
+            alt=""
+        >
 
-    <img
-        class="letters-bow"
-        src="../assets/icons/PinkBow.png"
-        alt=""
-    >
+        <img
+            class="letter-bow letter-bow-right"
+            src="../assets/icons/PinkBow.png"
+            alt=""
+        >
 
-
-    <!-- HEADER -->
-
-    <header class="letters-hero">
-
-        <div class="little-heart">
-            ♡
-        </div>
+        <img
+            class="letter-heart letter-heart-left"
+            src="../assets/icons/PinkHeart1.png"
+            alt=""
+        >
 
         <p class="eyebrow">
-            For whenever you need one
+            A little something for you
         </p>
 
         <h1>
-            Open
-            <span>When...</span>
+            Open When...
+            <span>♡</span>
         </h1>
 
-        <p class="letters-subtitle">
-            Little letters for little moments.
+        <p class="letter-subtitle">
+            Little letters for whenever you need them.
             <br>
-            Pick one whenever you need it ♡
+            Open one whenever your heart tells you to.
         </p>
 
     </header>
 
 
-    <!-- LETTERS -->
+    <!-- =========================================
+         LETTERS
+    ========================================== -->
 
-    <main class="letters-container">
+    <main class="letters-section">
 
         <div class="letters-grid">
 
 
-            <!-- LETTER 1 -->
+            <!-- =================================
+                 LETTER 1
+            ================================== -->
 
-            <div class="letter-wrapper">
+            <article class="letter-card">
 
                 <button
                     class="letter-envelope"
-                    onclick="openLetter(this)"
+                    onclick="toggleLetter(this)"
                 >
 
-                    <div class="envelope-back">
+                    <div class="envelope-top">
+                        ♡
+                    </div>
 
-                        <div class="envelope-flap"></div>
+                    <div class="envelope-body">
 
-                        <div class="envelope-heart">
+                        <span class="envelope-icon">
                             💌
-                        </div>
+                        </span>
+
+                        <h2>
+                            Open when...
+                        </h2>
+
+                        <p>
+                            you're having a bad day
+                        </p>
+
+                        <span class="open-text">
+                            click to open ♡
+                        </span>
 
                     </div>
-
-                    <span class="envelope-label">
-                        Open when you're sad ♡
-                    </span>
 
                 </button>
 
 
                 <div class="letter-content">
 
-                    <button
-                        class="close-letter"
-                        onclick="closeLetter(this)"
-                    >
-                        ×
-                    </button>
+                    <div class="letter-paper">
 
-                    <p class="letter-small-title">
-                        Open when you're sad
-                    </p>
-
-                    <h2>
-                        A little reminder ♡
-                    </h2>
-
-                    <p>
-                        Dear you,
-                    </p>
-
-                    <p>
-                        [placeholder words for now]
-                        <br><br>
-                        Whatever you're going through,
-                        I hope you remember that you are
-                        loved and that tomorrow can be
-                        a little brighter.
-                    </p>
-
-                    <p class="letter-signature">
-                        — yours ♡
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- LETTER 2 -->
-
-            <div class="letter-wrapper">
-
-                <button
-                    class="letter-envelope"
-                    onclick="openLetter(this)"
-                >
-
-                    <div class="envelope-back">
-
-                        <div class="envelope-flap"></div>
-
-                        <div class="envelope-heart">
-                            💗
+                        <div class="letter-paper-heart">
+                            ♡
                         </div>
+
+                        <h2>
+                            For your bad days
+                        </h2>
+
+                        <p>
+                            Dear you,
+                        </p>
+
+                        <p>
+                            Placeholder words for now...
+                            but just know that whatever
+                            happened today, you don't have
+                            to face it alone.
+                        </p>
+
+                        <p>
+                            I hope tomorrow is a little
+                            kinder to you. And until then,
+                            remember that someone out there
+                            cares about you very, very much.
+                        </p>
+
+                        <p class="letter-signature">
+                            Yours ♡
+                        </p>
 
                     </div>
 
-                    <span class="envelope-label">
-                        Open when you miss me ♡
-                    </span>
-
-                </button>
-
-
-                <div class="letter-content">
-
-                    <button
-                        class="close-letter"
-                        onclick="closeLetter(this)"
-                    >
-                        ×
-                    </button>
-
-                    <p class="letter-small-title">
-                        Open when you miss me
-                    </p>
-
-                    <h2>
-                        I'm thinking of you ♡
-                    </h2>
-
-                    <p>
-                        Hi love,
-                    </p>
-
-                    <p>
-                        [placeholder words for now]
-                        <br><br>
-                        Even when we're apart,
-                        you're still a little part
-                        of my day.
-                    </p>
-
-                    <p class="letter-signature">
-                        — yours ♡
-                    </p>
-
                 </div>
 
-            </div>
+            </article>
 
 
-            <!-- LETTER 3 -->
 
-            <div class="letter-wrapper">
+            <!-- =================================
+                 LETTER 2
+            ================================== -->
+
+            <article class="letter-card">
 
                 <button
                     class="letter-envelope"
-                    onclick="openLetter(this)"
+                    onclick="toggleLetter(this)"
                 >
 
-                    <div class="envelope-back">
+                    <div class="envelope-top">
+                        ♡
+                    </div>
 
-                        <div class="envelope-flap"></div>
+                    <div class="envelope-body">
 
-                        <div class="envelope-heart">
+                        <span class="envelope-icon">
                             🌸
-                        </div>
+                        </span>
+
+                        <h2>
+                            Open when...
+                        </h2>
+
+                        <p>
+                            you miss me
+                        </p>
+
+                        <span class="open-text">
+                            click to open ♡
+                        </span>
 
                     </div>
-
-                    <span class="envelope-label">
-                        Open when you need a smile ♡
-                    </span>
 
                 </button>
 
 
                 <div class="letter-content">
 
-                    <button
-                        class="close-letter"
-                        onclick="closeLetter(this)"
-                    >
-                        ×
-                    </button>
+                    <div class="letter-paper">
 
-                    <p class="letter-small-title">
-                        Open when you need a smile
-                    </p>
+                        <div class="letter-paper-heart">
+                            ♡
+                        </div>
 
-                    <h2>
-                        Smile for me ♡
-                    </h2>
+                        <h2>
+                            When you miss me
+                        </h2>
 
-                    <p>
-                        Hey you,
-                    </p>
+                        <p>
+                            Dear you,
+                        </p>
 
-                    <p>
-                        [placeholder words for now]
-                        <br><br>
-                        Here's your reminder that
-                        you're pretty amazing.
-                        Yes, you specifically.
-                    </p>
+                        <p>
+                            Placeholder words for now...
+                            but I hope this little letter
+                            makes the distance feel just
+                            a tiny bit smaller.
+                        </p>
 
-                    <p class="letter-signature">
-                        — yours ♡
-                    </p>
+                        <p>
+                            Think about all the little
+                            moments we've already had,
+                            and remember that there are
+                            still so many more waiting for us.
+                        </p>
+
+                        <p class="letter-signature">
+                            Yours ♡
+                        </p>
+
+                    </div>
 
                 </div>
 
-            </div>
+            </article>
 
 
-            <!-- LETTER 4 -->
 
-            <div class="letter-wrapper">
+            <!-- =================================
+                 LETTER 3
+            ================================== -->
+
+            <article class="letter-card">
 
                 <button
                     class="letter-envelope"
-                    onclick="openLetter(this)"
+                    onclick="toggleLetter(this)"
                 >
 
-                    <div class="envelope-back">
-
-                        <div class="envelope-flap"></div>
-
-                        <div class="envelope-heart">
-                            🎀
-                        </div>
-
+                    <div class="envelope-top">
+                        ♡
                     </div>
 
-                    <span class="envelope-label">
-                        Open when you need encouragement ♡
-                    </span>
+                    <div class="envelope-body">
+
+                        <span class="envelope-icon">
+                            🎀
+                        </span>
+
+                        <h2>
+                            Open when...
+                        </h2>
+
+                        <p>
+                            you need a reminder
+                        </p>
+
+                        <span class="open-text">
+                            click to open ♡
+                        </span>
+
+                    </div>
 
                 </button>
 
 
                 <div class="letter-content">
 
-                    <button
-                        class="close-letter"
-                        onclick="closeLetter(this)"
-                    >
-                        ×
-                    </button>
+                    <div class="letter-paper">
 
-                    <p class="letter-small-title">
-                        Open when you need encouragement
-                    </p>
+                        <div class="letter-paper-heart">
+                            ♡
+                        </div>
 
-                    <h2>
-                        You can do this ♡
-                    </h2>
+                        <h2>
+                            A little reminder
+                        </h2>
 
-                    <p>
-                        Dear you,
-                    </p>
+                        <p>
+                            Dear you,
+                        </p>
 
-                    <p>
-                        [placeholder words for now]
-                        <br><br>
-                        I believe in you more than you
-                        probably realize.
-                    </p>
+                        <p>
+                            Placeholder words for now...
+                            but you are more special than
+                            you probably realize.
+                        </p>
 
-                    <p class="letter-signature">
-                        — yours ♡
-                    </p>
+                        <p>
+                            Please don't forget how loved,
+                            appreciated, and amazing you are.
+                        </p>
+
+                        <p class="letter-signature">
+                            Yours ♡
+                        </p>
+
+                    </div>
 
                 </div>
 
-            </div>
+            </article>
+
+
+
+            <!-- =================================
+                 LETTER 4
+            ================================== -->
+
+            <article class="letter-card">
+
+                <button
+                    class="letter-envelope"
+                    onclick="toggleLetter(this)"
+                >
+
+                    <div class="envelope-top">
+                        ♡
+                    </div>
+
+                    <div class="envelope-body">
+
+                        <span class="envelope-icon">
+                            💗
+                        </span>
+
+                        <h2>
+                            Open when...
+                        </h2>
+
+                        <p>
+                            you need a smile
+                        </p>
+
+                        <span class="open-text">
+                            click to open ♡
+                        </span>
+
+                    </div>
+
+                </button>
+
+
+                <div class="letter-content">
+
+                    <div class="letter-paper">
+
+                        <div class="letter-paper-heart">
+                            ♡
+                        </div>
+
+                        <h2>
+                            Make yourself smile
+                        </h2>
+
+                        <p>
+                            Dear you,
+                        </p>
+
+                        <p>
+                            Placeholder words for now...
+                            so here's your official reminder
+                            to smile right now.
+                        </p>
+
+                        <p>
+                            Yes, right now. I'm watching. ♡
+                        </p>
+
+                        <p class="letter-signature">
+                            Yours ♡
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================
+                 LETTER 5
+            ================================== -->
+
+            <article class="letter-card">
+
+                <button
+                    class="letter-envelope"
+                    onclick="toggleLetter(this)"
+                >
+
+                    <div class="envelope-top">
+                        ♡
+                    </div>
+
+                    <div class="envelope-body">
+
+                        <span class="envelope-icon">
+                            🌷
+                        </span>
+
+                        <h2>
+                            Open when...
+                        </h2>
+
+                        <p>
+                            you can't sleep
+                        </p>
+
+                        <span class="open-text">
+                            click to open ♡
+                        </span>
+
+                    </div>
+
+                </button>
+
+
+                <div class="letter-content">
+
+                    <div class="letter-paper">
+
+                        <div class="letter-paper-heart">
+                            ♡
+                        </div>
+
+                        <h2>
+                            For a sleepless night
+                        </h2>
+
+                        <p>
+                            Dear you,
+                        </p>
+
+                        <p>
+                            Placeholder words for now...
+                            so take a deep breath, get
+                            comfortable, and let yourself
+                            rest.
+                        </p>
+
+                        <p>
+                            Tomorrow is another day,
+                            and I'll still be here.
+                        </p>
+
+                        <p class="letter-signature">
+                            Goodnight ♡
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================
+                 LETTER 6
+            ================================== -->
+
+            <article class="letter-card">
+
+                <button
+                    class="letter-envelope"
+                    onclick="toggleLetter(this)"
+                >
+
+                    <div class="envelope-top">
+                        ♡
+                    </div>
+
+                    <div class="envelope-body">
+
+                        <span class="envelope-icon">
+                            🩷
+                        </span>
+
+                        <h2>
+                            Open when...
+                        </h2>
+
+                        <p>
+                            you need to know
+                        </p>
+
+                        <span class="open-text">
+                            click to open ♡
+                        </span>
+
+                    </div>
+
+                </button>
+
+
+                <div class="letter-content">
+
+                    <div class="letter-paper">
+
+                        <div class="letter-paper-heart">
+                            ♡
+                        </div>
+
+                        <h2>
+                            One last reminder
+                        </h2>
+
+                        <p>
+                            Dear you,
+                        </p>
+
+                        <p>
+                            Placeholder words for now...
+                            but there is one thing I never
+                            want you to forget.
+                        </p>
+
+                        <p>
+                            I am incredibly lucky to have
+                            you in my life. ♡
+                        </p>
+
+                        <p class="letter-signature">
+                            Always yours ♡
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
 
 
         </div>
+
+
+        <!-- =========================================
+             ENDING
+        ========================================== -->
+
+        <section class="letters-ending">
+
+            <img
+                src="../assets/icons/PinkHeart2.png"
+                alt=""
+            >
+
+            <h2>
+                More letters...
+                <span>coming soon.</span>
+            </h2>
+
+            <p>
+                Maybe one day I'll fill every single one
+                with something just for you. ♡
+            </p>
+
+        </section>
 
     </main>
 
 
-    <!-- END -->
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
 
-    <section class="letters-ending">
+    <script>
 
-        <div>
-            ♡
-        </div>
+        function toggleLetter(button) {
 
-        <h2>
-            More letters coming soon...
-        </h2>
+            const card = button.closest(".letter-card");
 
-        <p>
-            These are just little placeholders for now.
-        </p>
+            card.classList.toggle("opened");
 
-    </section>
+        }
 
+    </script>
 
-    <footer>
-        made with way too much love ♡
-    </footer>
-
-
-    <script src="../js/script.js"></script>
 
 </body>
 
