@@ -2,36 +2,94 @@
    REASONS PAGE
 ========================================= */
 
-* {
+.reasons-page {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
 
-html {
-    scroll-behavior: smooth;
-}
+    min-height: 100vh;
 
-body {
-    font-family: 'DM Sans', sans-serif;
-    background: #fff8fb;
-    color: #5a3d48;
+    font-family: "DM Sans", sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(255, 220, 232, 0.8),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(255, 230, 240, 0.8),
+            transparent 35%
+        ),
+        #fff8fb;
+
+    color: #4d3440;
+
     overflow-x: hidden;
-}
-
-img {
-    max-width: 100%;
 }
 
 
 /* =========================================
-   PAGE
+   HOME BUTTON
+   MATCHES THE OTHER PAGES
 ========================================= */
 
-.reasons-page {
-    min-height: 100vh;
-    background: #fff8fb;
-    overflow-x: hidden;
+.memory-nav {
+    position: absolute;
+
+    top: 22px;
+    left: 22px;
+
+    z-index: 100;
+}
+
+
+.memory-home-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    background: #ec719b;
+
+    color: white;
+
+    padding: 10px 20px;
+
+    border-radius: 50px;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 7px 18px rgba(
+            236,
+            113,
+            155,
+            0.2
+        );
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.memory-home-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 24px rgba(
+            236,
+            113,
+            155,
+            0.28
+        );
 }
 
 
@@ -42,71 +100,82 @@ img {
 .reasons-hero {
     position: relative;
 
-    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding:
+        55px
+        25px
+        70px;
 
     text-align: center;
-
-    padding: 95px 20px 55px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #fff5f9 0%,
-            #fffafd 100%
-        );
-
-    overflow: hidden;
 }
 
+
+.eyebrow {
+    margin: 0 0 12px;
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #c87b95;
+}
+
+
 .reasons-hero h1 {
-    font-family: 'Pacifico', cursive;
+    margin: 0;
 
-    font-size: clamp(42px, 6vw, 64px);
+    font-family: "Pacifico", cursive;
 
-    line-height: 1.15;
+    font-size: clamp(48px, 7vw, 78px);
+
+    line-height: 1.1;
 
     font-weight: 400;
 
-    color: #6b4352;
+    color: #633f4d;
 }
+
 
 .reasons-hero h1 span {
-    color: #e96b98;
+    display: block;
+
+    color: #d66f93;
 }
+
 
 .reasons-subtitle {
-    max-width: 550px;
+    margin:
+        18px
+        auto
+        25px;
 
-    margin: 14px auto 0;
+    max-width: 520px;
 
-    color: #876873;
+    font-size: 16px;
 
-    font-size: 15px;
-
-    line-height: 1.7;
+    color: #86616f;
 }
 
 
-/* =========================================
-   OPEN ALL BUTTON
-========================================= */
-
 .open-all-button {
-    margin-top: 22px;
-
     border: none;
 
-    background: #ec719b;
+    padding: 13px 25px;
+
+    border-radius: 30px;
+
+    background: #df83a2;
 
     color: white;
 
-    padding: 12px 24px;
+    font-family: "DM Sans", sans-serif;
 
-    border-radius: 50px;
-
-    font-family: 'DM Sans', sans-serif;
-
-    font-size: 13px;
+    font-size: 14px;
 
     font-weight: 600;
 
@@ -114,9 +183,9 @@ img {
 
     box-shadow:
         0 8px 20px rgba(
-            236,
-            113,
-            155,
+            205,
+            105,
+            140,
             0.22
         );
 
@@ -125,103 +194,89 @@ img {
         box-shadow 0.2s ease;
 }
 
+
 .open-all-button:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 
     box-shadow:
         0 12px 25px rgba(
-            236,
-            113,
-            155,
-            0.28
+            205,
+            105,
+            140,
+            0.3
         );
 }
 
 
 /* =========================================
-   DECORATIONS
+   HERO DECORATIONS
 ========================================= */
 
-.reasons-flower {
-    position: absolute;
-
-    width: 38px;
-    height: 38px;
-
-    object-fit: contain;
-
-    opacity: 0.45;
-
-    pointer-events: none;
-
-    z-index: 1;
-}
-
-.reasons-flower-left {
-    left: 4%;
-    top: 20%;
-
-    transform: rotate(-18deg);
-}
-
-.reasons-flower-right {
-    right: 4%;
-    top: 55%;
-
-    transform: rotate(28deg);
-}
-
-.reasons-bow {
-    position: absolute;
-
-    width: 43px;
-    height: 43px;
-
-    right: 9%;
-    top: 18%;
-
-    object-fit: contain;
-
-    opacity: 0.42;
-
-    transform: rotate(15deg);
-
-    pointer-events: none;
-
-    z-index: 1;
-}
-
+.reasons-flower,
+.reasons-bow,
 .reasons-heart {
     position: absolute;
 
-    width: 26px;
-    height: 26px;
-
-    left: 9%;
-    top: 60%;
-
-    object-fit: contain;
-
-    opacity: 0.42;
-
-    transform: rotate(-12deg);
-
     pointer-events: none;
 
-    z-index: 1;
+    user-select: none;
+}
+
+
+.reasons-flower {
+    width: 95px;
+
+    opacity: 0.85;
+}
+
+
+.reasons-flower-left {
+    left: 0;
+    bottom: 30px;
+
+    transform: rotate(-12deg);
+}
+
+
+.reasons-flower-right {
+    right: 0;
+    top: 30px;
+
+    transform: rotate(15deg);
+}
+
+
+.reasons-bow {
+    width: 70px;
+
+    left: 14%;
+    top: 40px;
+
+    transform: rotate(-12deg);
+}
+
+
+.reasons-heart {
+    width: 65px;
+
+    right: 15%;
+    bottom: 35px;
+
+    transform: rotate(12deg);
 }
 
 
 /* =========================================
-   REASONS SECTION
+   REASONS CONTAINER
 ========================================= */
 
 .reasons-container {
-    width: 100%;
+    width: min(
+        1100px,
+        calc(100% - 40px)
+    );
 
-    padding: 55px 20px 80px;
-
-    background: white;
+    margin: 0 auto;
 }
 
 
@@ -230,34 +285,36 @@ img {
 ========================================= */
 
 .reasons-grid {
-    width: 100%;
-
-    max-width: 800px;
-
-    margin: 0 auto;
-
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(3, minmax(0, 1fr));
 
-    gap: 18px;
+    gap: 25px;
+
+    align-items: start;
 }
 
 
 /* =========================================
-   REASON CARD
+   NORMAL CARD
 ========================================= */
 
 .reason-card {
     width: 100%;
 
-    height: 215px;
+    height: 330px;
 
-    perspective: 1000px;
+    perspective: 1200px;
 
     cursor: pointer;
+
+    position: relative;
+
+    transition:
+        z-index 0s linear 0.35s;
 }
+
 
 .reason-card-inner {
     position: relative;
@@ -268,19 +325,22 @@ img {
     transform-style: preserve-3d;
 
     transition:
-        transform 0.65s
-        cubic-bezier(
-            0.4,
+        transform 0.7s cubic-bezier(
             0.2,
-            0.2,
+            0.75,
+            0.25,
             1
         );
 }
 
 
-/* =========================================
-   FLIPPED
-========================================= */
+.reason-card.flipped {
+    z-index: 50;
+
+    transition:
+        z-index 0s;
+}
+
 
 .reason-card.flipped
 .reason-card-inner {
@@ -296,38 +356,26 @@ img {
 .reason-back {
     position: absolute;
 
-    top: 0;
-    left: 0;
+    inset: 0;
 
     width: 100%;
     height: 100%;
 
-    padding: 20px 17px;
+    box-sizing: border-box;
 
-    border-radius: 20px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
+    border-radius: 28px;
 
     backface-visibility: hidden;
-
     -webkit-backface-visibility: hidden;
 
-    border: 1px solid #f6dce7;
+    overflow: hidden;
 
     box-shadow:
-        0 8px 22px rgba(
+        0 15px 40px rgba(
             190,
             105,
             135,
-            0.09
+            0.13
         );
 }
 
@@ -337,234 +385,409 @@ img {
 ========================================= */
 
 .reason-front {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    text-align: center;
+
     background:
         linear-gradient(
             145deg,
-            #fff8fb,
-            #fffafd
+            #ffffff,
+            #fff1f6
+        );
+
+    border:
+        1px solid rgba(
+            222,
+            141,
+            169,
+            0.18
         );
 }
 
-.reason-front:hover {
-    box-shadow:
-        0 12px 27px rgba(
-            190,
-            105,
-            135,
-            0.14
-        );
-}
 
 .reason-icon {
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 50%;
+
+    background: #ffe1eb;
+
     font-size: 28px;
 
-    line-height: 1;
-
-    margin-bottom: 12px;
-
-    display: inline-block;
-
-    transition:
-        transform 0.3s ease;
+    box-shadow:
+        0 8px 20px rgba(
+            210,
+            115,
+            145,
+            0.12
+        );
 }
 
-.reason-card:hover .reason-icon {
-    transform:
-        scale(1.06)
-        rotate(-5deg);
-}
 
 .reason-front h2 {
-    font-family: 'Pacifico', cursive;
+    margin: 0;
 
-    font-size: 20px;
+    font-family: "Pacifico", cursive;
 
-    line-height: 1.25;
+    font-size: 26px;
 
     font-weight: 400;
 
-    color: #704654;
+    color: #704352;
 }
 
+
 .reason-front p {
-    margin-top: 8px;
+    margin: 10px 0 0;
 
-    font-size: 11px;
+    font-size: 13px;
 
-    line-height: 1.5;
-
-    color: #c18a9c;
+    color: #a37483;
 }
 
 
 /* =========================================
-   BACK
+   NORMAL BACK
 ========================================= */
 
 .reason-back {
+    transform: rotateY(180deg);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 35px;
+
+    text-align: center;
+
     background:
         linear-gradient(
             145deg,
-            #fff5f9,
-            #ffeef5
+            #ffe7ef,
+            #fff7fa
         );
 
-    transform: rotateY(180deg);
+    border:
+        1px solid rgba(
+            214,
+            118,
+            150,
+            0.2
+        );
 }
 
+
 .reason-number {
-    font-size: 10px;
+    margin-bottom: 10px;
+
+    font-size: 11px;
+
+    font-weight: 600;
 
     letter-spacing: 2px;
 
-    color: #d76b91;
-
-    margin-bottom: 8px;
+    color: #c97996;
 }
 
+
 .reason-back h2 {
-    font-family: 'Pacifico', cursive;
+    margin: 0 0 14px;
 
-    font-size: 22px;
+    font-family: "Pacifico", cursive;
 
-    line-height: 1.2;
+    font-size: 27px;
 
     font-weight: 400;
 
-    color: #e06a95;
-
-    margin-bottom: 10px;
+    color: #704352;
 }
+
 
 .reason-back p {
-    width: 100%;
+    margin: 0;
 
-    max-width: 205px;
+    max-width: 400px;
 
-    font-size: 12px;
+    font-size: 14px;
 
-    line-height: 1.55;
+    line-height: 1.7;
 
-    color: #8e6b78;
+    color: #805d69;
 }
 
 
 /* =========================================
-   SIXTH CARD
+   REASON 6
+   CLOSED SIZE IS EXACTLY 330px
 ========================================= */
 
-.reason-card:last-child .reason-front {
-    background:
-        linear-gradient(
-            145deg,
-            #fff1f6,
-            #fff8fb
-        );
-}
+.reason-card-six {
+    height: 330px;
 
-.reason-card:last-child .reason-front h2 {
-    color: #e06a95;
+    position: relative;
+
+    /*
+       IMPORTANT:
+       The grid position does not change.
+       The card grows downward from its
+       original top edge.
+    */
+
+    transform-origin: top center;
 }
 
 
 /* =========================================
-   LONG REASON LIST
+   REASON 6 OPEN
 ========================================= */
 
-.reason-list-back {
+.reason-card-six.flipped {
+    /*
+       This is the total height when opened.
+       It gets taller downward.
+    */
+
+    height: 650px;
+}
+
+
+/*
+   The actual inner card also becomes taller.
+
+   Because the top edge stays in exactly
+   the same place, the extra 320px is
+   added underneath.
+*/
+
+.reason-card-six.flipped
+.reason-card-inner {
+    height: 650px;
+}
+
+
+/* =========================================
+   REASON 6 BACKING
+========================================= */
+
+.reason-six-back {
+    /*
+       The pink background belongs to the
+       entire back itself, so it stretches
+       with the card.
+    */
+
     justify-content: flex-start;
+
+    padding:
+        30px
+        30px
+        25px;
 
     overflow: hidden;
 
-    padding:
-        17px
-        14px
-        14px;
-}
-
-.reason-list-back .reason-number {
-    flex-shrink: 0;
-
-    margin-bottom: 4px;
-}
-
-.reason-list-back h2 {
-    flex-shrink: 0;
-
-    margin-bottom: 3px;
-
-    font-size: 19px;
-}
-
-.reason-list-back > p {
-    flex-shrink: 0;
-
-    margin-bottom: 7px;
-
-    font-size: 10px;
-
-    line-height: 1.3;
+    background:
+        linear-gradient(
+            145deg,
+            #ffe0eb,
+            #fff3f7
+        );
 }
 
 
 /* =========================================
-   TINY REASONS SCROLL AREA
+   REASON 6 CONTENT
 ========================================= */
 
-.tiny-reasons {
+.reason-six-content {
     width: 100%;
+    height: 100%;
 
-    max-width: 205px;
+    min-height: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.reason-six-intro {
+    max-width: 600px !important;
+
+    margin:
+        2px
+        0
+        5px !important;
+}
+
+
+/* =========================================
+   EXTRA REASONS SCROLLING AREA
+========================================= */
+
+.extra-reasons {
+    width: 100%;
 
     flex: 1;
 
     min-height: 0;
 
+    margin-top: 15px;
+
+    padding:
+        8px
+        15px
+        10px
+        5px;
+
+    box-sizing: border-box;
+
     overflow-y: auto;
 
-    overflow-x: hidden;
+    text-align: left;
 
-    padding-right: 5px;
+    border-radius: 18px;
 
-    font-size: 9px;
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.42
+        );
+}
+
+
+.extra-reasons p {
+    margin: 0 !important;
+
+    padding: 6px 4px;
+
+    max-width: none !important;
+
+    font-size: 14px;
 
     line-height: 1.45;
 
-    color: #8e6b78;
+    color: #805d69;
+}
 
-    text-align: center;
 
+.extra-reasons p:hover {
+    color: #c05e82;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.extra-reasons::-webkit-scrollbar {
+    width: 7px;
+}
+
+
+.extra-reasons::-webkit-scrollbar-track {
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.5
+        );
+
+    border-radius: 20px;
+}
+
+
+.extra-reasons::-webkit-scrollbar-thumb {
+    background:
+        rgba(
+            202,
+            111,
+            143,
+            0.45
+        );
+
+    border-radius: 20px;
+}
+
+
+.extra-reasons::-webkit-scrollbar-thumb:hover {
+    background:
+        rgba(
+            202,
+            111,
+            143,
+            0.7
+        );
+}
+
+
+.extra-reasons {
     scrollbar-width: thin;
 
     scrollbar-color:
-        #e9a2b9
-        transparent;
+        rgba(
+            202,
+            111,
+            143,
+            0.45
+        )
+        rgba(
+            255,
+            255,
+            255,
+            0.5
+        );
 }
 
-.tiny-reasons::-webkit-scrollbar {
-    width: 4px;
-}
 
-.tiny-reasons::-webkit-scrollbar-track {
-    background: transparent;
-}
+/* =========================================
+   FINAL REASON
+========================================= */
 
-.tiny-reasons::-webkit-scrollbar-thumb {
-    background: #e9a2b9;
+.extra-reasons .final-reason {
+    margin-top: 12px !important;
 
-    border-radius: 10px;
-}
+    padding-top: 15px;
 
-.tiny-reasons strong {
-    display: block;
+    border-top:
+        1px solid rgba(
+            202,
+            111,
+            143,
+            0.18
+        );
 
-    margin-top: 5px;
+    text-align: center;
 
-    color: #e06a95;
+    font-family: "Pacifico", cursive;
 
-    font-family: 'Pacifico', cursive;
+    font-size: 16px;
 
-    font-size: 11px;
+    color: #c05e82;
 }
 
 
@@ -573,73 +796,64 @@ img {
 ========================================= */
 
 .reasons-ending {
-    width: 100%;
+    padding:
+        100px
+        20px
+        80px;
 
     text-align: center;
-
-    padding: 65px 20px 80px;
-
-    background: #fff8fb;
 }
+
 
 .reasons-ending img {
-    width: 40px;
-    height: 40px;
-
-    object-fit: contain;
+    width: 65px;
 
     margin-bottom: 15px;
-
-    animation:
-        heartbeat
-        2.2s
-        ease-in-out
-        infinite;
 }
 
+
 .reasons-ending h2 {
-    font-family: 'Pacifico', cursive;
+    margin: 0;
 
-    font-size: 30px;
+    font-family: "Pacifico", cursive;
 
-    line-height: 1.25;
+    font-size: 35px;
 
     font-weight: 400;
 
-    color: #694552;
+    color: #704352;
 }
+
 
 .reasons-ending h2 span {
-    color: #e96b98;
+    color: #d66f93;
 }
 
+
 .reasons-ending p {
-    margin-top: 8px;
+    margin-top: 12px;
 
-    color: #957480;
+    font-size: 14px;
 
-    font-size: 13px;
+    color: #96717e;
 }
 
 
 /* =========================================
-   HEARTBEAT
+   FOOTER
 ========================================= */
 
-@keyframes heartbeat {
+footer {
+    padding:
+        25px
+        20px
+        40px;
 
-    0% {
-        transform: scale(1);
-    }
+    text-align: center;
 
-    50% {
-        transform: scale(1.07);
-    }
+    font-size: 12px;
 
-    100% {
-        transform: scale(1);
-    }
-
+    color: #b08391;
 }
 
 
@@ -647,242 +861,160 @@ img {
    TABLET
 ========================================= */
 
-@media (max-width: 850px) {
-
-    .reasons-hero {
-        padding:
-            85px
-            20px
-            50px;
-    }
+@media (max-width: 900px) {
 
     .reasons-grid {
-        max-width: 570px;
-
         grid-template-columns:
-            repeat(2, 1fr);
-
-        gap: 17px;
-    }
-
-    .reason-card {
-        height: 210px;
-    }
-
-    .reasons-flower {
-        width: 32px;
-        height: 32px;
-    }
-
-    .reasons-bow {
-        width: 38px;
-        height: 38px;
-    }
-
-    .reasons-heart {
-        width: 24px;
-        height: 24px;
+            repeat(2, minmax(0, 1fr));
     }
 
 }
 
 
 /* =========================================
-   MOBILE
+   PHONE
 ========================================= */
 
 @media (max-width: 600px) {
 
-    .reasons-hero {
-        padding:
-            75px
-            18px
-            45px;
+    .memory-nav {
+        top: 15px;
+        left: 15px;
     }
 
-    .reasons-hero h1 {
-        font-size: 40px;
-    }
 
-    .reasons-subtitle {
-        font-size: 14px;
-
-        max-width: 320px;
-    }
-
-    .reasons-container {
-        padding:
-            42px
-            18px
-            65px;
-    }
-
-    .reasons-grid {
-        max-width: 330px;
-
-        grid-template-columns: 1fr;
-
-        gap: 16px;
-    }
-
-    .reason-card {
-        height: 205px;
-    }
-
-    .reason-front,
-    .reason-back {
-        padding:
-            19px
-            16px;
-
-        border-radius: 19px;
-    }
-
-    .reason-icon {
-        font-size: 27px;
-
-        margin-bottom: 11px;
-    }
-
-    .reason-front h2 {
-        font-size: 20px;
-    }
-
-    .reason-back h2 {
-        font-size: 21px;
-    }
-
-    .reason-back p {
-        max-width: 245px;
+    .memory-home-button {
+        padding: 9px 16px;
 
         font-size: 12px;
     }
 
-    .reason-list-back {
-        padding:
-            16px
-            13px
-            13px;
-    }
-
-    .tiny-reasons {
-        max-width: 250px;
-
-        font-size: 9px;
-
-        line-height: 1.45;
-    }
-
-    .reasons-flower {
-        width: 29px;
-        height: 29px;
-    }
-
-    .reasons-bow {
-        width: 34px;
-        height: 34px;
-    }
-
-    .reasons-heart {
-        width: 21px;
-        height: 21px;
-    }
-
-    .reasons-ending {
-        padding:
-            55px
-            18px
-            70px;
-    }
-
-    .reasons-ending img {
-        width: 35px;
-        height: 35px;
-    }
-
-    .reasons-ending h2 {
-        font-size: 27px;
-    }
-
-}
-
-
-/* =========================================
-   VERY SMALL PHONES
-========================================= */
-
-@media (max-width: 400px) {
 
     .reasons-hero {
         padding:
-            65px
-            15px
-            40px;
+            40px
+            20px
+            55px;
     }
+
 
     .reasons-hero h1 {
-        font-size: 36px;
+        font-size: 48px;
     }
+
+
+    .reasons-container {
+        width:
+            min(
+                calc(100% - 30px),
+                500px
+            );
+    }
+
 
     .reasons-grid {
-        max-width: 285px;
+        grid-template-columns: 1fr;
+
+        gap: 20px;
     }
 
-    .reason-card {
-        height: 195px;
+
+    /*
+       CLOSED REASON 6
+       Same exact size as the others.
+    */
+
+    .reason-card-six {
+        height: 330px;
     }
 
-    .reason-front,
-    .reason-back {
+
+    /*
+       OPEN REASON 6
+       Grows downward.
+    */
+
+    .reason-card-six.flipped {
+        height: 600px;
+    }
+
+
+    .reason-card-six.flipped
+    .reason-card-inner {
+        height: 600px;
+    }
+
+
+    .reason-six-back {
         padding:
-            16px
-            13px;
-
-        border-radius: 18px;
+            25px
+            20px;
     }
 
-    .reason-icon {
+
+    .reason-back {
+        padding: 25px;
+    }
+
+
+    .reason-front h2 {
         font-size: 24px;
     }
 
-    .reason-front h2 {
-        font-size: 18px;
-    }
-
-    .reason-front p {
-        font-size: 10px;
-    }
 
     .reason-back h2 {
-        font-size: 19px;
+        font-size: 24px;
     }
 
-    .reason-back p {
-        font-size: 11px;
 
-        line-height: 1.5;
+    .extra-reasons {
+        padding-right: 10px;
     }
 
-    .tiny-reasons {
-        font-size: 8px;
 
-        line-height: 1.4;
+    .extra-reasons p {
+        font-size: 13px;
+
+        padding: 6px 2px;
     }
+
+
+    .reasons-flower {
+        width: 75px;
+    }
+
 
     .reasons-flower-left {
-        left: 2%;
+        left: -15px;
     }
+
 
     .reasons-flower-right {
-        right: 2%;
+        right: -15px;
     }
+
 
     .reasons-bow {
-        right: 4%;
+        width: 50px;
+
+        left: 5%;
     }
 
+
     .reasons-heart {
-        left: 4%;
+        width: 50px;
+
+        right: 5%;
+    }
+
+
+    .reasons-ending {
+        padding-top: 70px;
+    }
+
+
+    .reasons-ending h2 {
+        font-size: 29px;
     }
 
 }
