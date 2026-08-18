@@ -739,26 +739,3 @@
 </body>
 
 </html>
-```
-
-### And change this in `reasons.css`
-
-Your current CSS has the Home navigation pinned to the **top-left** with `left: 24px`.
-
-Replace the existing `.memory-nav` block with:
-
-```css
-.memory-nav {
-    width: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: absolute;
-
-    top: 24px;
-    left: 0;
-
-    z-index: 20;
-}
