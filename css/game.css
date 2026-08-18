@@ -1,1 +1,1011 @@
+/* =========================================
+   CATCH THE HEARTS
+========================================= */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    min-height: 100%;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        'DM Sans',
+        sans-serif;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff7fa 0%,
+            #fffafd 50%,
+            #fff4f8 100%
+        );
+
+    color: #634450;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   HOME
+========================================= */
+
+.game-home-button {
+    position: fixed;
+
+    top: 22px;
+    left: 22px;
+
+    z-index: 100;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        10px
+        18px;
+
+    border-radius: 50px;
+
+    background: #ec719b;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 20px
+        rgba(
+            236,
+            113,
+            155,
+            0.22
+        );
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.game-home-button:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(
+            236,
+            113,
+            155,
+            0.3
+        );
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.game-header {
+    text-align: center;
+
+    padding:
+        85px
+        20px
+        25px;
+}
+
+
+.game-eyebrow {
+    color: #d86d93;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 12px;
+}
+
+
+.game-header h1 {
+    font-family:
+        'Pacifico',
+        cursive;
+
+    font-size:
+        clamp(
+            42px,
+            7vw,
+            62px
+        );
+
+    line-height: 1.15;
+
+    font-weight: 400;
+
+    color: #684451;
+}
+
+
+.game-header h1 span {
+    color: #e96b98;
+}
+
+
+.game-subtitle {
+    margin-top: 12px;
+
+    color: #957481;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   GAME WRAPPER
+========================================= */
+
+.game-wrapper {
+    width: 100%;
+
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    padding:
+        15px
+        20px
+        60px;
+}
+
+
+/* =========================================
+   GAME CONTAINER
+========================================= */
+
+.game-container {
+    width: 100%;
+
+    padding:
+        15px;
+
+    border-radius: 28px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.7
+        );
+
+    border:
+        1px solid #f4dce6;
+
+    box-shadow:
+        0 20px 50px
+        rgba(
+            180,
+            100,
+            130,
+            0.1
+        );
+
+    backdrop-filter:
+        blur(10px);
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.game-stats {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding:
+        6px
+        8px
+        14px;
+}
+
+
+.stat {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.stat-label {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #c38a9e;
+}
+
+
+.stat-value {
+    min-width: 35px;
+
+    color: #e36c96;
+
+    font-family:
+        'Pacifico',
+        cursive;
+
+    font-size: 18px;
+}
+
+
+/* =========================================
+   GAME FIELD
+========================================= */
+
+.game-field {
+    position: relative;
+
+    width: 100%;
+
+    height: 600px;
+
+    overflow: hidden;
+
+    border-radius: 21px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff0f6 0%,
+            #fff8fb 55%,
+            #ffeef5 100%
+        );
+
+    border:
+        1px solid #f4d7e3;
+}
+
+
+/* =========================================
+   SUBTLE BACKGROUND
+========================================= */
+
+.game-field::before,
+.game-field::after {
+    content: "♡";
+
+    position: absolute;
+
+    color:
+        rgba(
+            235,
+            107,
+            152,
+            0.08
+        );
+
+    font-size: 80px;
+
+    pointer-events: none;
+}
+
+
+.game-field::before {
+    left: 7%;
+
+    top: 18%;
+
+    transform:
+        rotate(-15deg);
+}
+
+
+.game-field::after {
+    right: 7%;
+
+    bottom: 28%;
+
+    transform:
+        rotate(15deg);
+}
+
+
+/* =========================================
+   GAME SCREENS
+========================================= */
+
+.game-screen {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 50;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    background:
+        rgba(
+            255,
+            248,
+            251,
+            0.94
+        );
+
+    backdrop-filter:
+        blur(5px);
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================
+   START SCREEN
+========================================= */
+
+.start-player {
+    width: 105px;
+
+    height: 105px;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+
+    animation:
+        floatPlayer
+        2.5s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes floatPlayer {
+
+    0% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-9px);
+    }
+
+    100% {
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+.game-screen h2 {
+    font-family:
+        'Pacifico',
+        cursive;
+
+    font-size: 28px;
+
+    font-weight: 400;
+
+    color: #df6995;
+
+    margin-bottom: 12px;
+}
+
+
+.game-screen p {
+    max-width: 350px;
+
+    color: #91707d;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin-bottom: 4px;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.game-button {
+    margin-top: 22px;
+
+    padding:
+        12px
+        26px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #ec719b;
+
+    color: white;
+
+    font-family:
+        'DM Sans',
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px
+        rgba(
+            236,
+            113,
+            155,
+            0.24
+        );
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.game-button:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(
+            236,
+            113,
+            155,
+            0.32
+        );
+}
+
+
+.game-button:active {
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================
+   GAME OVER
+========================================= */
+
+.game-over-heart {
+    font-size: 55px;
+
+    margin-bottom: 5px;
+
+    animation:
+        sadHeart
+        1.4s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes sadHeart {
+
+    0% {
+        transform:
+            rotate(-5deg)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            rotate(5deg)
+            scale(1.08);
+    }
+
+    100% {
+        transform:
+            rotate(-5deg)
+            scale(1);
+    }
+
+}
+
+
+.final-score-text {
+    font-size: 15px !important;
+}
+
+
+.final-score-text span {
+    color: #e56b96;
+
+    font-family:
+        'Pacifico',
+        cursive;
+
+    font-size: 20px;
+}
+
+
+.game-message {
+    color: #d47799 !important;
+
+    font-family:
+        'Pacifico',
+        cursive;
+
+    font-size: 15px !important;
+
+    margin-top: 8px;
+}
+
+
+/* =========================================
+   PLAYER
+========================================= */
+
+.game-player {
+    position: absolute;
+
+    z-index: 20;
+
+    bottom: 18px;
+
+    left: 50%;
+
+    width: 82px;
+
+    height: 82px;
+
+    object-fit: contain;
+
+    transform:
+        translateX(-50%);
+
+    user-select: none;
+
+    pointer-events: none;
+
+    filter:
+        drop-shadow(
+            0 5px 7px
+            rgba(
+                170,
+                80,
+                110,
+                0.14
+            )
+        );
+}
+
+
+/* =========================================
+   FALLING HEARTS
+========================================= */
+
+.falling-heart {
+    position: absolute;
+
+    z-index: 10;
+
+    top: -80px;
+
+    width: 52px;
+
+    height: 52px;
+
+    object-fit: contain;
+
+    user-select: none;
+
+    pointer-events: none;
+
+    will-change:
+        transform;
+}
+
+
+/* =========================================
+   CATCH ANIMATION
+========================================= */
+
+.catch-effect {
+    position: absolute;
+
+    z-index: 30;
+
+    pointer-events: none;
+
+    color: #e86b98;
+
+    font-family:
+        'Pacifico',
+        cursive;
+
+    font-size: 19px;
+
+    animation:
+        catchPop
+        0.65s
+        ease-out
+        forwards;
+}
+
+
+@keyframes catchPop {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(0)
+            scale(0.7);
+    }
+
+    20% {
+        opacity: 1;
+
+        transform:
+            translateY(-8px)
+            scale(1);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateY(-42px)
+            scale(1.15);
+    }
+
+}
+
+
+/* =========================================
+   BROKEN HEART HIT
+========================================= */
+
+.hit-effect {
+    position: absolute;
+
+    z-index: 35;
+
+    pointer-events: none;
+
+    font-size: 45px;
+
+    animation:
+        hitPop
+        0.55s
+        ease-out
+        forwards;
+}
+
+
+@keyframes hitPop {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            scale(0.5);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            scale(1.5)
+            rotate(15deg);
+    }
+
+}
+
+
+/* =========================================
+   INSTRUCTIONS
+========================================= */
+
+.game-instructions {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 18px;
+
+    padding:
+        14px
+        5px
+        2px;
+
+    color: #a27b89;
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   MOBILE CONTROLS
+========================================= */
+
+.mobile-controls {
+    display: none;
+
+    position: absolute;
+
+    bottom: 15px;
+
+    left: 0;
+
+    right: 0;
+
+    z-index: 40;
+
+    justify-content: space-between;
+
+    padding:
+        0
+        18px;
+
+    pointer-events: none;
+}
+
+
+.control-button {
+    width: 60px;
+
+    height: 50px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.78
+        );
+
+    color: #e36c96;
+
+    font-size: 25px;
+
+    box-shadow:
+        0 5px 15px
+        rgba(
+            170,
+            80,
+            110,
+            0.1
+        );
+
+    pointer-events: auto;
+
+    touch-action: none;
+}
+
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.game-bottom {
+    text-align: center;
+
+    padding:
+        35px
+        10px
+        10px;
+}
+
+
+.game-bottom img {
+    width: 35px;
+
+    height: 35px;
+
+    object-fit: contain;
+
+    margin-bottom: 7px;
+}
+
+
+.game-bottom p {
+    color: #9a7582;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 700px) {
+
+    .game-field {
+        height: 560px;
+    }
+
+
+    .game-player {
+        width: 76px;
+        height: 76px;
+    }
+
+
+    .falling-heart {
+        width: 48px;
+        height: 48px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .game-home-button {
+        top: 15px;
+
+        left: 15px;
+
+        padding:
+            9px
+            15px;
+
+        font-size: 12px;
+    }
+
+
+    .game-header {
+        padding:
+            72px
+            15px
+            20px;
+    }
+
+
+    .game-header h1 {
+        font-size: 43px;
+    }
+
+
+    .game-subtitle {
+        font-size: 13px;
+    }
+
+
+    .game-wrapper {
+        padding:
+            10px
+            10px
+            45px;
+    }
+
+
+    .game-container {
+        padding: 10px;
+
+        border-radius: 22px;
+    }
+
+
+    .game-field {
+        height: 570px;
+
+        border-radius: 17px;
+    }
+
+
+    .game-player {
+        width: 70px;
+
+        height: 70px;
+
+        bottom: 65px;
+    }
+
+
+    .mobile-controls {
+        display: flex;
+    }
+
+
+    .game-instructions {
+        font-size: 9px;
+
+        gap: 10px;
+    }
+
+
+    .falling-heart {
+        width: 46px;
+
+        height: 46px;
+    }
+
+
+    .game-screen h2 {
+        font-size: 25px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .game-header h1 {
+        font-size: 38px;
+    }
+
+
+    .game-field {
+        height: 520px;
+    }
+
+
+    .game-player {
+        width: 64px;
+
+        height: 64px;
+    }
+
+
+    .control-button {
+        width: 54px;
+
+        height: 46px;
+    }
+
+}
