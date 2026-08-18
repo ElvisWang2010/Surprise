@@ -771,3 +771,30 @@ img {
     }
 
 }
+
+/* =========================================
+   CENTER MEMORY ENDING
+========================================= */
+
+.memory-ending {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+}
+
+.memory-ending > img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.memory-ending h2,
+.memory-ending p {
+    width: 100%;
+    text-align: center;
+}
