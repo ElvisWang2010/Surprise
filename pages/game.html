@@ -1,1 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Catch the Hearts ♡</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Pacifico&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/game.css"
+    >
+
+</head>
+
+
+<body class="game-page">
+
+
+    <!-- =========================================
+         HOME BUTTON
+    ========================================== -->
+
+    <a
+        href="../index.html"
+        class="game-home-button"
+    >
+        ← Home
+    </a>
+
+
+    <!-- =========================================
+         GAME HEADER
+    ========================================== -->
+
+    <header class="game-header">
+
+        <p class="game-eyebrow">
+            a tiny game for you ♡
+        </p>
+
+        <h1>
+            Catch the
+            <span>Hearts</span>
+        </h1>
+
+        <p class="game-subtitle">
+            Catch the good hearts. Avoid the broken ones.
+        </p>
+
+    </header>
+
+
+    <!-- =========================================
+         GAME AREA
+    ========================================== -->
+
+    <main class="game-wrapper">
+
+
+        <section
+            class="game-container"
+            id="gameContainer"
+        >
+
+
+            <!-- =================================
+                 SCORE
+            ================================== -->
+
+            <div class="game-stats">
+
+                <div class="stat">
+
+                    <span class="stat-label">
+                        SCORE
+                    </span>
+
+                    <span
+                        class="stat-value"
+                        id="score"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <span class="stat-label">
+                        SPEED
+                    </span>
+
+                    <span
+                        class="stat-value"
+                        id="speed"
+                    >
+                        1x
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 GAME FIELD
+            ================================== -->
+
+            <div
+                class="game-field"
+                id="gameField"
+            >
+
+
+                <!-- =================================
+                     START SCREEN
+                ================================== -->
+
+                <div
+                    class="game-screen start-screen"
+                    id="startScreen"
+                >
+
+                    <img
+                        src="../assets/game/NysaHelloKittyFusionPlayer.png"
+                        class="start-player"
+                        alt="Player"
+                    >
+
+                    <h2>
+                        Catch the hearts! ♡
+                    </h2>
+
+                    <p>
+                        Move left and right to catch
+                        the pink hearts.
+                    </p>
+
+                    <p>
+                        But don't touch a broken heart...
+                        💔
+                    </p>
+
+                    <button
+                        class="game-button"
+                        id="startButton"
+                        type="button"
+                    >
+                        Start Game ♡
+                    </button>
+
+                </div>
+
+
+                <!-- =================================
+                     GAME OVER SCREEN
+                ================================== -->
+
+                <div
+                    class="game-screen game-over-screen hidden"
+                    id="gameOverScreen"
+                >
+
+                    <div class="game-over-heart">
+                        💔
+                    </div>
+
+                    <h2>
+                        Game Over
+                    </h2>
+
+                    <p class="final-score-text">
+                        You caught
+                        <span id="finalScore">
+                            0
+                        </span>
+                        hearts ♡
+                    </p>
+
+                    <p
+                        class="game-message"
+                        id="gameMessage"
+                    >
+                        Nice try ♡
+                    </p>
+
+                    <button
+                        class="game-button"
+                        id="restartButton"
+                        type="button"
+                    >
+                        Try Again ♡
+                    </button>
+
+                </div>
+
+
+                <!-- =================================
+                     PLAYER
+                ================================== -->
+
+                <img
+                    src="../assets/game/NysaHelloKittyFusionPlayer.png"
+                    class="game-player"
+                    id="player"
+                    alt="Player"
+                >
+
+
+                <!-- =================================
+                     CONTROLS
+                ================================== -->
+
+                <div class="mobile-controls">
+
+                    <button
+                        class="control-button"
+                        id="leftButton"
+                        type="button"
+                    >
+                        ←
+                    </button>
+
+                    <button
+                        class="control-button"
+                        id="rightButton"
+                        type="button"
+                    >
+                        →
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =================================
+                 INSTRUCTIONS
+            ================================== -->
+
+            <div class="game-instructions">
+
+                <span>
+                    ← → or A D to move
+                </span>
+
+                <span>
+                    ♡ catch
+                </span>
+
+                <span>
+                    💔 avoid
+                </span>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =====================================
+             BOTTOM MESSAGE
+        ====================================== -->
+
+        <section class="game-bottom">
+
+            <img
+                src="../assets/icons/PinkHeart2.png"
+                alt=""
+            >
+
+            <p>
+                How many hearts can you catch? ♡
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="../js/game.js"></script>
+
+</body>
+
+</html>
