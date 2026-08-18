@@ -12,6 +12,9 @@
 
     <title>Letters ♡</title>
 
+
+    <!-- GOOGLE FONTS -->
+
     <link
         rel="preconnect"
         href="https://fonts.googleapis.com"
@@ -28,6 +31,9 @@
         rel="stylesheet"
     >
 
+
+    <!-- LETTER CSS -->
+
     <link
         rel="stylesheet"
         href="../css/letter.css"
@@ -36,24 +42,56 @@
 </head>
 
 
-<body class="letters-page">
+<body>
 
 
-    <!-- TOP HOME BUTTON -->
+    <!-- =========================================
+         TOP HOME BUTTON
+    ========================================= -->
 
-    <a
-        href="../index.html"
-        class="letters-home-button letters-home-top"
-    >
-        ← Home
-    </a>
+    <nav class="letter-nav">
+
+        <a
+            href="../index.html"
+            class="letter-home-button"
+        >
+            ← Home
+        </a>
+
+    </nav>
 
 
-    <!-- HEADER -->
+    <!-- =========================================
+         HERO
+    ========================================= -->
 
-    <header class="letters-header">
+    <header class="letter-hero">
 
-        <p class="letters-eyebrow">
+
+        <!-- DECORATIONS -->
+
+        <img
+            src="../assets/icons/Flower1.png"
+            class="letter-flower-left"
+            alt=""
+        >
+
+        <img
+            src="../assets/icons/PinkBow.png"
+            class="letter-bow-right"
+            alt=""
+        >
+
+        <img
+            src="../assets/icons/PinkHeart1.png"
+            class="letter-heart-left"
+            alt=""
+        >
+
+
+        <!-- HERO TEXT -->
+
+        <p class="eyebrow">
             a few words for you ♡
         </p>
 
@@ -62,149 +100,314 @@
             <span>Letters</span>
         </h1>
 
-        <p class="letters-subtitle">
+        <p class="letter-subtitle">
             Little pieces of my heart, written just for you.
         </p>
+
 
     </header>
 
 
-    <!-- MAIN CONTENT -->
+    <!-- =========================================
+         LETTER SECTION
+    ========================================= -->
 
-    <main class="letters-wrapper">
+    <main class="letters-section">
 
 
-        <section class="letters-container">
+        <div class="letters-grid">
 
 
-            <!-- LETTER 1 -->
+            <!-- =====================================
+                 LETTER ONE
+            ====================================== -->
 
             <article class="letter-card">
 
-                <div class="letter-decoration">
-                    ♡
+
+                <!-- ENVELOPE -->
+
+                <button
+                    class="letter-envelope"
+                    type="button"
+                    onclick="openLetter(this)"
+                >
+
+                    <div class="envelope-body">
+
+                        <span class="envelope-icon">
+                            💌
+                        </span>
+
+                        <h2>
+                            To You ♡
+                        </h2>
+
+                        <p>
+                            A little letter just for you.
+                        </p>
+
+                        <span class="open-text">
+                            Click to open
+                        </span>
+
+                    </div>
+
+                </button>
+
+
+                <!-- LETTER CONTENT -->
+
+                <div class="letter-content">
+
+                    <div class="letter-paper">
+
+                        <h2>
+                            To You ♡
+                        </h2>
+
+                        <p>
+                            I don't think I'll ever get tired
+                            of telling you how much you mean to me.
+                            Every little moment with you is
+                            something I treasure.
+                        </p>
+
+                        <p>
+                            Whether we're laughing about something
+                            completely stupid, talking about our day,
+                            or simply sitting together, I love every
+                            second of it.
+                        </p>
+
+                        <p>
+                            You make ordinary days feel special
+                            just by being there.
+                        </p>
+
+                        <p class="letter-signature">
+                            With all my love
+                            <span class="signature-heart">♡</span>
+                        </p>
+
+                        <button
+                            class="close-letter-button"
+                            type="button"
+                            onclick="closeLetter(this)"
+                        >
+                            Close Letter
+                        </button>
+
+                    </div>
+
                 </div>
 
-                <p class="letter-date">
-                    Letter One
-                </p>
-
-                <h2>
-                    To You ♡
-                </h2>
-
-                <p>
-                    I don't think I'll ever get tired of telling you
-                    how much you mean to me. Every little moment with
-                    you is something I treasure.
-                </p>
-
-                <p>
-                    Whether we're laughing about something completely
-                    stupid, talking about our day, or simply sitting
-                    together, I love every second of it.
-                </p>
-
-                <p>
-                    You make ordinary days feel special just by being
-                    there.
-                </p>
-
-                <p class="letter-signature">
-                    With all my love ♡
-                </p>
 
             </article>
 
 
-            <!-- LETTER 2 -->
+        </div>
+
+
+        <!-- =========================================
+             LETTER TWO
+        ========================================= -->
+
+        <div class="letters-grid">
+
 
             <article class="letter-card">
 
-                <div class="letter-decoration">
-                    🌷
+
+                <!-- ENVELOPE -->
+
+                <button
+                    class="letter-envelope"
+                    type="button"
+                    onclick="openLetter(this)"
+                >
+
+                    <div class="envelope-body">
+
+                        <span class="envelope-icon">
+                            🌷
+                        </span>
+
+                        <h2>
+                            My Favorite Person ♡
+                        </h2>
+
+                        <p>
+                            Another little letter for you.
+                        </p>
+
+                        <span class="open-text">
+                            Click to open
+                        </span>
+
+                    </div>
+
+                </button>
+
+
+                <!-- LETTER CONTENT -->
+
+                <div class="letter-content">
+
+                    <div class="letter-paper">
+
+                        <h2>
+                            My Favorite Person ♡
+                        </h2>
+
+                        <p>
+                            There are so many little things about
+                            you that I love. Your laugh, your smile,
+                            your voice, and even the little things
+                            you probably don't notice.
+                        </p>
+
+                        <p>
+                            I love hearing about your day and getting
+                            to be part of your life, even in the
+                            smallest ways.
+                        </p>
+
+                        <p>
+                            Thank you for being you.
+                        </p>
+
+                        <p class="letter-signature">
+                            Always
+                            <span class="signature-heart">♡</span>
+                        </p>
+
+                        <button
+                            class="close-letter-button"
+                            type="button"
+                            onclick="closeLetter(this)"
+                        >
+                            Close Letter
+                        </button>
+
+                    </div>
+
                 </div>
 
-                <p class="letter-date">
-                    Letter Two
-                </p>
-
-                <h2>
-                    My Favorite Person ♡
-                </h2>
-
-                <p>
-                    There are so many little things about you that I
-                    love. Your laugh, your smile, your voice, and even
-                    the little things you probably don't notice.
-                </p>
-
-                <p>
-                    I love hearing about your day and getting to be
-                    part of your life, even in the smallest ways.
-                </p>
-
-                <p>
-                    Thank you for being you.
-                </p>
-
-                <p class="letter-signature">
-                    Always ♡
-                </p>
 
             </article>
 
 
-            <!-- LETTER 3 -->
+        </div>
+
+
+        <!-- =========================================
+             LETTER THREE
+        ========================================= -->
+
+        <div class="letters-grid">
+
 
             <article class="letter-card">
 
-                <div class="letter-decoration">
-                    💗
+
+                <!-- ENVELOPE -->
+
+                <button
+                    class="letter-envelope"
+                    type="button"
+                    onclick="openLetter(this)"
+                >
+
+                    <div class="envelope-body">
+
+                        <span class="envelope-icon">
+                            💗
+                        </span>
+
+                        <h2>
+                            One More Thing ♡
+                        </h2>
+
+                        <p>
+                            One last little letter for you.
+                        </p>
+
+                        <span class="open-text">
+                            Click to open
+                        </span>
+
+                    </div>
+
+                </button>
+
+
+                <!-- LETTER CONTENT -->
+
+                <div class="letter-content">
+
+                    <div class="letter-paper">
+
+                        <h2>
+                            One More Thing ♡
+                        </h2>
+
+                        <p>
+                            If I could keep one thing forever,
+                            it would be all the little moments
+                            we've shared together.
+                        </p>
+
+                        <p>
+                            The laughs, the jokes, the random
+                            conversations, the memories, and even
+                            all the times I've annoyed you on purpose.
+                        </p>
+
+                        <p>
+                            I hope we get to make many, many more
+                            memories together.
+                        </p>
+
+                        <p class="letter-signature">
+                            Yours
+                            <span class="signature-heart">♡</span>
+                        </p>
+
+                        <button
+                            class="close-letter-button"
+                            type="button"
+                            onclick="closeLetter(this)"
+                        >
+                            Close Letter
+                        </button>
+
+                    </div>
+
                 </div>
 
-                <p class="letter-date">
-                    Letter Three
-                </p>
-
-                <h2>
-                    One More Thing ♡
-                </h2>
-
-                <p>
-                    If I could keep one thing forever, it would be all
-                    the little moments we've shared together.
-                </p>
-
-                <p>
-                    The laughs, the jokes, the random conversations,
-                    the memories, and even all the times I've annoyed
-                    you on purpose.
-                </p>
-
-                <p>
-                    I hope we get to make many, many more memories
-                    together.
-                </p>
-
-                <p class="letter-signature">
-                    Yours ♡
-                </p>
 
             </article>
 
 
-        </section>
+        </div>
 
 
-        <!-- BOTTOM MESSAGE -->
+        <!-- =========================================
+             ENDING
+        ========================================= -->
 
-        <section class="letters-bottom">
+        <section class="letters-ending">
 
             <img
                 src="../assets/icons/PinkHeart2.png"
                 alt=""
             >
+
+            <h2>
+                Always
+                <span>For You ♡</span>
+            </h2>
 
             <p>
                 There will always be more words for you. ♡
@@ -213,17 +416,65 @@
         </section>
 
 
-        <!-- BOTTOM HOME BUTTON -->
+        <!-- =========================================
+             BOTTOM HOME BUTTON
+        ========================================= -->
 
-        <a
-            href="../index.html"
-            class="letters-home-button letters-home-bottom"
+        <div
+            style="
+                display: flex;
+                justify-content: center;
+                margin-top: 35px;
+            "
         >
-            ♡ Back Home
-        </a>
+
+            <a
+                href="../index.html"
+                class="letter-home-button"
+            >
+                ♡ Back Home
+            </a>
+
+        </div>
 
 
     </main>
+
+
+    <!-- =========================================
+         LETTER JAVASCRIPT
+    ========================================= -->
+
+    <script>
+
+        function openLetter(button) {
+
+            const card =
+                button.closest(".letter-card");
+
+            if (!card) {
+                return;
+            }
+
+            card.classList.add("opened");
+
+        }
+
+
+        function closeLetter(button) {
+
+            const card =
+                button.closest(".letter-card");
+
+            if (!card) {
+                return;
+            }
+
+            card.classList.remove("opened");
+
+        }
+
+    </script>
 
 
 </body>
