@@ -13,7 +13,7 @@ html {
 }
 
 body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: "DM Sans", sans-serif;
     background: #fff8fb;
     color: #5a3d48;
     overflow-x: hidden;
@@ -40,16 +40,15 @@ img {
     align-items: center;
     justify-content: center;
 
-    text-decoration: none;
-
-    background: #ec719b;
-    color: white;
-
     padding: 10px 20px;
 
     border-radius: 50px;
 
-    font-family: 'DM Sans', sans-serif;
+    background: #ec719b;
+    color: white;
+
+    text-decoration: none;
+
     font-size: 13px;
     font-weight: 600;
 
@@ -74,19 +73,20 @@ img {
 ========================================= */
 
 .memory-hero {
+    position: relative;
+
     width: 100%;
     min-height: 46vh;
 
     display: flex;
     flex-direction: column;
 
-    justify-content: center;
     align-items: center;
-
-    text-align: center;
-    position: relative;
+    justify-content: center;
 
     padding: 90px 20px 60px;
+
+    text-align: center;
 
     background:
         linear-gradient(
@@ -99,15 +99,15 @@ img {
 }
 
 .memory-hero h1 {
-    font-family: 'Pacifico', cursive;
+    color: #6b4352;
+
+    font-family: "Pacifico", cursive;
 
     font-size: clamp(45px, 6vw, 70px);
 
-    line-height: 1.1;
-
     font-weight: 400;
 
-    color: #6b4352;
+    line-height: 1.1;
 }
 
 .memory-hero h1 span {
@@ -119,10 +119,11 @@ img {
 
     margin-top: 15px;
 
-    font-size: 16px;
-    line-height: 1.7;
-
     color: #876873;
+
+    font-size: 16px;
+
+    line-height: 1.7;
 }
 
 
@@ -133,11 +134,11 @@ img {
 .memory-hero-flower {
     position: absolute;
 
+    top: 22%;
+    left: 7%;
+
     width: 52px;
     height: 52px;
-
-    left: 7%;
-    top: 22%;
 
     object-fit: contain;
 
@@ -151,11 +152,11 @@ img {
 .memory-hero-bow {
     position: absolute;
 
+    top: 20%;
+    right: 7%;
+
     width: 58px;
     height: 58px;
-
-    right: 7%;
-    top: 20%;
 
     object-fit: contain;
 
@@ -169,11 +170,11 @@ img {
 .memory-hero-heart {
     position: absolute;
 
-    width: 32px;
-    height: 32px;
-
     left: 13%;
     bottom: 15%;
+
+    width: 32px;
+    height: 32px;
 
     object-fit: contain;
 
@@ -190,9 +191,9 @@ img {
 ========================================= */
 
 .memories-page {
-    width: 100%;
-
     position: relative;
+
+    width: 100%;
 
     padding: 70px 25px 100px;
 
@@ -203,12 +204,14 @@ img {
 
 
 /* =========================================
-   MEMORY GRID
+   MEMORY GALLERY
 ========================================= */
 
 .memory-gallery {
-    width: 100%;
+    position: relative;
+    z-index: 5;
 
+    width: 100%;
     max-width: 1000px;
 
     margin: 0 auto;
@@ -219,29 +222,20 @@ img {
         repeat(4, minmax(0, 1fr));
 
     gap: 20px;
-
-    position: relative;
-
-    z-index: 5;
 }
 
 
 /* =========================================
-   CENTER FINAL DESKTOP ROW
+   CENTER LAST DESKTOP ROW
 ========================================= */
 
 /*
-    Desktop has 4 columns.
+    Desktop:
 
-    With 14 pictures:
+    4 + 4 + 4 + 2
 
-    ROW 1 → 4
-    ROW 2 → 4
-    ROW 3 → 4
-    ROW 4 → 2
-
-    Pictures 13 and 14 are placed
-    into the two middle columns.
+    Photos 13 and 14
+    occupy the two middle columns.
 */
 
 @media (min-width: 901px) {
@@ -258,15 +252,15 @@ img {
 
 
 /* =========================================
-   MEMORY CARD
+   MEMORY PHOTO CARD
 ========================================= */
 
 .memory-photo {
     width: 100%;
 
-    background: white;
-
     padding: 7px 7px 13px;
+
+    background: white;
 
     border-radius: 8px;
 
@@ -282,7 +276,7 @@ img {
 
 
 /* =========================================
-   SLIGHT NATURAL ROTATION
+   NATURAL PHOTO ROTATIONS
 ========================================= */
 
 .memory-photo:nth-child(odd) {
@@ -316,17 +310,28 @@ img {
     display: block;
 
     width: 100%;
-
-    /*
-        Keeps every picture the same size
-        regardless of the original photo ratio.
-    */
-
     height: 175px;
 
     object-fit: cover;
 
     border-radius: 5px;
+}
+
+
+/* =========================================
+   FLIPPED PHOTOS
+========================================= */
+
+/*
+    These pictures are upside down
+    in their original orientation,
+    so they are rotated 180 degrees.
+*/
+
+.memory-photo img[src*="IMG_0238"],
+.memory-photo img[src*="IMG_0531"],
+.memory-photo img[src*="IMG_0747"] {
+    transform: rotate(180deg);
 }
 
 
@@ -337,39 +342,20 @@ img {
 .memory-photo p {
     margin: 9px 3px 0;
 
-    font-family: 'Pacifico', cursive;
+    color: #815363;
+
+    font-family: "Pacifico", cursive;
 
     font-size: 13px;
 
     line-height: 1.3;
-
-    color: #815363;
 
     text-align: center;
 }
 
 
 /* =========================================
-   FLIPPED PHOTOS
-========================================= */
-
-/*
-    These are the photos that need
-    to be rotated because of their
-    original orientation.
-*/
-
-.memory-photo img[src*="IMG_0238"] {
-    transform: rotate(180deg);
-}
-
-.memory-photo img[src*="IMG_0531"] {
-    transform: rotate(180deg);
-}
-
-
-/* =========================================
-   DECORATIONS AROUND GALLERY
+   BACKGROUND DECORATIONS
 ========================================= */
 
 .memories-page::before {
@@ -377,17 +363,18 @@ img {
 
     position: absolute;
 
+    top: 12%;
+    left: 2%;
+
     width: 45px;
     height: 45px;
-
-    left: 2%;
-    top: 12%;
 
     background-image:
         url("../assets/icons/Flower1.png");
 
-    background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 
     opacity: 0.35;
 
@@ -401,17 +388,18 @@ img {
 
     position: absolute;
 
+    top: 45%;
+    right: 2%;
+
     width: 50px;
     height: 50px;
-
-    right: 2%;
-    top: 45%;
 
     background-image:
         url("../assets/icons/Flower2.png");
 
-    background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 
     opacity: 0.35;
 
@@ -426,53 +414,51 @@ img {
 ========================================= */
 
 .memory-ending {
-    width: 100%;
+    position: relative;
+    z-index: 5;
 
+    width: 100%;
     max-width: 600px;
 
     margin: 90px auto 0;
 
     text-align: center;
-
-    position: relative;
-
-    z-index: 5;
 }
 
 .memory-ending > img {
+    display: block;
+
     width: 48px;
     height: 48px;
 
-    object-fit: contain;
-
-    display: block;
-
     margin: 0 auto 20px;
+
+    object-fit: contain;
 
     animation:
         heartbeat 2.2s ease-in-out infinite;
 }
 
 .memory-ending h2 {
-    font-family: 'Pacifico', cursive;
-
-    font-weight: 400;
-
-    font-size: clamp(30px, 4vw, 45px);
-
-    line-height: 1.2;
+    margin-bottom: 12px;
 
     color: #694552;
 
-    margin-bottom: 12px;
+    font-family: "Pacifico", cursive;
+
+    font-size: clamp(30px, 4vw, 45px);
+
+    font-weight: 400;
+
+    line-height: 1.2;
 }
 
 .memory-ending p {
+    margin-bottom: 20px;
+
     color: #957480;
 
     font-size: 15px;
-
-    margin-bottom: 20px;
 }
 
 
@@ -506,16 +492,7 @@ img {
     .memory-gallery {
         max-width: 720px;
 
-        /*
-            Use six tracks.
-
-            Each card spans two tracks,
-            which gives us the same visual
-            3-column layout.
-
-            This also lets us center an
-            incomplete final row correctly.
-        */
+        display: grid;
 
         grid-template-columns:
             repeat(6, minmax(0, 1fr));
@@ -529,13 +506,9 @@ img {
 
 
     /*
-        14 photos:
+        3 columns visually.
 
-        12 fill the first 4 rows.
-
-        The final two start at columns
-        2 and 4, leaving equal space
-        on both sides.
+        Final two photos are centered.
     */
 
     .memory-gallery > .memory-photo:nth-child(13) {
@@ -550,6 +523,7 @@ img {
     .memory-photo img {
         height: 175px;
     }
+
 
     .memory-hero-flower {
         width: 45px;
@@ -575,12 +549,18 @@ img {
 
 @media (max-width: 700px) {
 
+    .memories-page {
+        padding:
+            60px
+            18px
+            90px;
+    }
+
+
     .memory-gallery {
         max-width: 520px;
 
-        /*
-            Two columns on smaller screens.
-        */
+        display: grid;
 
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
@@ -588,14 +568,18 @@ img {
         gap: 16px;
     }
 
+
     .memory-photo {
         grid-column: auto;
     }
 
 
     /*
-        14 photos divides perfectly
-        into 7 rows of 2.
+        14 photos = 7 complete rows
+        of 2 photos.
+
+        Therefore no special centering
+        is needed here.
     */
 
     .memory-gallery > .memory-photo:nth-child(13),
@@ -608,12 +592,6 @@ img {
         height: 165px;
     }
 
-    .memories-page {
-        padding:
-            60px
-            18px
-            90px;
-    }
 
     .memory-hero {
         min-height: 43vh;
@@ -624,33 +602,38 @@ img {
             55px;
     }
 
+
     .memory-hero h1 {
         font-size: 48px;
     }
+
 
     .memory-subtitle {
         font-size: 14px;
     }
 
+
     .memory-hero-flower {
+        left: 3%;
+
         width: 40px;
         height: 40px;
-
-        left: 3%;
     }
+
 
     .memory-hero-bow {
+        right: 3%;
+
         width: 45px;
         height: 45px;
-
-        right: 3%;
     }
 
+
     .memory-hero-heart {
+        left: 7%;
+
         width: 26px;
         height: 26px;
-
-        left: 7%;
     }
 
 }
@@ -667,11 +650,15 @@ img {
         left: 15px;
     }
 
+
     .memory-home-button {
-        padding: 9px 16px;
+        padding:
+            9px
+            16px;
 
         font-size: 12px;
     }
+
 
     .memory-hero {
         min-height: 42vh;
@@ -682,13 +669,16 @@ img {
             50px;
     }
 
+
     .memory-hero h1 {
         font-size: 43px;
     }
 
+
     .memory-subtitle {
         font-size: 14px;
     }
+
 
     .memories-page {
         padding:
@@ -696,6 +686,7 @@ img {
             12px
             80px;
     }
+
 
     .memory-gallery {
         max-width: 390px;
@@ -706,6 +697,7 @@ img {
         gap: 13px;
     }
 
+
     .memory-photo {
         padding:
             5px
@@ -715,31 +707,36 @@ img {
         border-radius: 7px;
     }
 
+
     .memory-photo img {
         height: 145px;
 
         border-radius: 4px;
     }
 
-    .memory-photo p {
-        font-size: 12px;
 
+    .memory-photo p {
         margin-top: 7px;
+
+        font-size: 12px;
     }
+
 
     .memories-page::before {
+        left: 1%;
+
         width: 30px;
         height: 30px;
-
-        left: 1%;
     }
+
 
     .memories-page::after {
+        right: 1%;
+
         width: 32px;
         height: 32px;
-
-        right: 1%;
     }
+
 
     .memory-ending {
         margin-top: 70px;
@@ -758,13 +755,16 @@ img {
         gap: 9px;
     }
 
+
     .memory-photo img {
         height: 125px;
     }
 
+
     .memory-photo p {
         font-size: 11px;
     }
+
 
     .memory-hero h1 {
         font-size: 38px;
