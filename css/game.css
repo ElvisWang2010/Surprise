@@ -1009,3 +1009,18 @@ body {
     }
 
 }
+
+/* =========================================
+   MISSED HEARTS
+========================================= */
+
+.final-missed-text {
+    color: #a27b89 !important;
+    font-size: 13px !important;
+    margin-top: 2px;
+}
+
+.final-missed-text span {
+    color: #e36c96;
+    font-weight: 600;
+}
