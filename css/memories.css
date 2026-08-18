@@ -84,7 +84,6 @@ img {
     align-items: center;
 
     text-align: center;
-
     position: relative;
 
     padding: 90px 20px 60px;
@@ -121,7 +120,6 @@ img {
     margin-top: 15px;
 
     font-size: 16px;
-
     line-height: 1.7;
 
     color: #876873;
@@ -217,13 +215,45 @@ img {
 
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
 
     gap: 20px;
 
     position: relative;
 
     z-index: 5;
+}
+
+
+/* =========================================
+   CENTER FINAL DESKTOP ROW
+========================================= */
+
+/*
+    Desktop has 4 columns.
+
+    With 14 pictures:
+
+    ROW 1 → 4
+    ROW 2 → 4
+    ROW 3 → 4
+    ROW 4 → 2
+
+    Pictures 13 and 14 are placed
+    into the two middle columns.
+*/
+
+@media (min-width: 901px) {
+
+    .memory-gallery > .memory-photo:nth-child(13) {
+        grid-column: 2;
+    }
+
+    .memory-gallery > .memory-photo:nth-child(14) {
+        grid-column: 3;
+    }
+
 }
 
 
@@ -251,7 +281,9 @@ img {
 }
 
 
-/* Slight natural rotation */
+/* =========================================
+   SLIGHT NATURAL ROTATION
+========================================= */
 
 .memory-photo:nth-child(odd) {
     transform: rotate(-1.2deg);
@@ -262,7 +294,9 @@ img {
 }
 
 
-/* Hover */
+/* =========================================
+   HOVER
+========================================= */
 
 .memory-photo:hover {
     transform:
@@ -284,9 +318,8 @@ img {
     width: 100%;
 
     /*
-       IMPORTANT:
-       Keeps every picture the same size
-       regardless of the original photo ratio.
+        Keeps every picture the same size
+        regardless of the original photo ratio.
     */
 
     height: 175px;
@@ -321,11 +354,9 @@ img {
 ========================================= */
 
 /*
-   These are the photos you told me
-   were upside down.
-
-   IMG_0238
-   IMG_0531
+    These are the photos that need
+    to be rotated because of their
+    original orientation.
 */
 
 .memory-photo img[src*="IMG_0238"] {
@@ -356,7 +387,6 @@ img {
         url("../assets/icons/Flower1.png");
 
     background-size: contain;
-
     background-repeat: no-repeat;
 
     opacity: 0.35;
@@ -381,7 +411,6 @@ img {
         url("../assets/icons/Flower2.png");
 
     background-size: contain;
-
     background-repeat: no-repeat;
 
     opacity: 0.35;
@@ -464,6 +493,7 @@ img {
     100% {
         transform: scale(1);
     }
+
 }
 
 
@@ -476,11 +506,46 @@ img {
     .memory-gallery {
         max-width: 720px;
 
+        /*
+            Use six tracks.
+
+            Each card spans two tracks,
+            which gives us the same visual
+            3-column layout.
+
+            This also lets us center an
+            incomplete final row correctly.
+        */
+
         grid-template-columns:
-            repeat(3, 1fr);
+            repeat(6, minmax(0, 1fr));
 
         gap: 18px;
     }
+
+    .memory-photo {
+        grid-column: span 2;
+    }
+
+
+    /*
+        14 photos:
+
+        12 fill the first 4 rows.
+
+        The final two start at columns
+        2 and 4, leaving equal space
+        on both sides.
+    */
+
+    .memory-gallery > .memory-photo:nth-child(13) {
+        grid-column: 2 / span 2;
+    }
+
+    .memory-gallery > .memory-photo:nth-child(14) {
+        grid-column: 4 / span 2;
+    }
+
 
     .memory-photo img {
         height: 175px;
@@ -500,6 +565,7 @@ img {
         width: 28px;
         height: 28px;
     }
+
 }
 
 
@@ -512,11 +578,31 @@ img {
     .memory-gallery {
         max-width: 520px;
 
+        /*
+            Two columns on smaller screens.
+        */
+
         grid-template-columns:
-            repeat(2, 1fr);
+            repeat(2, minmax(0, 1fr));
 
         gap: 16px;
     }
+
+    .memory-photo {
+        grid-column: auto;
+    }
+
+
+    /*
+        14 photos divides perfectly
+        into 7 rows of 2.
+    */
+
+    .memory-gallery > .memory-photo:nth-child(13),
+    .memory-gallery > .memory-photo:nth-child(14) {
+        grid-column: auto;
+    }
+
 
     .memory-photo img {
         height: 165px;
@@ -566,6 +652,7 @@ img {
 
         left: 7%;
     }
+
 }
 
 
@@ -614,7 +701,7 @@ img {
         max-width: 390px;
 
         grid-template-columns:
-            repeat(2, 1fr);
+            repeat(2, minmax(0, 1fr));
 
         gap: 13px;
     }
@@ -657,6 +744,7 @@ img {
     .memory-ending {
         margin-top: 70px;
     }
+
 }
 
 
@@ -681,15 +769,5 @@ img {
     .memory-hero h1 {
         font-size: 38px;
     }
-}
 
-/* =========================================
-   CENTER MEMORY PHOTO ROWS
-========================================= */
-
-.memory-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
 }
