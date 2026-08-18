@@ -1,7 +1,9 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -12,185 +14,220 @@
     <title>Letters ♡</title>
 
     <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Pacifico&display=swap"
         rel="stylesheet"
     >
 
     <link
         rel="stylesheet"
-        href="../css/letter.css"
+        href="../css/letters.css"
     >
+
 </head>
 
 
-<body>
-
-    <!-- =========================================
-         HOME BUTTON
-    ========================================== -->
-
-    <nav class="letter-nav">
-
-        <a
-            href="../index.html"
-            class="letter-home-button"
-        >
-            ← Home
-        </a>
-
-    </nav>
+<body class="letters-page">
 
 
-    <!-- =========================================
-         HERO
-    ========================================== -->
+    <!-- TOP HOME BUTTON -->
 
-    <header class="letter-hero">
+    <a
+        href="../index.html"
+        class="letters-home-button"
+    >
+        ← Home
+    </a>
 
-        <img
-            src="../assets/icons/Flower1.png"
-            class="letter-flower letter-flower-left"
-            alt=""
-        >
 
-        <img
-            src="../assets/icons/PinkBow.png"
-            class="letter-bow letter-bow-right"
-            alt=""
-        >
+    <!-- HEADER -->
 
-        <img
-            src="../assets/icons/PinkHeart1.png"
-            class="letter-heart letter-heart-left"
-            alt=""
-        >
+    <header class="letters-header">
 
-        <p class="eyebrow">
-            A little something from me ♡
+        <p class="letters-eyebrow">
+            a few words for you ♡
         </p>
 
         <h1>
-            A Letter <span>For You</span>
+            My
+            <span>Letters</span>
         </h1>
 
-        <p class="letter-subtitle">
-            Something I wanted to write just for you.
+        <p class="letters-subtitle">
+            Little pieces of my heart, written just for you.
         </p>
 
     </header>
 
 
-    <!-- =========================================
-         LETTER SECTION
-    ========================================== -->
+    <!-- MAIN CONTENT -->
 
-    <main class="letters-section">
-
-        <div class="letters-grid">
-
-            <div class="letter-card">
-
-                <!-- ENVELOPE -->
-
-                <button
-                    class="letter-envelope"
-                    onclick="toggleLetter(this)"
-                    type="button"
-                >
-
-                    <div class="envelope-body">
-
-                        <div class="envelope-top">
-                        </div>
-
-                        <span class="envelope-icon">
-                            💌
-                        </span>
-
-                        <h2>
-                            Dear Nysa ♡
-                        </h2>
-
-                        <p>
-                            I wrote something for you.
-                        </p>
-
-                        <span class="open-text">
-                            Tap to open
-                        </span>
-
-                    </div>
-
-                </button>
+    <main class="letters-wrapper">
 
 
-                <!-- LETTER -->
+        <section class="letters-container">
 
-                <div class="letter-content">
 
-                    <div class="letter-paper">
+            <!-- LETTER 1 -->
 
-                        <div class="letter-paper-heart">
-                            ♡
-                        </div>
+            <article class="letter-card">
 
-                        <h2>
-                            Dear Nysa,
-                        </h2>
-
-                        <p>
-                            Over this past month I’ve grown so close to you. Closer than I have with anyone else in my entire life. I just wanted to make this little website to show how much I really love you and how much you mean to me. I know I don’t show it enough but you literally mean the whole world to me and these days at work all I ever think about is finishing and going home to talk to you. I miss you sosososo much and I really want this relationship to work. I hope you love this surprise and I hope we have many more memories to make in the future.
-                        </p>
-
-                        <p class="letter-signature">
-                            - Love RayRay
-                            <span class="signature-heart">♡</span>
-                        </p>
-
-                        <button
-                            class="close-letter-button"
-                            onclick="toggleLetter(this)"
-                            type="button"
-                        >
-                            Close letter ♡
-                        </button>
-
-                    </div>
-
+                <div class="letter-decoration">
+                    ♡
                 </div>
 
-            </div>
+                <p class="letter-date">
+                    Letter One
+                </p>
 
-        </div>
+                <h2>
+                    To You ♡
+                </h2>
+
+                <p>
+                    I don't think I'll ever get tired of telling you
+                    how much you mean to me. Every little moment with
+                    you is something I treasure.
+                </p>
+
+                <p>
+                    Whether we're laughing about something completely
+                    stupid, talking about our day, or simply sitting
+                    together, I love every second of it.
+                </p>
+
+                <p>
+                    You make ordinary days feel special just by being
+                    there.
+                </p>
+
+                <p class="letter-signature">
+                    With all my love ♡
+                </p>
+
+            </article>
 
 
-        <!-- =========================================
-             ENDING
-        ========================================== -->
+            <!-- LETTER 2 -->
 
-        <section class="letters-ending">
+            <article class="letter-card">
+
+                <div class="letter-decoration">
+                    🌷
+                </div>
+
+                <p class="letter-date">
+                    Letter Two
+                </p>
+
+                <h2>
+                    My Favorite Person ♡
+                </h2>
+
+                <p>
+                    There are so many little things about you that I
+                    love. Your laugh, your smile, your voice, and even
+                    the little things you probably don't notice.
+                </p>
+
+                <p>
+                    I love hearing about your day and getting to be
+                    part of your life, even in the smallest ways.
+                </p>
+
+                <p>
+                    Thank you for being you.
+                </p>
+
+                <p class="letter-signature">
+                    Always ♡
+                </p>
+
+            </article>
+
+
+            <!-- LETTER 3 -->
+
+            <article class="letter-card">
+
+                <div class="letter-decoration">
+                    💗
+                </div>
+
+                <p class="letter-date">
+                    Letter Three
+                </p>
+
+                <h2>
+                    One More Thing ♡
+                </h2>
+
+                <p>
+                    If I could keep one thing forever, it would be all
+                    the little moments we've shared together.
+                </p>
+
+                <p>
+                    The laughs, the jokes, the random conversations,
+                    the memories, and even all the times I've annoyed
+                    you on purpose.
+                </p>
+
+                <p>
+                    I hope we get to make many, many more memories
+                    together.
+                </p>
+
+                <p class="letter-signature">
+                    Yours ♡
+                </p>
+
+            </article>
+
+
+        </section>
+
+
+        <!-- BOTTOM MESSAGE -->
+
+        <section class="letters-bottom">
 
             <img
-                src="../assets/icons/PinkHeart1.png"
-                alt="Heart"
+                src="../assets/icons/PinkHeart2.png"
+                alt=""
             >
 
-            <h2>
-                More memories,
-                <span>to come.</span>
-            </h2>
-
             <p>
-                This is only the beginning. ♡
+                There will always be more words for you. ♡
             </p>
 
         </section>
 
+
+        <!-- BOTTOM HOME BUTTON -->
+
+        <a
+            href="../index.html"
+            class="letters-home-button"
+        >
+            ♡ Back Home
+        </a>
+
+
     </main>
 
-
-    <script src="../js/script.js"></script>
 
 </body>
 
 </html>
+```
