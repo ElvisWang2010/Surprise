@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -363,7 +364,6 @@
 
                 <div class="reason-card-inner">
 
-
                     <!-- FRONT -->
 
                     <div class="reason-front">
@@ -679,6 +679,7 @@
 
                             </div>
 
+
                         </div>
 
                     </div>
@@ -739,3 +740,34 @@
 </body>
 
 </html>
+```
+
+### And change this in `reasons.css`
+
+Your current CSS has the Home navigation pinned to the **top-left** with `left: 24px`.
+
+Replace the existing `.memory-nav` block with:
+
+```css
+.memory-nav {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+
+    top: 24px;
+    left: 0;
+
+    z-index: 20;
+}
+```
+
+That gives you:
+
+**Top center:** `← Home`
+**Bottom center:** `♡ Back Home`
+
+while leaving the actual Reasons cards and decorations alone.
