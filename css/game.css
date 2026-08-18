@@ -302,8 +302,10 @@ body {
 
     left: 50%;
 
-    width: 90px;
-    height: 90px;
+    /* CHANGED: 90px → 125px */
+
+    width: 125px;
+    height: 125px;
 
     object-fit: contain;
 
@@ -379,8 +381,10 @@ body {
 ========================================= */
 
 .start-player {
-    width: 110px;
-    height: 110px;
+    /* CHANGED: 110px → 130px */
+
+    width: 130px;
+    height: 130px;
 
     object-fit: contain;
 
@@ -805,8 +809,10 @@ body {
 
 
     .game-player {
-        width: 78px;
-        height: 78px;
+        /* CHANGED: 100px → 110px */
+
+        width: 110px;
+        height: 110px;
 
         bottom: 13px;
     }
@@ -935,8 +941,8 @@ body {
 
 
     .game-player {
-        width: 68px;
-        height: 68px;
+        width: 100px;
+        height: 100px;
 
         bottom: 10px;
     }
@@ -974,8 +980,8 @@ body {
 
 
     .start-player {
-        width: 85px;
-        height: 85px;
+        width: 95px;
+        height: 95px;
     }
 
 
@@ -1045,8 +1051,10 @@ body {
 
 
     .game-player {
-        width: 62px;
-        height: 62px;
+        /* CHANGED: 62px → 84px */
+
+        width: 84px;
+        height: 84px;
     }
 
 
@@ -1113,8 +1121,10 @@ body {
 
 
     .game-player {
-        width: 60px;
-        height: 60px;
+        /* CHANGED: 60px → 84px */
+
+        width: 84px;
+        height: 84px;
 
         bottom: 8px;
     }
