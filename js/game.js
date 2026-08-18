@@ -2,47 +2,25 @@
    CATCH THE HEARTS
 ========================================= */
 
-const gameField =
-    document.getElementById("gameField");
+const gameField = document.getElementById("gameField");
+const player = document.getElementById("player");
 
-const player =
-    document.getElementById("player");
+const scoreDisplay = document.getElementById("score");
+const missedDisplay = document.getElementById("missed");
+const speedDisplay = document.getElementById("speed");
 
-const scoreDisplay =
-    document.getElementById("score");
+const startScreen = document.getElementById("startScreen");
+const gameOverScreen = document.getElementById("gameOverScreen");
 
-const missedDisplay =
-    document.getElementById("missed");
+const startButton = document.getElementById("startButton");
+const restartButton = document.getElementById("restartButton");
 
-const speedDisplay =
-    document.getElementById("speed");
+const finalScore = document.getElementById("finalScore");
+const finalMissed = document.getElementById("finalMissed");
+const gameMessage = document.getElementById("gameMessage");
 
-const startScreen =
-    document.getElementById("startScreen");
-
-const gameOverScreen =
-    document.getElementById("gameOverScreen");
-
-const startButton =
-    document.getElementById("startButton");
-
-const restartButton =
-    document.getElementById("restartButton");
-
-const finalScore =
-    document.getElementById("finalScore");
-
-const finalMissed =
-    document.getElementById("finalMissed");
-
-const gameMessage =
-    document.getElementById("gameMessage");
-
-const leftButton =
-    document.getElementById("leftButton");
-
-const rightButton =
-    document.getElementById("rightButton");
+const leftButton = document.getElementById("leftButton");
+const rightButton = document.getElementById("rightButton");
 
 
 /* =========================================
@@ -71,15 +49,15 @@ let missed = 0;
 
 const MAX_MISSED = 5;
 
-let playerX = 0;
-
 let hearts = [];
+
+let animationFrame = null;
 
 let lastTime = 0;
 
 let spawnTimer = 0;
 
-let animationFrame = null;
+let playerX = 0;
 
 let movementLeft = false;
 
@@ -87,56 +65,61 @@ let movementRight = false;
 
 
 /*
-    Hearts now start faster than before.
+    Starting speed.
+    Hearts start faster than before.
 */
 
-let fallSpeed = 180;
+let fallSpeed = 220;
 
 
 /*
-    Speed begins at 1x and increases
-    every time you catch a heart.
+    Speed multiplier increases
+    every time a heart is caught.
 */
 
 let speedMultiplier = 1;
 
 
 /*
-    Hearts also spawn faster.
+    Starting spawn time.
 */
 
-let spawnInterval = 760;
+let spawnInterval = 700;
 
 
 /*
-    Minimum time between hearts.
+    Hearts cannot spawn faster
+    than this.
 */
 
-const MIN_SPAWN_INTERVAL = 190;
+const MIN_SPAWN_INTERVAL = 180;
 
 
 /*
-    Maximum speed.
+    Maximum difficulty.
 */
 
 const MAX_SPEED_MULTIPLIER = 5;
 
 
 /*
-    Player movement.
+    Player movement speed.
 */
 
-const PLAYER_SPEED = 410;
+const PLAYER_SPEED = 450;
 
 
 /* =========================================
-   INITIALIZE PLAYER
+   RESET PLAYER
 ========================================= */
 
 function resetPlayer() {
 
+    const fieldWidth =
+        gameField.clientWidth;
+
     playerX =
-        gameField.clientWidth / 2;
+        fieldWidth / 2;
 
     player.style.left =
         `${playerX}px`;
@@ -150,7 +133,11 @@ function resetPlayer() {
 
 function startGame() {
 
-    if (animationFrame) {
+    /*
+        Stop any previous game.
+    */
+
+    if (animationFrame !== null) {
 
         cancelAnimationFrame(
             animationFrame
@@ -160,7 +147,7 @@ function startGame() {
 
 
     /*
-        Remove old hearts.
+        Remove all old hearts.
     */
 
     hearts.forEach(function(heart) {
@@ -173,23 +160,22 @@ function startGame() {
 
     });
 
-
     hearts = [];
 
 
     /*
-        Reset game.
+        Reset everything.
     */
 
     score = 0;
 
     missed = 0;
 
-    fallSpeed = 180;
+    fallSpeed = 220;
 
     speedMultiplier = 1;
 
-    spawnInterval = 760;
+    spawnInterval = 700;
 
     spawnTimer = 0;
 
@@ -199,7 +185,7 @@ function startGame() {
 
 
     /*
-        Reset display.
+        Reset displays.
     */
 
     scoreDisplay.textContent =
@@ -225,8 +211,16 @@ function startGame() {
     );
 
 
+    /*
+        Reset player.
+    */
+
     resetPlayer();
 
+
+    /*
+        Start game loop.
+    */
 
     animationFrame =
         requestAnimationFrame(
@@ -259,10 +253,18 @@ function gameLoop(timestamp) {
     lastTime = timestamp;
 
 
+    /*
+        Move player.
+    */
+
     updatePlayer(
         deltaTime
     );
 
+
+    /*
+        Spawn hearts.
+    */
 
     spawnTimer +=
         deltaTime * 1000;
@@ -280,6 +282,10 @@ function gameLoop(timestamp) {
     }
 
 
+    /*
+        Move hearts.
+    */
+
     updateHearts(
         deltaTime
     );
@@ -294,16 +300,16 @@ function gameLoop(timestamp) {
 
 
 /* =========================================
-   PLAYER
+   PLAYER MOVEMENT
 ========================================= */
 
 function updatePlayer(deltaTime) {
 
-    const fieldWidth =
-        gameField.clientWidth;
-
     const playerWidth =
         player.offsetWidth;
+
+    const fieldWidth =
+        gameField.clientWidth;
 
 
     if (movementLeft) {
@@ -324,19 +330,23 @@ function updatePlayer(deltaTime) {
     }
 
 
-    const minX =
+    /*
+        Keep player inside game.
+    */
+
+    const minimumX =
         playerWidth / 2;
 
-    const maxX =
+    const maximumX =
         fieldWidth -
         playerWidth / 2;
 
 
     playerX =
         Math.max(
-            minX,
+            minimumX,
             Math.min(
-                maxX,
+                maximumX,
                 playerX
             )
         );
@@ -366,8 +376,10 @@ function spawnHeart() {
 
 
     /*
-        Broken hearts become slightly
-        more common as the score rises.
+        Chance of a broken heart.
+
+        Starts around 12%.
+        Slowly increases.
     */
 
     const brokenChance =
@@ -383,24 +395,43 @@ function spawnHeart() {
         brokenChance;
 
 
-    element.src =
-        isBroken
-            ? DEAD_HEART
-            : ALIVE_HEART;
+    /*
+        Choose image.
+    */
+
+    if (isBroken) {
+
+        element.src =
+            DEAD_HEART;
+
+    } else {
+
+        element.src =
+            ALIVE_HEART;
+
+    }
 
 
     element.className =
         "falling-heart";
 
+    element.alt = "";
 
     element.draggable = false;
 
-    element.alt = "";
 
+    /*
+        Heart size.
+    */
 
     const heartSize = 52;
 
-    const maxX =
+
+    /*
+        Random horizontal position.
+    */
+
+    const maximumX =
         gameField.clientWidth -
         heartSize;
 
@@ -409,15 +440,23 @@ function spawnHeart() {
         Math.random() *
         Math.max(
             0,
-            maxX
+            maximumX
         );
+
+
+    /*
+        Start just above
+        the visible game area.
+    */
+
+    const y = -heartSize;
 
 
     element.style.left =
         `${x}px`;
 
     element.style.top =
-        "-65px";
+        `${y}px`;
 
 
     gameField.appendChild(
@@ -431,11 +470,11 @@ function spawnHeart() {
 
         x: x,
 
-        y: -65,
+        y: y,
 
-        broken: isBroken,
+        size: heartSize,
 
-        size: heartSize
+        broken: isBroken
 
     });
 
@@ -452,6 +491,11 @@ function updateHearts(deltaTime) {
         gameField.clientHeight;
 
 
+    /*
+        Go backwards so hearts
+        can safely be removed.
+    */
+
     for (
         let i = hearts.length - 1;
         i >= 0;
@@ -463,7 +507,7 @@ function updateHearts(deltaTime) {
 
 
         /*
-            Move heart.
+            Move heart down.
         */
 
         heart.y +=
@@ -477,7 +521,7 @@ function updateHearts(deltaTime) {
 
 
         /*
-            Collision.
+            Check collision first.
         */
 
         if (
@@ -486,11 +530,17 @@ function updateHearts(deltaTime) {
             )
         ) {
 
+            /*
+                Broken heart = instant loss.
+            */
+
             if (heart.broken) {
 
-                createHitEffect(
+                createBrokenEffect(
                     heart
                 );
+
+                removeHeart(i);
 
                 endGame(
                     "broken"
@@ -502,7 +552,7 @@ function updateHearts(deltaTime) {
 
 
             /*
-                Good heart caught.
+                Normal heart = score.
             */
 
             catchHeart(
@@ -516,29 +566,46 @@ function updateHearts(deltaTime) {
         }
 
 
+        /* =================================
+           MISSED HEART DETECTION
+        ================================= */
+
         /*
-            Heart reached bottom.
+            THIS IS THE IMPORTANT PART.
 
-            Only normal hearts count
-            as a missed heart.
+            The heart is considered missed
+            when its BOTTOM reaches the
+            bottom of the playable field.
 
-            Broken hearts can simply
-            disappear if you don't hit them.
+            We do NOT wait for it to travel
+            outside the field.
         */
 
+        const heartBottom =
+            heart.y +
+            heart.size;
+
+
         if (
-            heart.y >
-            fieldHeight + 70
+            heartBottom >=
+            fieldHeight
         ) {
+
+            /*
+                Only normal hearts count
+                toward the 5-heart limit.
+            */
 
             if (!heart.broken) {
 
                 missed++;
 
-                updateMissed();
+                updateMissedDisplay();
+
 
                 /*
-                    FIVE MISSED HEARTS = LOSS.
+                    FIVE MISSED HEARTS
+                    = GAME OVER
                 */
 
                 if (
@@ -559,6 +626,11 @@ function updateHearts(deltaTime) {
             }
 
 
+            /*
+                Remove the heart after
+                it reaches the bottom.
+            */
+
             removeHeart(i);
 
         }
@@ -569,7 +641,7 @@ function updateHearts(deltaTime) {
 
 
 /* =========================================
-   COLLISION
+   COLLISION DETECTION
 ========================================= */
 
 function checkCollision(heart) {
@@ -581,7 +653,12 @@ function checkCollision(heart) {
         heart.element.getBoundingClientRect();
 
 
-    const padding = 9;
+    /*
+        Slight padding makes
+        collisions feel fairer.
+    */
+
+    const padding = 8;
 
 
     return !(
@@ -617,13 +694,10 @@ function catchHeart(heart) {
 
 
     /*
-        Faster ramp-up.
+        Increase difficulty.
 
-        Before:
-        0.055 per heart
-
-        Now:
-        0.07 per heart
+        Every caught heart makes
+        everything slightly faster.
     */
 
     speedMultiplier =
@@ -635,17 +709,20 @@ function catchHeart(heart) {
 
 
     /*
-        Spawn interval also decreases
-        faster.
+        Hearts also spawn faster.
     */
 
     spawnInterval =
         Math.max(
             MIN_SPAWN_INTERVAL,
-            760 -
+            700 -
             score * 14
         );
 
+
+    /*
+        Update display.
+    */
 
     scoreDisplay.textContent =
         score;
@@ -654,6 +731,10 @@ function catchHeart(heart) {
     speedDisplay.textContent =
         `${speedMultiplier.toFixed(1)}x`;
 
+
+    /*
+        Show +1 effect.
+    */
 
     createCatchEffect(
         heart
@@ -666,10 +747,31 @@ function catchHeart(heart) {
    MISSED DISPLAY
 ========================================= */
 
-function updateMissed() {
+function updateMissedDisplay() {
 
     missedDisplay.textContent =
         `${missed}/${MAX_MISSED}`;
+
+
+    /*
+        Add a little visual feedback.
+    */
+
+    missedDisplay.classList.remove(
+        "missed-warning"
+    );
+
+
+    /*
+        Force animation to restart.
+    */
+
+    void missedDisplay.offsetWidth;
+
+
+    missedDisplay.classList.add(
+        "missed-warning"
+    );
 
 }
 
@@ -746,10 +848,10 @@ function createCatchEffect(heart) {
 
 
 /* =========================================
-   HIT EFFECT
+   BROKEN HEART EFFECT
 ========================================= */
 
-function createHitEffect(heart) {
+function createBrokenEffect(heart) {
 
     const effect =
         document.createElement("div");
@@ -789,7 +891,7 @@ function createHitEffect(heart) {
 
 
 /* =========================================
-   END GAME
+   GAME OVER
 ========================================= */
 
 function endGame(reason) {
@@ -797,7 +899,13 @@ function endGame(reason) {
     gameRunning = false;
 
 
-    if (animationFrame) {
+    /*
+        Stop animation.
+    */
+
+    if (
+        animationFrame !== null
+    ) {
 
         cancelAnimationFrame(
             animationFrame
@@ -807,6 +915,10 @@ function endGame(reason) {
 
     }
 
+
+    /*
+        Remove every remaining heart.
+    */
 
     hearts.forEach(function(heart) {
 
@@ -822,22 +934,34 @@ function endGame(reason) {
     hearts = [];
 
 
+    /*
+        Show final statistics.
+    */
+
     finalScore.textContent =
         score;
-
 
     finalMissed.textContent =
         missed;
 
 
     /*
-        Different message depending
-        on how the player lost.
+        Different messages
+        depending on how they lost.
     */
 
     if (
-        reason ===
-        "broken"
+        reason === "missed"
+    ) {
+
+        gameMessage.textContent =
+            "You missed too many hearts! 😭💗";
+
+    }
+
+
+    if (
+        reason === "broken"
     ) {
 
         gameMessage.textContent =
@@ -845,47 +969,70 @@ function endGame(reason) {
 
     }
 
-    else {
-
-        gameMessage.textContent =
-            "You missed too many hearts! 😭";
-
-    }
-
 
     /*
-        Score-based message can
-        override the basic message
-        for very high scores.
+        Better messages for
+        higher scores.
     */
 
     if (score >= 35) {
 
-        gameMessage.textContent =
-            reason === "broken"
-                ? "You got SO far and then hit a broken heart 😭💔"
-                : "You caught SO many hearts!! 😭💗";
+        if (
+            reason === "missed"
+        ) {
+
+            gameMessage.textContent =
+                "YOU CAUGHT SO MANY HEARTS!! 😭💗";
+
+        } else {
+
+            gameMessage.textContent =
+                "You got SO far and hit a broken heart 😭💔";
+
+        }
 
     }
 
     else if (score >= 20) {
 
-        gameMessage.textContent =
-            reason === "broken"
-                ? "Okayyy you were doing SO good 😭💔"
-                : "Okayyy you're actually really good at this 💗";
+        if (
+            reason === "missed"
+        ) {
+
+            gameMessage.textContent =
+                "Okayyy you were actually really good 💗";
+
+        } else {
+
+            gameMessage.textContent =
+                "You were doing SO good 😭💔";
+
+        }
 
     }
 
     else if (score >= 10) {
 
-        gameMessage.textContent =
-            reason === "broken"
-                ? "You were doing so well!! 😭💔"
-                : "Not bad at all hehe ♡";
+        if (
+            reason === "missed"
+        ) {
+
+            gameMessage.textContent =
+                "Not bad at all hehe ♡";
+
+        } else {
+
+            gameMessage.textContent =
+                "You were doing pretty good! 💔";
+
+        }
 
     }
 
+
+    /*
+        Show game-over screen.
+    */
 
     gameOverScreen.classList.remove(
         "hidden"
@@ -895,7 +1042,7 @@ function endGame(reason) {
 
 
 /* =========================================
-   KEYBOARD
+   KEYBOARD CONTROLS
 ========================================= */
 
 document.addEventListener(
@@ -957,139 +1104,178 @@ document.addEventListener(
 
 
 /* =========================================
-   MOBILE CONTROLS
+   MOBILE LEFT BUTTON
 ========================================= */
 
-leftButton.addEventListener(
-    "pointerdown",
-    function(event) {
+if (leftButton) {
 
-        event.preventDefault();
+    leftButton.addEventListener(
+        "pointerdown",
+        function(event) {
 
-        movementLeft = true;
+            event.preventDefault();
 
-    }
-);
+            movementLeft = true;
 
-
-leftButton.addEventListener(
-    "pointerup",
-    function(event) {
-
-        event.preventDefault();
-
-        movementLeft = false;
-
-    }
-);
+        }
+    );
 
 
-leftButton.addEventListener(
-    "pointercancel",
-    function() {
+    leftButton.addEventListener(
+        "pointerup",
+        function(event) {
 
-        movementLeft = false;
+            event.preventDefault();
 
-    }
-);
+            movementLeft = false;
 
-
-leftButton.addEventListener(
-    "pointerleave",
-    function() {
-
-        movementLeft = false;
-
-    }
-);
+        }
+    );
 
 
-rightButton.addEventListener(
-    "pointerdown",
-    function(event) {
+    leftButton.addEventListener(
+        "pointercancel",
+        function() {
 
-        event.preventDefault();
+            movementLeft = false;
 
-        movementRight = true;
-
-    }
-);
+        }
+    );
 
 
-rightButton.addEventListener(
-    "pointerup",
-    function(event) {
+    leftButton.addEventListener(
+        "pointerleave",
+        function() {
 
-        event.preventDefault();
+            movementLeft = false;
 
-        movementRight = false;
+        }
+    );
 
-    }
-);
-
-
-rightButton.addEventListener(
-    "pointercancel",
-    function() {
-
-        movementRight = false;
-
-    }
-);
-
-
-rightButton.addEventListener(
-    "pointerleave",
-    function() {
-
-        movementRight = false;
-
-    }
-);
+}
 
 
 /* =========================================
-   BUTTONS
+   MOBILE RIGHT BUTTON
 ========================================= */
 
-startButton.addEventListener(
-    "click",
-    startGame
-);
+if (rightButton) {
+
+    rightButton.addEventListener(
+        "pointerdown",
+        function(event) {
+
+            event.preventDefault();
+
+            movementRight = true;
+
+        }
+    );
 
 
-restartButton.addEventListener(
-    "click",
-    startGame
-);
+    rightButton.addEventListener(
+        "pointerup",
+        function(event) {
+
+            event.preventDefault();
+
+            movementRight = false;
+
+        }
+    );
+
+
+    rightButton.addEventListener(
+        "pointercancel",
+        function() {
+
+            movementRight = false;
+
+        }
+    );
+
+
+    rightButton.addEventListener(
+        "pointerleave",
+        function() {
+
+            movementRight = false;
+
+        }
+    );
+
+}
 
 
 /* =========================================
-   RESIZE
+   START BUTTON
+========================================= */
+
+if (startButton) {
+
+    startButton.addEventListener(
+        "click",
+        function() {
+
+            startGame();
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   RESTART BUTTON
+========================================= */
+
+if (restartButton) {
+
+    restartButton.addEventListener(
+        "click",
+        function() {
+
+            startGame();
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   WINDOW RESIZE
 ========================================= */
 
 window.addEventListener(
     "resize",
     function() {
 
+        if (!gameField) {
+
+            return;
+
+        }
+
+
         const playerWidth =
             player.offsetWidth;
 
 
-        const minX =
+        const minimumX =
             playerWidth / 2;
 
 
-        const maxX =
+        const maximumX =
             gameField.clientWidth -
             playerWidth / 2;
 
 
         playerX =
             Math.max(
-                minX,
+                minimumX,
                 Math.min(
-                    maxX,
+                    maximumX,
                     playerX
                 )
             );
@@ -1106,8 +1292,16 @@ window.addEventListener(
    INITIALIZE
 ========================================= */
 
-player.src =
-    PLAYER_IMAGE;
+if (player) {
+
+    player.src =
+        PLAYER_IMAGE;
+
+}
 
 
-resetPlayer();
+if (gameField && player) {
+
+    resetPlayer();
+
+}
