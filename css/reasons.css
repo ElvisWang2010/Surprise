@@ -36,7 +36,6 @@ img {
 
 .reasons-page {
     min-height: 100vh;
-
     background: #fff8fb;
 
     overflow-x: hidden;
@@ -71,7 +70,6 @@ img {
     color: white;
 
     padding: 10px 19px;
-
     border-radius: 50px;
 
     font-family: 'DM Sans', sans-serif;
@@ -134,7 +132,6 @@ img {
 
 .reasons-hero h1 {
     font-family: 'Pacifico', cursive;
-
     font-size:
         clamp(
             42px,
@@ -179,7 +176,6 @@ img {
     color: #876873;
 
     font-size: 15px;
-
     line-height: 1.7;
 }
 
@@ -210,7 +206,6 @@ img {
     font-weight: 600;
 
     cursor: pointer;
-
     box-shadow:
         0 8px 20px rgba(
             236,
@@ -286,7 +281,6 @@ img {
     object-fit: contain;
 
     opacity: 0.42;
-
     transform: rotate(15deg);
 
     pointer-events: none;
@@ -325,7 +319,6 @@ img {
         60px
         20px
         80px;
-
     background: white;
 }
 
@@ -347,16 +340,6 @@ img {
 
     gap: 18px;
 
-    /*
-       IMPORTANT:
-
-       This makes the grid row expand when
-       Reason 6 becomes taller.
-
-       The card itself starts at the exact
-       same top position and grows downward.
-    */
-
     align-items: start;
 }
 
@@ -375,12 +358,6 @@ img {
     cursor: pointer;
 
     position: relative;
-
-    /*
-       Prevents the card from visually
-       affecting neighboring cards while
-       it is flipping.
-    */
 
     z-index: 1;
 }
@@ -459,7 +436,6 @@ img {
     backface-visibility: hidden;
 
     -webkit-backface-visibility: hidden;
-
     border:
         1px solid #f6dce7;
 
@@ -525,7 +501,6 @@ img {
     font-family: 'Pacifico', cursive;
 
     font-size: 20px;
-
     line-height: 1.25;
 
     font-weight: 400;
@@ -563,7 +538,6 @@ img {
 
 .reason-number {
     font-size: 10px;
-
     letter-spacing: 2px;
 
     color: #d76b91;
@@ -606,20 +580,7 @@ img {
 ========================================= */
 
 .reason-six {
-    /*
-       THIS IS THE SAME HEIGHT AS EVERY
-       OTHER CARD ON DESKTOP.
-    */
-
     height: 220px;
-
-    /*
-       The important part:
-
-       The top of this element stays fixed.
-       When its height changes, the extra
-       space is added below it.
-    */
 
     align-self: start;
 }
@@ -631,31 +592,9 @@ img {
 ========================================= */
 
 .reason-six.flipped {
-    /*
-       CLOSED:
-       220px
-
-       OPEN:
-       650px
-
-       Because the element is not translated,
-       its TOP DOES NOT MOVE.
-
-       The additional 430px is added
-       underneath the original card.
-    */
-
     height: 650px;
 }
 
-
-/*
-   The inner wrapper MUST also become
-   the new height.
-
-   Otherwise the pink back would remain
-   220px tall.
-*/
 
 .reason-six.flipped
 .reason-card-inner {
@@ -668,13 +607,6 @@ img {
 ========================================= */
 
 .reason-six-back {
-    /*
-       This is the actual pink backing.
-
-       Because it has height: 100%, it follows
-       the expanded 650px card.
-    */
-
     height: 100%;
 
     justify-content:
@@ -803,7 +735,6 @@ img {
 .tiny-reasons
 .final-reason {
     margin-top: 12px;
-
     padding:
         14px
         5px
@@ -873,8 +804,6 @@ img {
 }
 
 
-/* Firefox */
-
 .tiny-reasons {
     scrollbar-width: thin;
 
@@ -921,7 +850,6 @@ img {
 
 .reasons-ending {
     text-align: center;
-
     padding:
         65px
         20px
@@ -971,6 +899,35 @@ img {
     color: #957480;
 
     font-size: 13px;
+}
+
+
+/* =========================================
+   BOTTOM HOME BUTTON
+========================================= */
+
+.reasons-home-bottom {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-top: 30px;
+
+    text-align: center;
+}
+
+
+.reasons-home-bottom
+.memory-home-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
 }
 
 
@@ -1027,19 +984,10 @@ img {
     }
 
 
-    /*
-       Reason 6 must use the same closed
-       height as the other tablet cards.
-    */
-
     .reason-six {
         height: 215px;
     }
 
-
-    /*
-       When opened it still grows DOWN.
-    */
 
     .reason-six.flipped {
         height: 600px;
@@ -1136,23 +1084,10 @@ img {
     }
 
 
-    /*
-       Closed Reason 6 is exactly the
-       same size as the other cards.
-    */
-
     .reason-six {
         height: 205px;
     }
 
-
-    /*
-       Open Reason 6.
-
-       TOP STAYS FIXED.
-
-       EXTRA HEIGHT GOES DOWN.
-    */
 
     .reason-six.flipped {
         height: 570px;
@@ -1260,6 +1195,11 @@ img {
         font-size: 27px;
     }
 
+
+    .reasons-home-bottom {
+        margin-top: 25px;
+    }
+
 }
 
 
@@ -1296,11 +1236,6 @@ img {
         height: 195px;
     }
 
-
-    /*
-       Expanded version still grows
-       downward from the same top.
-    */
 
     .reason-six.flipped {
         height: 540px;
